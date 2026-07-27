@@ -1,4 +1,4 @@
-package org.example.Kazi_Tahmid_Abtahi.CustomerControllers;
+package Kazi_Tahmid_Abtahi.CustomerControllers;
 
 public class customerDashboardController
 {

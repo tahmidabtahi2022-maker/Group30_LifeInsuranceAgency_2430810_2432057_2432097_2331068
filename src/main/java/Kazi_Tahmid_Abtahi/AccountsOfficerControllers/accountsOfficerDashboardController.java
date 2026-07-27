@@ -1,4 +1,4 @@
-package org.example.Kazi_Tahmid_Abtahi.AccountsOfficerControllers;
+package Kazi_Tahmid_Abtahi.AccountsOfficerControllers;
 
 public class accountsOfficerDashboardController
 {
