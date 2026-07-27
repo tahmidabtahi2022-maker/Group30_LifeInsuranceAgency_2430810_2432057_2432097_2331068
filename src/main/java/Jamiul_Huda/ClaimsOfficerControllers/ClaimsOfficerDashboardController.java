@@ -1,4 +1,4 @@
 package Jamiul_Huda.ClaimsOfficerControllers;
 
-public class claimsOfficerDashboardController {
+public class ClaimsOfficerDashboardController {
 }
