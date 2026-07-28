@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="897.0" prefWidth="1277.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" prefHeight="59.0" prefWidth="1418.0" style="-fx-background-color: #b3f876;" text="Client Clarification &amp; Evidence Requests Manager">
+         <font>
+            <Font name="Carlito Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="38.0" prefWidth="1277.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="107.0" text="Application ID:" />
+            <TextField />
+         </children>
+      </HBox>
+   </children>
+</VBox>
