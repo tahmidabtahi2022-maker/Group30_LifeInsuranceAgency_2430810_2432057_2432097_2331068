@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Kazi_Tahmid_Abtahi.AccountsOfficerControllers.accountsOfficerDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane fx:id="accountsOfficerDashboardBorderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.AccountsOfficerControllers.accountsOfficerDashboardController">
+    <left>
+        <VBox prefHeight="578.0" prefWidth="169.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#verifyPremiumsButtonOnAction" style="-fx-background-color: #250b84;" text="Verify Premiums" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#claimFundDisbursalsButtonOnAction" style="-fx-background-color: #250b84;" text="Claim Fund Disbursals" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#agentCommissionsButtonOnAction" style="-fx-background-color: #250b84;" text="Agent Commissions" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#policyAuditAndLapsesButtonOnAction" style="-fx-background-color: #250b84;" text="Policy Audit &amp; Lapses" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#financialReportingButtonOnAction" style="-fx-background-color: #250b84;" text="Financial Reporting" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loanOperationsButtonOnAction" style="-fx-background-color: #250b84;" text="Loan Operations" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#corporateFundAllocationButtonOnAction" style="-fx-background-color: #250b84;" text="Corporate Fund Allocation" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#masterTransactionLedgerButtonOnAction" style="-fx-background-color: #250b84;" text="Master Transaction Ledger" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets bottom="120.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#signOutButtonOnAction" style="-fx-background-color: #b41a1a;" text="Sign Out" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <Label prefHeight="47.0" prefWidth="310.0" text="Accounts Officer Dashboard" textFill="#163999" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+    </top>
+   <center>
+      <AnchorPane fx:id="sceneSwitchingArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
