@@ -1,14 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Jamiul_Huda.InsuranceAgentControllers.CreateCustomerProfileController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="901.0" prefWidth="1301.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.InsuranceAgentControllers.CreateCustomerProfileController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="dashboardTitleLabel" alignment="CENTER" prefHeight="100.0" prefWidth="479.0" text="Insurance Agent Dashboard">
+               <font>
+                  <Font name="Carlito Bold" size="24.0" />
+               </font>
+            </Label>
+            <Region prefHeight="100.0" prefWidth="326.0" />
+            <HBox prefHeight="100.0" prefWidth="557.0">
+               <children>
+                  <Label fx:id="agentNameLabel" alignment="CENTER" prefHeight="100.0" prefWidth="841.0" text="Insurance Agent">
+                     <font>
+                        <Font name="Carlito Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="100.0" prefWidth="326.0" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="0.0" prefWidth="302.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="dashboardButton" mnemonicParsing="false" text="Dashboard" />
+            <Button fx:id="clientPortfolioButton" mnemonicParsing="false" text="My Client Portfolio Registry" />
+            <Button fx:id="onboardProspectButton" mnemonicParsing="false" style="-fx-background-color: #ffa2a2;" text="Onboard New Prospect Account">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="pendingRenewalsButton" mnemonicParsing="false" text="Pending Renewals" />
+            <Button fx:id="messagesButton" mnemonicParsing="false" text="Messages" />
+            <Button fx:id="settingsButton" mnemonicParsing="false" text="Settings" />
+            <Button fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="600.0" prefWidth="999.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="pageTitleLabel" alignment="CENTER" prefHeight="80.0" prefWidth="999.0" style="-fx-background-color: #809de1;" text="Onboard New Prospect Account">
+               <font>
+                  <Font name="Caladea Bold" size="24.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="40.0" prefWidth="999.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="270.0" text="Client Full Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fullNameTextField" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="999.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="270.0" text="National Identity ID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nidTextField" />
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="999.0">
+               <children>
+                  <Label fx:id="mobileeNumberTextField" prefHeight="25.0" prefWidth="270.0" text="Active Mobile Number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="mobileNumberTextField" prefHeight="26.0" prefWidth="161.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="33.0" prefWidth="999.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="270.0" text="Digital Email Address">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailTextField" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="269.0" text="Date of Birth">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateOfBirthPicker" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="999.0">
+               <children>
+                  <Button fx:id="createProfileButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="748.0" text="Create Profile" textFill="#0031a4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="722.0" text="Clear">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="statusLabel" alignment="CENTER" prefHeight="35.0" prefWidth="1026.0" style="-fx-background-color: #d9a4ff;" text="Ready to Create New Customer">
+                     <font>
+                        <Font name="Carlito Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
