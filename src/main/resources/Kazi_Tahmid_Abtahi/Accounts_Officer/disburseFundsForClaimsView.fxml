@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.AccountsOfficerControllers.disburseFundsForClaimsController">
+    <children>
+        <Label layoutX="185.0" layoutY="28.0" text="Disburse Claim Funds &amp; Maturities" textFill="#2b2091">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="65.0" layoutY="75.0" text="Approved Claims Pending Disbursal :" textFill="#200f7e">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <TableView fx:id="approvedClaimsTableView" layoutX="65.0" layoutY="100.0" prefHeight="200.0" prefWidth="570.0">
+            <columns>
+                <TableColumn fx:id="claimIdTC" prefWidth="110.0" text="Claim ID" />
+                <TableColumn fx:id="policyIdTC" prefWidth="110.0" text="Policy ID" />
+                <TableColumn fx:id="claimantNameTC" prefWidth="170.0" text="Claimant Name" />
+                <TableColumn fx:id="approvedPayoutAmountTC" prefWidth="178.0" text="Approved Payout Amount" />
+            </columns>
+        </TableView>
+
+        <Label layoutX="65.0" layoutY="318.0" text="Disbursal Information Entry : " textFill="#242fac">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="65.0" layoutY="348.0" text="Outgoing Bank Transfer ID :" />
+        <TextField fx:id="outgoingBankTransferIdTF" layoutX="230.0" layoutY="344.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter Transfer ID" />
+
+        <Label layoutX="65.0" layoutY="386.0" text="Disbursal Date :" />
+        <DatePicker fx:id="disbursalDatePicker" layoutX="170.0" layoutY="382.0" prefHeight="26.0" prefWidth="180.0" promptText="Select Date" />
+
+        <Button layoutX="430.0" layoutY="382.0" mnemonicParsing="false" onAction="#confirmDisbursalButtonOnAction" text="Confirm &amp; Disburse Funds" />
+
+        <Label fx:id="statusMessageLabel" layoutX="65.0" layoutY="435.0" prefHeight="40.0" prefWidth="570.0" text="Status : " textFill="#00000b" />
+    </children>
+</AnchorPane>

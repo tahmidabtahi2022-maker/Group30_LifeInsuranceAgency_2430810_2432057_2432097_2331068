@@ -3,7 +3,7 @@ package Kazi_Tahmid_Abtahi.CustomerControllers;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class customerPortfolioDashboardController
+public class customerPortfolioController
 {
     @javafx.fxml.FXML
     private TableView customerOwnedPolicyDataTableview;

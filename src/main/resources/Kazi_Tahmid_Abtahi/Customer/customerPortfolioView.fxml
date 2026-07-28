@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="564.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.customerPortfolioDashboardController">
+<AnchorPane prefHeight="564.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.customerPortfolioController">
    <children>
       <TableView fx:id="customerOwnedPolicyDataTableview" layoutX="50.0" layoutY="122.0" prefHeight="200.0" prefWidth="572.0">
         <columns>
