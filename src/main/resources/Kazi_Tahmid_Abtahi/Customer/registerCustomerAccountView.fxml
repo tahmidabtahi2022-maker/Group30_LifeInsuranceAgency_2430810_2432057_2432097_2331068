@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="581.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.registerCustomerAccountController">
    <children>
       <TextField fx:id="fullNameTF" layoutX="246.0" layoutY="78.0" prefHeight="26.0" prefWidth="261.0" promptText="Enter your full name" />
@@ -33,5 +32,10 @@
          </font>
       </Button>
       <Label layoutX="128.0" layoutY="419.0" prefHeight="63.0" prefWidth="470.0" text="Complete Registration Process. enter all your data properly" />
+      <Button layoutX="129.0" layoutY="491.0" mnemonicParsing="false" onAction="#returnToLoginPageButtonOnAction" style="-fx-background-color: #2f3e58;" text="Return to login page" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

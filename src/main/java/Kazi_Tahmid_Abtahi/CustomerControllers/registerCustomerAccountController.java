@@ -18,8 +18,6 @@ public class registerCustomerAccountController
     @javafx.fxml.FXML
     private TextField confirmPasswordTF;
     @javafx.fxml.FXML
-    private Label registrationPromptLabel;
-    @javafx.fxml.FXML
     private TextField emailAddressTF;
 
     @javafx.fxml.FXML
@@ -28,5 +26,9 @@ public class registerCustomerAccountController
 
     @javafx.fxml.FXML
     public void registerAccountButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void returnToLoginPageButtonOnAction(ActionEvent actionEvent) {
     }
 }
