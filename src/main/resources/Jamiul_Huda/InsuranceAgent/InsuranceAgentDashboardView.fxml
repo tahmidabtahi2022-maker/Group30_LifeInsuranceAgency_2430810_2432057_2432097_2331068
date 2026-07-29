@@ -33,12 +33,39 @@
    <left>
       <VBox prefHeight="556.0" prefWidth="189.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="dashboardButton" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" text="Dashboard" />
-            <Button fx:id="clientPortfolioButton" alignment="TOP_LEFT" mnemonicParsing="false" style="-fx-background-color: #ffa2a2;" text="My Client Portfolio Registry" />
-            <Button fx:id="pendingRenewalsButton" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" text="Pending Renewals" />
-            <Button fx:id="messagesButton" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" text="Messages" />
-            <Button fx:id="settingsButton" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" text="Settings" />
-            <Button fx:id="logoutButton" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" text="Logout" />
+             <Button fx:id="clientPortfolioButton"
+                     alignment="TOP_LEFT"
+                     mnemonicParsing="false"
+                     onAction="#openClientPortfolio"
+                     style="-fx-background-color: #ffa2a2;"
+                     text="My Client Portfolio Registry" />           <Button fx:id="pendingRenewalsButton"
+                                                                              alignment="TOP_LEFT"
+                                                                              mnemonicParsing="false"
+                                                                              onAction="#openPendingRenewals"
+                                                                              prefHeight="26.0"
+                                                                              prefWidth="184.0"
+                                                                              text="Pending Renewals" />
+             <Button fx:id="messagesButton"
+                     alignment="TOP_LEFT"
+                     mnemonicParsing="false"
+                     onAction="#openMessages"
+                     prefHeight="26.0"
+                     prefWidth="184.0"
+                     text="Messages" />
+             <Button fx:id="settingsButton"
+                     alignment="TOP_LEFT"
+                     mnemonicParsing="false"
+                     onAction="#openSettings"
+                     prefHeight="26.0"
+                     prefWidth="184.0"
+                     text="Settings" />
+             <Button fx:id="logoutButton"
+                     alignment="TOP_LEFT"
+                     mnemonicParsing="false"
+                     onAction="#logout"
+                     prefHeight="26.0"
+                     prefWidth="184.0"
+                     text="Logout" />
          </children>
       </VBox>
    </left>
@@ -57,7 +84,9 @@
                         <Label fx:id="totalClientsLabel" text="Total Clients" />
                         <Label fx:id="totalClientsValueLabel" text="25" />
                      </children>
-                     <cursor>
+
+
+             <cursor>
                         <Cursor fx:constant="CROSSHAIR" />
                      </cursor>
                   </VBox>
@@ -84,8 +113,12 @@
             <HBox prefHeight="33.0" prefWidth="786.0">
                <children>
                   <TextField fx:id="searchClientTextField" text="Search Client..." />
-                  <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Search" />
-               </children>
+                   <Button fx:id="searchButton"
+                           mnemonicParsing="false"
+                           onAction="#searchClient"
+                           prefHeight="26.0"
+                           prefWidth="150.0"
+                           text="Search" />               </children>
             </HBox>
             <TableView fx:id="clientTableView" prefHeight="360.0" prefWidth="792.0">
               <columns>

@@ -1,5 +1,6 @@
 package Jamiul_Huda.InsuranceAgentControllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -8,26 +9,60 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 
 public class AgentPerformanceReportController {
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblTo;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblGraph;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextArea txtSummary;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker dpFrom;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker dpTo;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button btnGenerateReport;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextArea txtGraph;
-    @javafx.fxml.FXML
+
+    @FXML
     private HBox dateBox;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblTitle;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblSummary;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblFrom;
+
+    @FXML
+    private void generateReport(ActionEvent event) {
+
+        if (dpFrom.getValue() == null || dpTo.getValue() == null) {
+            txtSummary.setText("Please select both dates.");
+            return;
+        }
+
+        txtSummary.setText(
+                "Total Policies Sold : 20\n" +
+                        "Total Premium : BDT 500000\n" +
+                        "Commission : BDT 50000"
+        );
+
+        txtGraph.setText(
+                "Week 1 : ****\n" +
+                        "Week 2 : ******\n" +
+                        "Week 3 : ********\n" +
+                        "Week 4 : **********"
+        );
+    }
+
 }
