@@ -4,30 +4,37 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
-public class BranchManagerGoal2Controller
+public class BeneficiaryGoal3Controller
 {
     @javafx.fxml.FXML
-    private TableColumn policiesSoldTC;
+    private TextField beneficiaryIdTF;
     @javafx.fxml.FXML
-    private TableColumn performanceTC;
+    private TableColumn referenceTC;
     @javafx.fxml.FXML
-    private TableColumn agentNameTC;
+    private TableColumn remarksTC;
     @javafx.fxml.FXML
-    private DatePicker toDateDP;
+    private TextField numberTF;
     @javafx.fxml.FXML
-    private DatePicker fromDateDP;
+    private TableColumn policyNumberTc;
     @javafx.fxml.FXML
     private TableView tableView;
     @javafx.fxml.FXML
-    private TableColumn agentIdTC;
+    private TableColumn claimAmountTC;
     @javafx.fxml.FXML
-    private TableColumn totalSalesTC;
+    private DatePicker dateDP;
     @javafx.fxml.FXML
-    private TableColumn commissionTC;
+    private TableColumn beneficiaryIdTC;
+    @javafx.fxml.FXML
+    private TableColumn dateTC;
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void detailsOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -35,6 +42,6 @@ public class BranchManagerGoal2Controller
     }
 
     @javafx.fxml.FXML
-    public void filterOA(ActionEvent actionEvent) {
+    public void searchOA(ActionEvent actionEvent) {
     }
 }

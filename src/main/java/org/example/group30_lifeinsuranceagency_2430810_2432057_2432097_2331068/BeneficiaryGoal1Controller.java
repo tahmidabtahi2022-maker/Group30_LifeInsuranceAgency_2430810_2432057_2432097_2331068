@@ -6,44 +6,40 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class BranchManagerGoal3Controller
+public class BeneficiaryGoal1Controller
 {
     @javafx.fxml.FXML
-    private TableColumn requestTC;
+    private TextField phoneTF;
     @javafx.fxml.FXML
     private TextField nameTF;
     @javafx.fxml.FXML
-    private TableColumn agentNameTC;
+    private TextField emailTF;
     @javafx.fxml.FXML
-    private ComboBox allStatusCB;
+    private TableColumn fullNameTC;
+    @javafx.fxml.FXML
+    private ComboBox genderCB;
+    @javafx.fxml.FXML
+    private TableColumn policyReferenceTc;
     @javafx.fxml.FXML
     private TableColumn emailTC;
     @javafx.fxml.FXML
-    private TableColumn statusTC;
-    @javafx.fxml.FXML
     private TableView tableView;
+    @javafx.fxml.FXML
+    private TableColumn beneficiaryIdTC;
     @javafx.fxml.FXML
     private TableColumn phoneTC;
     @javafx.fxml.FXML
-    private TableColumn requestIdTC;
-    @javafx.fxml.FXML
-    private TableColumn actionsTC;
-    @javafx.fxml.FXML
-    private TableColumn requestDateTC;
+    private TableColumn registrationStatusTC;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void refreshOA(ActionEvent actionEvent) {
+    public void clearOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void approveOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void requestOA(ActionEvent actionEvent) {
+    public void registerOA(ActionEvent actionEvent) {
     }
 }

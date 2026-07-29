@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068.BranchManagerGoal1Controller"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068.BranchManagerGoal1Controller">
+   <children>
+      <Label layoutX="42.0" layoutY="45.0" prefHeight="31.0" prefWidth="80.0" text="Branch Level:" />
+      <TableView fx:id="tableView" layoutX="-1.0" layoutY="200.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="agentIdTC" prefWidth="75.0" text="Agent Id" />
+          <TableColumn fx:id="agentNameTC" prefWidth="85.0" text="Agent Name" />
+            <TableColumn fx:id="emailTC" prefWidth="65.0" text="Email " />
+            <TableColumn fx:id="phoneTC" prefWidth="75.0" text="Phone" />
+            <TableColumn fx:id="departmentTC" prefWidth="75.0" text="Department" />
+            <TableColumn fx:id="statusTC" prefWidth="75.0" text="Status" />
+            <TableColumn fx:id="dataJoinedTC" prefWidth="75.0" text="Data Joined" />
+            <TableColumn fx:id="actionsTC" prefWidth="75.0" text="Actions" />
+        </columns>
+      </TableView>
+      <Label layoutX="213.0" layoutY="14.0" prefHeight="31.0" prefWidth="132.0" text="View All Agents">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="branchLevelCB" layoutX="114.0" layoutY="48.0" prefWidth="150.0" />
+      <Label layoutX="314.0" layoutY="45.0" prefHeight="31.0" prefWidth="54.0" text="Status:" />
+      <ComboBox fx:id="statusCB" layoutX="358.0" layoutY="51.0" prefWidth="150.0" />
+      <Label layoutX="193.0" layoutY="106.0" prefHeight="31.0" prefWidth="80.0" text="Joining date:" />
+      <DatePicker fx:id="joiningDateDP" layoutX="258.0" layoutY="109.0" />
+      <Button layoutX="141.0" layoutY="153.0" mnemonicParsing="false" onAction="#searchOA" text="Search" />
+      <Button layoutX="326.0" layoutY="153.0" mnemonicParsing="false" onAction="#clearOA" text="Clear" />
+   </children>
 </AnchorPane>

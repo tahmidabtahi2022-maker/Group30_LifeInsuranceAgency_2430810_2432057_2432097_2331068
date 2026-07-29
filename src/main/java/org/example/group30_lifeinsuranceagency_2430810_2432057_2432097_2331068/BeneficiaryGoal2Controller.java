@@ -6,35 +6,37 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class BranchManagerGoal5Controller
+public class BeneficiaryGoal2Controller
 {
     @javafx.fxml.FXML
-    private TableColumn<Branch, String> claimsTC;
+    private TableColumn beneficiaryStatusTC;
     @javafx.fxml.FXML
-    private TableColumn<Branch, String> performanceTC;
+    private TableColumn policyTypeTC;
     @javafx.fxml.FXML
-    private TableColumn<Branch, String> customersTC;
+    private TextField numberTF;
     @javafx.fxml.FXML
-    private ComboBox<String> timePeriodCB;
+    private TableColumn policyNumberTc;
     @javafx.fxml.FXML
-    private TableColumn<Agents, Integer> revenueTC;
+    private TableColumn coverageAmountTC;
     @javafx.fxml.FXML
-    private TableColumn<Branch, String> branchNameTC;
+    private TableColumn beneficiaryNameTC;
     @javafx.fxml.FXML
-    private TableView<Branch> tableView;
+    private ComboBox statusCB;
     @javafx.fxml.FXML
-    private TextField totalRevenueTF;
+    private TableView tableView;
     @javafx.fxml.FXML
-    private TableColumn<Agents, String> agentsTC;
+    private TableColumn registrationDateTC;
+    @javafx.fxml.FXML
+    private TableColumn beneficiaryIdTC;
     @javafx.fxml.FXML
     private TextField idTF;
-    @javafx.fxml.FXML
-    private ComboBox<String> branchCB;
-    @javafx.fxml.FXML
-    private TableColumn<Branch, Integer> branchIdTC;
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void detailsOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -42,6 +44,6 @@ public class BranchManagerGoal5Controller
     }
 
     @javafx.fxml.FXML
-    public void resetOA(ActionEvent actionEvent) {
+    public void searchOA(ActionEvent actionEvent) {
     }
 }
