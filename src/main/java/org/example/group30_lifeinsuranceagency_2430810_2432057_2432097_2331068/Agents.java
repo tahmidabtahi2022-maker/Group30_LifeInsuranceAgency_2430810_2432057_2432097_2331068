@@ -65,19 +65,6 @@ public class Agents {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Agents{" +
-                "agentId='" + agentId + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", branchId='" + branchId + '\'' +
-                ", policiesSold=" + policiesSold +
-                ", status='" + status + '\'' +
-                '}';
-    }
-
     public Agents(String agentId, String fullName, String email, String phoneNumber, String branchId, int policiesSold, String status) {
         this.agentId = agentId;
         this.fullName = fullName;
