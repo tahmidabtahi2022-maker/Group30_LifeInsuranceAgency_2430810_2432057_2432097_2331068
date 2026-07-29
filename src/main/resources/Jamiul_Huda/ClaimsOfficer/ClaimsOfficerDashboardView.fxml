@@ -8,10 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="900.0" prefWidth="1300.0"
-            xmlns="http://javafx.com/javafx/26"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimsOfficerDashboardController">
+<BorderPane prefHeight="900.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimsOfficerDashboardController">
 
     <!-- Top -->
     <top>
@@ -19,24 +16,20 @@
 
             <children>
 
-                <Label fx:id="dashboardTitleLabel"
-                       text="Claims Officer Dashboard"
-                       alignment="CENTER"
-                       prefWidth="450">
+                <Label fx:id="dashboardTitleLabel" alignment="CENTER" prefWidth="450" text="Claims Officer Dashboard">
 
                     <font>
-                        <Font name="Carlito Bold" size="24"/>
+                        <Font name="Carlito Bold" size="24" />
                     </font>
 
                 </Label>
 
-                <Region prefWidth="350"/>
+                <Region prefWidth="350" />
 
-                <Label fx:id="officerNameLabel"
-                       text="Claims Officer">
+                <Label fx:id="officerNameLabel" text="Claims Officer">
 
                     <font>
-                        <Font name="Carlito Bold" size="22"/>
+                        <Font name="Carlito Bold" size="22" />
                     </font>
 
                 </Label>
@@ -49,56 +42,27 @@
     <!-- Left Menu -->
     <left>
 
-        <VBox spacing="8"
-              prefWidth="240"
-              BorderPane.alignment="CENTER">
+        <VBox prefWidth="240" spacing="8" BorderPane.alignment="CENTER">
 
             <children>
 
-                <Button fx:id="goal1Button"
-                        text="Goal 1 - Pending Claims Queue"
-                        onAction="#openGoal1"
-                        prefWidth="220"/>
+                <Button fx:id="goal1Button" onAction="#openGoal1" prefWidth="220" text="Pending Claims Queue" />
 
-                <Button fx:id="goal2Button"
-                        text="Goal 2 - Claim Verification"
-                        onAction="#openGoal2"
-                        prefWidth="220"/>
+                <Button fx:id="goal2Button" onAction="#openGoal2" prefWidth="220" text="Claim Verification" />
 
-                <Button fx:id="goal3Button"
-                        text="Goal 3 - Claim Approval"
-                        onAction="#openGoal3"
-                        prefWidth="220"/>
+                <Button fx:id="goal3Button" onAction="#openGoal3" prefWidth="220" text="Claim Approval" />
 
-                <Button fx:id="goal4Button"
-                        text="Goal 4 - Claim History"
-                        onAction="#openGoal4"
-                        prefWidth="220"/>
+                <Button fx:id="goal4Button" onAction="#openGoal4" prefWidth="220" text="Claim History" />
 
-                <Button fx:id="goal5Button"
-                        text="Goal 5 - Payment Processing"
-                        onAction="#openGoal5"
-                        prefWidth="220"/>
+                <Button fx:id="goal5Button" onAction="#openGoal5" prefWidth="220" text="Payment Processing" />
 
-                <Button fx:id="goal6Button"
-                        text="Goal 6 - Claim Reports"
-                        onAction="#openGoal6"
-                        prefWidth="220"/>
+                <Button fx:id="goal6Button" onAction="#openGoal6" prefWidth="220" text="Claim Reports" />
 
-                <Button fx:id="goal7Button"
-                        text="Goal 7 - Notifications"
-                        onAction="#openGoal7"
-                        prefWidth="220"/>
+                <Button fx:id="goal7Button" onAction="#openGoal7" prefWidth="220" text="Notifications" />
 
-                <Button fx:id="goal8Button"
-                        text="Goal 8 - Settings"
-                        onAction="#openGoal8"
-                        prefWidth="220"/>
+                <Button fx:id="goal8Button" onAction="#openGoal8" prefWidth="220" text="Settings" />
 
-                <Button fx:id="logoutButton"
-                        text="Logout"
-                        onAction="#logout"
-                        prefWidth="220"/>
+                <Button fx:id="logoutButton" onAction="#logout" prefWidth="220" text="Logout" />
 
             </children>
 
@@ -109,16 +73,14 @@
     <!-- Center -->
     <center>
 
-        <VBox alignment="CENTER"
-              spacing="25"
-              BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" spacing="25" BorderPane.alignment="CENTER">
 
             <children>
 
                 <Label text="Welcome to Claims Officer Dashboard">
 
                     <font>
-                        <Font name="Carlito Bold" size="28"/>
+                        <Font name="Carlito Bold" size="28" />
                     </font>
 
                 </Label>
@@ -126,20 +88,15 @@
                 <Label text="Manage all insurance claims from one dashboard.">
 
                     <font>
-                        <Font size="18"/>
+                        <Font size="18" />
                     </font>
 
                 </Label>
 
-                <Label fx:id="statusLabel"
-                       text="Select a Goal from the left menu."
-                       style="-fx-background-color:#D6F5D6;"
-                       alignment="CENTER"
-                       prefHeight="60"
-                       prefWidth="700">
+                <Label fx:id="statusLabel" alignment="CENTER" prefHeight="60" prefWidth="700" style="-fx-background-color:#D6F5D6;" text="Select a Goal from the left menu.">
 
                     <font>
-                        <Font name="Carlito Bold" size="18"/>
+                        <Font name="Carlito Bold" size="18" />
                     </font>
 
                 </Label>
