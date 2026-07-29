@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="545.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.payPremiumsAndDuesController">
+   <children>
+      <Label layoutX="261.0" layoutY="34.0" text="Pay Premiums &amp; Dues" textFill="#1d1991">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="customerPolicyDataTableview" layoutX="72.0" layoutY="112.0" prefHeight="200.0" prefWidth="566.0">
+        <columns>
+          <TableColumn fx:id="policyIdTC" prefWidth="113.59993743896484" text="Policy ID " />
+          <TableColumn fx:id="premiumDueAmountTC" prefWidth="166.40008544921875" text=" Premium Due Amount " />
+            <TableColumn fx:id="nextDueDateTC" prefWidth="144.800048828125" text=" Next Due Date " />
+            <TableColumn fx:id="statusTC" prefWidth="141.60012817382812" text="Status " />
+        </columns>
+      </TableView>
+      <Label layoutX="70.0" layoutY="84.0" text="Your Policies: " textFill="#2621b1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="72.0" layoutY="331.0" text="Enter the policy id of which you want to pay premium for : " />
+      <TextField fx:id="selectedPolicyIdForPaymentTF" layoutX="396.0" layoutY="327.0" />
+      <Label layoutX="72.0" layoutY="360.0" text="Enter payment details :" />
+      <Label layoutX="70.0" layoutY="444.0" />
+      <Label layoutX="70.0" layoutY="387.0" text="Payment method : " />
+      <ComboBox fx:id="paymentMethodCB" layoutX="193.0" layoutY="383.0" prefWidth="150.0" />
+      <Label layoutX="70.0" layoutY="479.0" />
+      <Label layoutX="70.0" layoutY="422.0" text="Gateway Transaction Reference Number : " />
+      <Label layoutX="73.0" layoutY="453.0" text="Enter payment Amount :" />
+      <TextField fx:id="enterPaymentAmountTF" layoutX="217.0" layoutY="449.0" />
+      <TextField fx:id="gatewayTransactionReferenceNumberTF" layoutX="306.0" layoutY="418.0" />
+      <Button layoutX="70.0" layoutY="484.0" mnemonicParsing="false" onAction="#confirmAndPayPremiumButtonOnAction" text="Confirm &amp; Pay Premium" />
+      <Button layoutX="240.0" layoutY="484.0" mnemonicParsing="false" onAction="#DownloadTaxRecieptButtonOnAction" text="Download tax Reciept" />
+   </children>
+</AnchorPane>

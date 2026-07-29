@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.AccountsOfficerControllers.agencyFinancialPerformanceController">
+    <children>
+        <Label layoutX="175.0" layoutY="28.0" text="Financial Reporting &amp; Analytics" textFill="#2b2091">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="69.0" layoutY="302.0" text="Select Fiscal Period :" />
+        <ComboBox fx:id="fiscalPeriodCB" layoutX="186.0" layoutY="298.0" prefWidth="170.0" />
+        <Button layoutX="66.0" layoutY="349.0" mnemonicParsing="false" onAction="#generateReportButtonOnAction" text="Generate Visual Report" />
+
+        <Label layoutX="65.0" layoutY="106.0" text="Financial Performance Summary : " textFill="#200f7e">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="66.0" layoutY="141.0" text="Total Gross Revenue :" />
+        <Label fx:id="grossRevenueLabel" layoutX="220.0" layoutY="141.0" text="0.00 BDT" />
+
+        <Label layoutX="65.0" layoutY="172.0" text="Total Expense Claims :" />
+        <Label fx:id="totalExpensesLabel" layoutX="220.0" layoutY="172.0" text="0.00 BDT" />
+
+        <Label layoutX="65.0" layoutY="203.0" text="Net Current Cash Balance :" />
+        <Label fx:id="netCashBalanceLabel" layoutX="220.0" layoutY="203.0" text="0.00 BDT" />
+
+        <Label layoutX="65.0" layoutY="238.0" text="Net Profit Margin :" />
+        <Label fx:id="netProfitMarginLabel" layoutX="220.0" layoutY="238.0" text="0.00%" />
+
+        <Label fx:id="statusMessageLabel" layoutX="65.0" layoutY="445.0" prefHeight="40.0" prefWidth="570.0" text="Status : " textFill="#00000b" />
+    </children>
+</AnchorPane>
