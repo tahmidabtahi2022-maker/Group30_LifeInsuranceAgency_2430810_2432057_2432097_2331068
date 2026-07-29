@@ -1,14 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimsOfficerDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane prefHeight="900.0" prefWidth="1300.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimsOfficerDashboardController">
 
-</AnchorPane>
+    <!-- Top -->
+    <top>
+        <HBox prefHeight="70.0" BorderPane.alignment="CENTER">
+
+            <children>
+
+                <Label fx:id="dashboardTitleLabel"
+                       text="Claims Officer Dashboard"
+                       alignment="CENTER"
+                       prefWidth="450">
+
+                    <font>
+                        <Font name="Carlito Bold" size="24"/>
+                    </font>
+
+                </Label>
+
+                <Region prefWidth="350"/>
+
+                <Label fx:id="officerNameLabel"
+                       text="Claims Officer">
+
+                    <font>
+                        <Font name="Carlito Bold" size="22"/>
+                    </font>
+
+                </Label>
+
+            </children>
+
+        </HBox>
+    </top>
+
+    <!-- Left Menu -->
+    <left>
+
+        <VBox spacing="8"
+              prefWidth="240"
+              BorderPane.alignment="CENTER">
+
+            <children>
+
+                <Button fx:id="goal1Button"
+                        text="Goal 1 - Pending Claims Queue"
+                        onAction="#openGoal1"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal2Button"
+                        text="Goal 2 - Claim Verification"
+                        onAction="#openGoal2"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal3Button"
+                        text="Goal 3 - Claim Approval"
+                        onAction="#openGoal3"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal4Button"
+                        text="Goal 4 - Claim History"
+                        onAction="#openGoal4"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal5Button"
+                        text="Goal 5 - Payment Processing"
+                        onAction="#openGoal5"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal6Button"
+                        text="Goal 6 - Claim Reports"
+                        onAction="#openGoal6"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal7Button"
+                        text="Goal 7 - Notifications"
+                        onAction="#openGoal7"
+                        prefWidth="220"/>
+
+                <Button fx:id="goal8Button"
+                        text="Goal 8 - Settings"
+                        onAction="#openGoal8"
+                        prefWidth="220"/>
+
+                <Button fx:id="logoutButton"
+                        text="Logout"
+                        onAction="#logout"
+                        prefWidth="220"/>
+
+            </children>
+
+        </VBox>
+
+    </left>
+
+    <!-- Center -->
+    <center>
+
+        <VBox alignment="CENTER"
+              spacing="25"
+              BorderPane.alignment="CENTER">
+
+            <children>
+
+                <Label text="Welcome to Claims Officer Dashboard">
+
+                    <font>
+                        <Font name="Carlito Bold" size="28"/>
+                    </font>
+
+                </Label>
+
+                <Label text="Manage all insurance claims from one dashboard.">
+
+                    <font>
+                        <Font size="18"/>
+                    </font>
+
+                </Label>
+
+                <Label fx:id="statusLabel"
+                       text="Select a Goal from the left menu."
+                       style="-fx-background-color:#D6F5D6;"
+                       alignment="CENTER"
+                       prefHeight="60"
+                       prefWidth="700">
+
+                    <font>
+                        <Font name="Carlito Bold" size="18"/>
+                    </font>
+
+                </Label>
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

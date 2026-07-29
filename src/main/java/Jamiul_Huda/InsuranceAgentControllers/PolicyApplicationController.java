@@ -1,36 +1,182 @@
 package Jamiul_Huda.InsuranceAgentControllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class PolicyApplicationController {
-    @javafx.fxml.FXML
+
+    @FXML
     private Button searchButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField riskBaselineTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField clientIdTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField nomineeNameTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField applicationStatusTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label notificationLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button calculateRiskButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField customerStatusTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button clearButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button submitProposalButton;
-    @javafx.fxml.FXML
-    private ComboBox insurancePackageComboBox;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> insurancePackageComboBox;
+
+    @FXML
     private TextField sumAssuredTextField;
-    @javafx.fxml.FXML
-    private ComboBox healthCategoryComboBox;
+
+    @FXML
+    private ComboBox<String> healthCategoryComboBox;
+
+    //===================== Scene Switch =====================
+
+    private void switchScene(ActionEvent event, String fxml) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setScene(new Scene(root));
+
+        stage.show();
+    }
+
+    //===================== Dashboard =====================
+
+    @FXML
+    private void openDashboard(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/InsuranceAgentDashboardView.fxml");
+    }
+
+    //===================== Review Tracker =====================
+
+    @FXML
+    private void openPendingRenewals(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/ReviewTracker.fxml");
+    }
+
+    //===================== Request Documents =====================
+
+    @FXML
+    private void openMessages(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/AgentRequestDocuments.fxml");
+    }
+
+    //===================== Performance Report =====================
+
+    @FXML
+    private void openSettings(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/AgentPerformanceReport.fxml");
+    }
+
+    //===================== Logout =====================
+
+    @FXML
+    private void logout(ActionEvent event) {
+
+        System.exit(0);
+
+    }
+
+    //===================== Search Customer =====================
+
+    @FXML
+    private void searchCustomer(ActionEvent event) {
+
+        notificationLabel.setText("Customer Found.");
+
+    }
+
+    //===================== Calculate Risk =====================
+
+    @FXML
+    private void calculateRisk(ActionEvent event) {
+
+        riskBaselineTextField.setText("Medium Risk");
+
+        notificationLabel.setText("Risk Calculated.");
+
+    }
+
+    //===================== Submit Application =====================
+
+    @FXML
+    private void submitProposal(ActionEvent event) {
+
+        applicationStatusTextField.setText("Pending Client Verification");
+
+        notificationLabel.setText("Policy Application Submitted Successfully.");
+
+    }
+
+    //===================== Clear =====================
+
+    @FXML
+    private void clearForm(ActionEvent event) {
+
+        clientIdTextField.clear();
+        nomineeNameTextField.clear();
+        sumAssuredTextField.clear();
+        customerStatusTextField.clear();
+        applicationStatusTextField.clear();
+        riskBaselineTextField.clear();
+
+        insurancePackageComboBox.getSelectionModel().clearSelection();
+        healthCategoryComboBox.getSelectionModel().clearSelection();
+
+        notificationLabel.setText("Form Cleared.");
+
+    }
+
+
+    @FXML
+    public void initialize() {
+
+        insurancePackageComboBox.getItems().addAll(
+                "Basic Life Insurance",
+                "Premium Life Insurance",
+                "Family Protection Plan",
+                "Senior Citizen Plan"
+        );
+
+        healthCategoryComboBox.getItems().addAll(
+                "Low Risk",
+                "Medium Risk",
+                "High Risk"
+        );
+
+    }
+
 }

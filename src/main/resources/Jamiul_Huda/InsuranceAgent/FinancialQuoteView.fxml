@@ -14,82 +14,133 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="897.0" prefWidth="1295.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.InsuranceAgentControllers.FinancialQuoteController">   <top>
-      <Label alignment="CENTER" prefHeight="66.0" prefWidth="537.0" style="-fx-background-color: #ffbbbb;" text="Financial Quotation &amp; Analytical Modeling Tool" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Carlito Bold" size="24.0" />
-         </font>
-      </Label>
-   </top>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="33.0" prefWidth="1295.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="165.0" text="Budget" />
-                  <TextField fx:id="budgetTextField" prefHeight="26.0" prefWidth="149.0" />
-               </children>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.FinancialQuoteController"
+            prefWidth="1295"
+            prefHeight="897">
+
+    <top>
+        <Label text="Financial Quotation &amp; Analytical Modeling Tool"
+               alignment="CENTER"
+               prefHeight="66"
+               style="-fx-background-color:#ffbbbb;"
+               BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="24"/>
+            </font>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="10" prefWidth="1295" BorderPane.alignment="CENTER">
+
+            <HBox spacing="10">
+                <Label text="Budget" prefWidth="170"/>
+                <TextField fx:id="budgetTextField"/>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="1295.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="165.0" text="Risk Appetite" />
-                  <ComboBox fx:id="riskAppetiteComboBox" prefWidth="150.0" />
-               </children>
+
+            <HBox spacing="10">
+                <Label text="Risk Appetite" prefWidth="170"/>
+                <ComboBox fx:id="riskAppetiteComboBox" prefWidth="170"/>
             </HBox>
-            <HBox prefHeight="32.0" prefWidth="1295.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="165.0" text="Protection Period (Years)" />
-                  <TextField fx:id="protectionPeriodTextField" />
-               </children>
+
+            <HBox spacing="10">
+                <Label text="Protection Period (Years)" prefWidth="170"/>
+                <TextField fx:id="protectionPeriodTextField"/>
             </HBox>
-            <HBox prefHeight="35.0" prefWidth="1295.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="165.0" text="Dependents Count" />
-                  <TextField fx:id="dependentsCountTextField" />
-               </children>
+
+            <HBox spacing="10">
+                <Label text="Dependents Count" prefWidth="170"/>
+                <TextField fx:id="dependentsCountTextField"/>
             </HBox>
-            <TableView fx:id="recommendationTableView" prefHeight="200.0" prefWidth="200.0">
-              <columns>
-                <TableColumn fx:id="packageNameColumn" prefWidth="403.0" text="Package Name" />
-                <TableColumn fx:id="premiumColumn" prefWidth="471.0" text="Premium" />
-                  <TableColumn fx:id="maturityValueColumn" prefWidth="420.0" text="Maturity Value" />
-              </columns>
+
+            <TableView fx:id="recommendationTableView" prefHeight="180">
+
+                <columns>
+
+                    <TableColumn fx:id="packageNameColumn"
+                                 text="Package Name"
+                                 prefWidth="400"/>
+
+                    <TableColumn fx:id="premiumColumn"
+                                 text="Premium"
+                                 prefWidth="420"/>
+
+                    <TableColumn fx:id="maturityValueColumn"
+                                 text="Maturity Value"
+                                 prefWidth="420"/>
+
+                </columns>
+
             </TableView>
-            <BarChart fx:id="comparisonBarChart" prefHeight="229.0" prefWidth="1295.0" title="Cost vs Maturity Comparison">
-              <xAxis>
-                <CategoryAxis label="Insurance Packages" prefHeight="0.0" prefWidth="1236.0" side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis label="Value (BDT)" side="LEFT" />
-              </yAxis>
+
+            <BarChart fx:id="comparisonBarChart"
+                      title="Cost vs Maturity Comparison"
+                      prefHeight="250">
+
+                <xAxis>
+                    <CategoryAxis label="Insurance Package"/>
+                </xAxis>
+
+                <yAxis>
+                    <NumberAxis label="Value"/>
+                </yAxis>
+
             </BarChart>
-            <HBox prefHeight="42.0" prefWidth="1295.0">
-               <children>
-                  <Button fx:id="generateRecommendationButton" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="474.0" style="-fx-background-color: #b5ffab;" text="Generate Recommendation">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="exportPdfButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="430.0" style="-fx-background-color: #b5ffab;" text="Export PDF">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="495.0" style="-fx-background-color: #b5ffab;" text="Clear">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
+
+            <HBox spacing="10">
+
+                <Button fx:id="generateRecommendationButton"
+                        text="Generate Recommendation"
+                        prefWidth="350"
+                        style="-fx-background-color:#b5ffab;"
+                        onAction="#generateRecommendation">
+                    <font>
+                        <Font name="Arial Bold" size="18"/>
+                    </font>
+                </Button>
+
+                <Button fx:id="exportPdfButton"
+                        text="Export PDF"
+                        prefWidth="250"
+                        style="-fx-background-color:#b5ffab;"
+                        onAction="#exportPdf">
+                    <font>
+                        <Font name="Arial Bold" size="18"/>
+                    </font>
+                </Button>
+
+                <Button fx:id="clearButton"
+                        text="Clear"
+                        prefWidth="200"
+                        style="-fx-background-color:#b5ffab;"
+                        onAction="#clear">
+                    <font>
+                        <Font name="Arial Bold" size="18"/>
+                    </font>
+                </Button>
+
             </HBox>
-         </children>
-      </VBox>
-   </center>
-   <bottom>
-      <Label fx:id="notificationLabel" alignment="CENTER" prefHeight="93.0" prefWidth="345.0" style="-fx-background-color: #e4b3e3;" text="Status" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Carlito Bold" size="18.0" />
-         </font>
-      </Label>
-   </bottom>
+
+        </VBox>
+    </center>
+
+    <bottom>
+
+        <Label fx:id="notificationLabel"
+               text="Status"
+               alignment="CENTER"
+               prefHeight="80"
+               style="-fx-background-color:#e4b3e3;"
+               BorderPane.alignment="CENTER">
+
+            <font>
+                <Font name="Arial Bold" size="18"/>
+            </font>
+
+        </Label>
+
+    </bottom>
+
 </BorderPane>

@@ -8,21 +8,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity"
-      maxWidth="-Infinity"
-      minHeight="-Infinity"
-      minWidth="-Infinity"
+<VBox xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Jamiul_Huda.InsuranceAgentControllers.AgentPerformanceReportController"
       prefHeight="896.0"
       prefWidth="1231.0"
-      xmlns="http://javafx.com/javafx/26"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Jamiul_Huda.InsuranceAgentControllers.AgentPerformanceReportController">
+      spacing="15"
+      alignment="TOP_CENTER">
 
     <children>
 
         <Label fx:id="lblTitle"
                alignment="CENTER"
-               prefHeight="76.0"
+               prefHeight="70.0"
                prefWidth="1231.0"
                style="-fx-background-color: #fffcc5;"
                text="Performance Analytics &amp; Commission Statement Tool">
@@ -32,38 +30,26 @@
         </Label>
 
         <HBox fx:id="dateBox"
-              prefHeight="42.0"
-              prefWidth="1231.0">
+              alignment="CENTER"
+              spacing="10">
 
             <children>
 
-                <Label fx:id="lblFrom"
-                       alignment="CENTER"
-                       prefHeight="35.0"
-                       prefWidth="52.0"
-                       text="From">
+                <Label fx:id="lblFrom" text="From">
                     <font>
-                        <Font name="Carlito Bold" size="14.0"/>
+                        <Font size="14.0"/>
                     </font>
                 </Label>
 
-                <DatePicker fx:id="dpFrom"
-                            prefHeight="34.0"
-                            prefWidth="152.0"/>
+                <DatePicker fx:id="dpFrom"/>
 
-                <Label fx:id="lblTo"
-                       alignment="CENTER"
-                       prefHeight="34.0"
-                       prefWidth="28.0"
-                       text="To">
+                <Label fx:id="lblTo" text="To">
                     <font>
-                        <Font name="Carlito Bold" size="14.0"/>
+                        <Font size="14.0"/>
                     </font>
                 </Label>
 
-                <DatePicker fx:id="dpTo"
-                            prefHeight="33.0"
-                            prefWidth="152.0"/>
+                <DatePicker fx:id="dpTo"/>
 
             </children>
 
@@ -71,18 +57,19 @@
 
         <Button fx:id="btnGenerateReport"
                 mnemonicParsing="false"
+                onAction="#generateReport"
                 prefHeight="40.0"
-                prefWidth="385.0"
+                prefWidth="250.0"
                 style="-fx-background-color: #ffd2d2;"
                 text="Generate Report">
             <font>
-                <Font name="Carlito Bold" size="14.0"/>
+                <Font name="Carlito Bold" size="16.0"/>
             </font>
         </Button>
 
         <Label fx:id="lblSummary"
                alignment="CENTER"
-               prefHeight="41.0"
+               prefHeight="40.0"
                prefWidth="1231.0"
                style="-fx-background-color: #c6ffce;"
                text="Performance Summary">
@@ -92,12 +79,13 @@
         </Label>
 
         <TextArea fx:id="txtSummary"
-                  prefHeight="200.0"
-                  prefWidth="1231.0"/>
+                  editable="false"
+                  prefHeight="220.0"
+                  prefWidth="1180.0"/>
 
         <Label fx:id="lblGraph"
                alignment="CENTER"
-               prefHeight="41.0"
+               prefHeight="40.0"
                prefWidth="1231.0"
                style="-fx-background-color: #c6ffce;"
                text="Performance Graph">
@@ -107,13 +95,10 @@
         </Label>
 
         <TextArea fx:id="txtGraph"
-                  prefHeight="150.0"
-                  prefWidth="1231.0"
-                  text="Performance graph will be displayed here.">
-            <font>
-                <Font name="Carlito Bold" size="14.0"/>
-            </font>
-        </TextArea>
+                  editable="false"
+                  prefHeight="180.0"
+                  prefWidth="1180.0"
+                  text="Performance graph will be displayed here."/>
 
     </children>
 

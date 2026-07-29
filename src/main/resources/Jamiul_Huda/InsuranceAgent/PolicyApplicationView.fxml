@@ -9,91 +9,142 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="913.0" prefWidth="1288.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.InsuranceAgentControllers.PolicyApplicationController">
-   <top>
-      <Label alignment="CENTER" prefHeight="75.0" prefWidth="548.0" style="-fx-background-color: #7ea3dd;" text="Proxy Form Submission Portal" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Carlito Bold" size="24.0" />
-         </font>
-      </Label>
-   </top>
-   <center>
-      <VBox prefHeight="844.0" prefWidth="1296.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="40.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="137.0" text="Unique Client ID" />
-                  <TextField fx:id="clientIdTextField" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" text="Search" />
-               </children>
-            </HBox>
-            <HBox prefHeight="40.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="137.0" text="Customer Status" />
-                  <TextField fx:id="customerStatusTextField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="40.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="138.0" text="Insurance Package" />
-                  <ComboBox fx:id="insurancePackageComboBox" prefWidth="150.0" />
-               </children>
-            </HBox>
-            <HBox prefHeight="39.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="138.0" text="Sum Assured" />
-                  <TextField fx:id="sumAssuredTextField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="40.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="139.0" text="Nominee Name" />
-                  <TextField fx:id="nomineeNameTextField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="38.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="140.0" text="Health Category" />
-                  <ComboBox fx:id="healthCategoryComboBox" prefWidth="150.0" />
-               </children>
-            </HBox>
-            <HBox prefHeight="37.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="140.0" text="Risk Baseline" />
-                  <TextField fx:id="riskBaselineTextField" promptText="(calculated value)" />
-               </children>
-            </HBox>
-            <HBox prefHeight="38.0" prefWidth="1288.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="140.0" text="Application Status" />
-                  <TextField fx:id="applicationStatusTextField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="45.0" prefWidth="1288.0">
-               <children>
-                  <Button fx:id="calculateRiskButton" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="524.0" style="-fx-background-color: #06f2af;" text="Calculate Risk">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="submitProposalButton" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="368.0" style="-fx-background-color: #06f2af;" text="Submit Proposal">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="510.0" style="-fx-background-color: #06f2af;" text="Clear">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <Label fx:id="notificationLabel" alignment="CENTER" prefHeight="81.0" prefWidth="1288.0" style="-fx-background-color: #ffc9c4;" text="Status">
-               <font>
-                  <Font name="Carlito Bold" size="24.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </center>
+<BorderPane prefHeight="913.0" prefWidth="1288.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.PolicyApplicationController">
+
+    <top>
+        <Label alignment="CENTER"
+               prefHeight="75.0"
+               prefWidth="1288.0"
+               style="-fx-background-color:#7ea3dd;"
+               text="Proxy Form Submission Portal"
+               BorderPane.alignment="CENTER">
+            <font>
+                <Font size="24"/>
+            </font>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="10" prefWidth="1288.0" prefHeight="844.0">
+
+            <children>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Unique Client ID" prefWidth="150"/>
+                        <TextField fx:id="clientIdTextField"/>
+                        <Button fx:id="searchButton"
+                                text="Search"
+                                onAction="#searchCustomer"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Customer Status" prefWidth="150"/>
+                        <TextField fx:id="customerStatusTextField"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Insurance Package" prefWidth="150"/>
+                        <ComboBox fx:id="insurancePackageComboBox" prefWidth="250"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Sum Assured" prefWidth="150"/>
+                        <TextField fx:id="sumAssuredTextField"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Nominee Name" prefWidth="150"/>
+                        <TextField fx:id="nomineeNameTextField"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Health Category" prefWidth="150"/>
+                        <ComboBox fx:id="healthCategoryComboBox" prefWidth="250"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Risk Baseline" prefWidth="150"/>
+                        <TextField fx:id="riskBaselineTextField"
+                                   editable="false"
+                                   promptText="Calculated Risk"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Application Status" prefWidth="150"/>
+                        <TextField fx:id="applicationStatusTextField"
+                                   editable="false"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="20">
+
+                    <children>
+
+                        <Button fx:id="calculateRiskButton"
+                                text="Calculate Risk"
+                                prefWidth="220"
+                                style="-fx-background-color:#06f2af;"
+                                onAction="#calculateRisk">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Button>
+
+                        <Button fx:id="submitProposalButton"
+                                text="Submit Proposal"
+                                prefWidth="220"
+                                style="-fx-background-color:#06f2af;"
+                                onAction="#submitProposal">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Button>
+
+                        <Button fx:id="clearButton"
+                                text="Clear"
+                                prefWidth="220"
+                                style="-fx-background-color:#06f2af;"
+                                onAction="#clearForm">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+                        </Button>
+
+                    </children>
+
+                </HBox>
+
+                <Label fx:id="notificationLabel"
+                       alignment="CENTER"
+                       prefHeight="60"
+                       style="-fx-background-color:#ffc9c4;"
+                       text="Status">
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                </Label>
+
+            </children>
+
+        </VBox>
+    </center>
+
 </BorderPane>

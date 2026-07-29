@@ -1,35 +1,69 @@
 package Jamiul_Huda.InsuranceAgentControllers;
 
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 
 public class AgentRequestDocumentsController {
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField txtApplicationId;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblMissingDocuments;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button btnSendRequest;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblApplicationId;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblReason;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextArea txtReason;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblTitle;
-    @javafx.fxml.FXML
+
+    @FXML
     private HBox applicationIdBox;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label lblStatus;
-    @javafx.fxml.FXML
+
+    @FXML
     private CheckBox chkSalarySlip;
-    @javafx.fxml.FXML
+
+    @FXML
     private CheckBox chkPhysicianLetter;
+
+    @FXML
+    public void initialize() {
+
+        lblStatus.setText("Ready");
+    }
+
+    @FXML
+    private void sendRequest(ActionEvent event) {
+
+        if (txtApplicationId.getText().isEmpty()) {
+            lblStatus.setText("Enter Application ID.");
+            return;
+        }
+
+        if (!chkSalarySlip.isSelected() && !chkPhysicianLetter.isSelected()) {
+            lblStatus.setText("Select at least one missing document.");
+            return;
+        }
+
+        if (txtReason.getText().trim().length() < 10) {
+            lblStatus.setText("Reason must contain at least 10 characters.");
+            return;
+        }
+
+        lblStatus.setText("Document Requirement Alert Dispatched.");
+    }
 }

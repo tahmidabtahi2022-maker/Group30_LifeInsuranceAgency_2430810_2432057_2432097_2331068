@@ -1,36 +1,79 @@
 package Jamiul_Huda.InsuranceAgentControllers;
 
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class ReviewTrackerController {
-    @javafx.fxml.FXML
+
+    @FXML
     private Label notificationLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button searchButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button clearButton;
-    @javafx.fxml.FXML
-    private TextField applicationIdTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button refreshButton;
-    @javafx.fxml.FXML
-    private TableColumn customerNameColumn;
-    @javafx.fxml.FXML
-    private TableColumn underwriterNotesColumn;
-    @javafx.fxml.FXML
+
+    @FXML
+    private TextField applicationIdTextField;
+
+    @FXML
     private TextField selectedStatusTextField;
-    @javafx.fxml.FXML
-    private TableView reviewTableView;
-    @javafx.fxml.FXML
-    private TableColumn applicationIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn currentStatusColumn;
-    @javafx.fxml.FXML
-    private TableColumn submissionDateColumn;
+
+    @FXML
+    private TableView<?> reviewTableView;
+
+    @FXML
+    private TableColumn<?, ?> applicationIdColumn;
+
+    @FXML
+    private TableColumn<?, ?> customerNameColumn;
+
+    @FXML
+    private TableColumn<?, ?> submissionDateColumn;
+
+    @FXML
+    private TableColumn<?, ?> currentStatusColumn;
+
+    @FXML
+    private TableColumn<?, ?> underwriterNotesColumn;
+
+    @FXML
+    public void initialize() {
+
+        selectedStatusTextField.setEditable(false);
+        notificationLabel.setText("Ready");
+    }
+
+    @FXML
+    private void search(ActionEvent event) {
+
+        if (applicationIdTextField.getText().isEmpty()) {
+            notificationLabel.setText("Enter Application ID.");
+            return;
+        }
+
+        selectedStatusTextField.setText("Approved for Issuance");
+        notificationLabel.setText("Application Found.");
+    }
+
+    @FXML
+    private void refresh(ActionEvent event) {
+
+        notificationLabel.setText("Review Status Refreshed.");
+    }
+
+    @FXML
+    private void clear(ActionEvent event) {
+
+        applicationIdTextField.clear();
+        selectedStatusTextField.clear();
+
+        notificationLabel.setText("Form Cleared.");
+    }
+
 }

@@ -1,48 +1,169 @@
 package Jamiul_Huda.InsuranceAgentControllers;
-import javafx.fxml.FXML;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CreateCustomerProfileController {
-    @javafx.fxml.FXML
+
+    @FXML
     private Label pageTitleLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField nidTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField emailTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button createProfileButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label agentNameLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button logoutButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button pendingRenewalsButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button messagesButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label statusLabel;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button dashboardButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button settingsButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button clearButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private DatePicker dateOfBirthPicker;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField fullNameTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label mobileeNumberTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField mobileNumberTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button clientPortfolioButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Button onboardProspectButton;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label dashboardTitleLabel;
+
+
+
+    private void switchScene(ActionEvent event, String fxml) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setScene(new Scene(root));
+
+        stage.show();
+    }
+
+    @FXML
+    private void openDashboard(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/InsuranceAgentDashboardView.fxml");
+    }
+
+    @FXML
+    private void openClientPortfolio(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/InsuranceAgentDashboardView.fxml");
+    }
+
+    @FXML
+    private void openOnboardProspect(ActionEvent event) {
+
+        statusLabel.setText("Already on Create Customer Profile page.");
+
+    }
+
+    @FXML
+    private void openPendingRenewals(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/ReviewTracker.fxml");
+    }
+
+
+    @FXML
+    private void openMessages(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/AgentRequestDocuments.fxml");
+    }
+
+
+    @FXML
+    private void openSettings(ActionEvent event) throws IOException {
+
+        switchScene(event,
+                "/Jamiul_Huda/InsuranceAgent/AgentPerformanceReport.fxml");
+    }
+
+
+    @FXML
+    private void logout(ActionEvent event) {
+
+        System.exit(0);
+
+    }
+
+    @FXML
+    private void createProfile(ActionEvent event) {
+
+        if (fullNameTextField.getText().isEmpty()
+                || nidTextField.getText().isEmpty()
+                || mobileNumberTextField.getText().isEmpty()
+                || emailTextField.getText().isEmpty()
+                || dateOfBirthPicker.getValue() == null) {
+
+            statusLabel.setText("Please fill all fields.");
+
+            return;
+        }
+
+        statusLabel.setText("Customer Profile Created Successfully!");
+
+    }
+
+    @FXML
+    private void clearForm(ActionEvent event) {
+
+        fullNameTextField.clear();
+        nidTextField.clear();
+        mobileNumberTextField.clear();
+        emailTextField.clear();
+        dateOfBirthPicker.setValue(null);
+
+        statusLabel.setText("Form Cleared");
+
+    }
+
 }

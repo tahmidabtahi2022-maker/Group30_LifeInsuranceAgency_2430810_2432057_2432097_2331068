@@ -11,65 +11,154 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="909.0" prefWidth="1278.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.InsuranceAgentControllers.ClientVerificationAuditFeedController">
-   <top>
-      <Label alignment="CENTER" prefHeight="61.0" prefWidth="334.0" style="-fx-background-color: #bcf9ff;" text="Client Verification Audit Feed" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Carlito Bold" size="24.0" />
-         </font>
-      </Label>
-   </top>
-   <center>
-      <VBox prefHeight="647.0" prefWidth="1278.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="38.0" prefWidth="1326.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="130.0" text="Client ID" />
-                  <TextField fx:id="clientIdTextField" prefHeight="26.0" prefWidth="124.0" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Search" />
-               </children>
-            </HBox>
-            <TableView fx:id="documentTableView" prefHeight="200.0" prefWidth="200.0">
-              <columns>
-                <TableColumn fx:id="clientIdColumn" prefWidth="335.0" text="Client ID" />
-                <TableColumn fx:id="customerNameColumn" prefWidth="335.0" text="Customer Name" />
-                  <TableColumn fx:id="documentTypeColumn" prefWidth="335.0" text="Document Type" />
-                  <TableColumn fx:id="statusColumn" prefWidth="335.0" text="Status" />
-              </columns>
-            </TableView>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <ImageView fx:id="nidImageView" fitHeight="150.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="medicalReportImageView" fitHeight="150.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </HBox>
-            <HBox prefHeight="22.0" prefWidth="1278.0">
-               <children>
-                  <Button fx:id="approveKYCButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="404.0" text="Approve KYC" textFill="RED">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="markDeficientButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="555.0" text="Mark Deficient" textFill="RED">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="refreshButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="446.0" text="Refresh" textFill="RED">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </center>
-   <bottom>
-      <Label fx:id="notificationLabel" alignment="CENTER" prefHeight="84.0" prefWidth="340.0" style="-fx-background-color: #87ffc9;" text="Status" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Carlito Bold" size="20.0" />
-         </font>
-      </Label>
-   </bottom>
+<BorderPane prefHeight="909.0"
+            prefWidth="1278.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.ClientVerificationAuditFeedController">
+
+    <top>
+        <Label alignment="CENTER"
+               prefHeight="60"
+               prefWidth="1278"
+               text="Client Verification Audit Feed"
+               style="-fx-background-color:#bcf9ff;"
+               BorderPane.alignment="CENTER">
+            <font>
+                <Font size="24"/>
+            </font>
+        </Label>
+    </top>
+
+    <center>
+
+        <VBox spacing="15" prefWidth="1278">
+
+            <children>
+
+                <HBox spacing="10">
+
+                    <children>
+
+                        <Label text="Client ID" prefWidth="100"/>
+
+                        <TextField fx:id="clientIdTextField"
+                                   prefWidth="200"/>
+
+                        <Button fx:id="searchButton"
+                                text="Search"
+                                onAction="#searchClient"/>
+
+                    </children>
+
+                </HBox>
+
+                <TableView fx:id="documentTableView"
+                           prefHeight="350"
+                           prefWidth="1200">
+
+                    <columns>
+
+                        <TableColumn fx:id="clientIdColumn"
+                                     text="Client ID"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="customerNameColumn"
+                                     text="Customer Name"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="documentTypeColumn"
+                                     text="Document Type"
+                                     prefWidth="300"/>
+
+                        <TableColumn fx:id="statusColumn"
+                                     text="Status"
+                                     prefWidth="300"/>
+
+                    </columns>
+
+                </TableView>
+
+                <HBox spacing="30">
+
+                    <children>
+
+                        <ImageView fx:id="nidImageView"
+                                   fitHeight="180"
+                                   fitWidth="250"
+                                   preserveRatio="true"/>
+
+                        <ImageView fx:id="medicalReportImageView"
+                                   fitHeight="180"
+                                   fitWidth="250"
+                                   preserveRatio="true"/>
+
+                    </children>
+
+                </HBox>
+
+                <HBox spacing="20">
+
+                    <children>
+
+                        <Button fx:id="approveKYCButton"
+                                text="Approve KYC"
+                                prefWidth="220"
+                                onAction="#approveKYC">
+
+                            <font>
+                                <Font size="18"/>
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="markDeficientButton"
+                                text="Mark Deficient"
+                                prefWidth="220"
+                                onAction="#markDeficient">
+
+                            <font>
+                                <Font size="18"/>
+                            </font>
+
+                        </Button>
+
+                        <Button fx:id="refreshButton"
+                                text="Refresh"
+                                prefWidth="220"
+                                onAction="#refreshTable">
+
+                            <font>
+                                <Font size="18"/>
+                            </font>
+
+                        </Button>
+
+                    </children>
+
+                </HBox>
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <Label fx:id="notificationLabel"
+               alignment="CENTER"
+               prefHeight="70"
+               text="Waiting for Verification"
+               style="-fx-background-color:#87ffc9;"
+               BorderPane.alignment="CENTER">
+
+            <font>
+                <Font size="20"/>
+            </font>
+
+        </Label>
+
+    </bottom>
+
 </BorderPane>

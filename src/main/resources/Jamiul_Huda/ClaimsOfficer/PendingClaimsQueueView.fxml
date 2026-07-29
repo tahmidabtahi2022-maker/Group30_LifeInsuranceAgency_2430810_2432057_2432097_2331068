@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.PendingClaimsQueueController">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <Label text="Central Claims Assessment Work Queue"
+                   style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+            <HBox spacing="10">
+
+                <Button text="Sort By Urgency"
+                        onAction="#sortByUrgency"/>
+
+                <Button text="Sort By Filing Date"
+                        onAction="#sortByDate"/>
+
+                <Button text="Sort By Financial Weight"
+                        onAction="#sortByAmount"/>
+
+                <Button text="Refresh Queue"
+                        onAction="#loadPendingClaims"/>
+
+            </HBox>
+
+        </VBox>
+    </top>
+
+
+    <center>
+
+        <TableView fx:id="claimsTable">
+
+            <columns>
+
+                <TableColumn fx:id="tokenColumn"
+                             text="Claim Token ID"
+                             prefWidth="150"/>
+
+
+                <TableColumn fx:id="dateColumn"
+                             text="Filing Date"
+                             prefWidth="150"/>
+
+
+                <TableColumn fx:id="coverageColumn"
+                             text="Coverage Description"
+                             prefWidth="250"/>
+
+
+                <TableColumn fx:id="urgencyColumn"
+                             text="Urgency Level"
+                             prefWidth="120"/>
+
+
+                <TableColumn fx:id="amountColumn"
+                             text="Financial Weight"
+                             prefWidth="150"/>
+
+
+                <TableColumn fx:id="statusColumn"
+                             text="Status"
+                             prefWidth="220"/>
+
+            </columns>
+
+        </TableView>
+
+    </center>
+
+
+    <bottom>
+
+        <HBox spacing="20"
+              alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+
+
+            <Button text="Back Dashboard"
+                    onAction="#backDashboard"/>
+
+        </HBox>
+
+    </bottom>
+
+
+</BorderPane>
