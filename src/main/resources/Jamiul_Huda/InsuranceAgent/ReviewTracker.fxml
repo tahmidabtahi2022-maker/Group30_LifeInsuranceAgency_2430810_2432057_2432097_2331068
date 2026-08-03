@@ -10,21 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Jamiul_Huda.InsuranceAgentControllers.ReviewTrackerController"
-            prefWidth="1310.0"
-            prefHeight="885.0">
+<BorderPane prefHeight="606.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.InsuranceAgentControllers.ReviewTrackerController">
 
     <top>
-        <Label alignment="CENTER"
-               text="Underwriter Review Pipeline Tracker"
-               prefHeight="65.0"
-               style="-fx-background-color:#ffc2e5;"
-               BorderPane.alignment="CENTER">
+        <Label alignment="CENTER" prefHeight="52.0" prefWidth="417.0" style="-fx-background-color:#ffc2e5;" text="Underwriter Review Pipeline Tracker" BorderPane.alignment="CENTER">
 
             <font>
-                <Font name="Arial Bold" size="24"/>
+                <Font name="Arial Bold" size="24" />
             </font>
 
         </Label>
@@ -36,41 +28,27 @@
 
             <HBox spacing="10">
 
-                <Label text="Application ID :" prefWidth="120"/>
+                <Label prefWidth="120" text="Application ID :" />
 
-                <TextField fx:id="applicationIdTextField"
-                           prefWidth="180"/>
+                <TextField fx:id="applicationIdTextField" prefWidth="180" />
 
-                <Button fx:id="searchButton"
-                        text="Search"
-                        onAction="#search"/>
+                <Button fx:id="searchButton" onAction="#search" text="Search" />
 
             </HBox>
 
-            <TableView fx:id="reviewTableView"
-                       prefHeight="350">
+            <TableView fx:id="reviewTableView" prefHeight="350" prefWidth="840.0">
 
                 <columns>
 
-                    <TableColumn fx:id="applicationIdColumn"
-                                 text="Application ID"
-                                 prefWidth="220"/>
+                    <TableColumn fx:id="applicationIdColumn" prefWidth="220" text="Application ID" />
 
-                    <TableColumn fx:id="customerNameColumn"
-                                 text="Customer Name"
-                                 prefWidth="240"/>
+                    <TableColumn fx:id="customerNameColumn" prefWidth="240" text="Customer Name" />
 
-                    <TableColumn fx:id="submissionDateColumn"
-                                 text="Submission Date"
-                                 prefWidth="220"/>
+                    <TableColumn fx:id="submissionDateColumn" prefWidth="220" text="Submission Date" />
 
-                    <TableColumn fx:id="currentStatusColumn"
-                                 text="Current Status"
-                                 prefWidth="280"/>
+                    <TableColumn fx:id="currentStatusColumn" prefWidth="280" text="Current Status" />
 
-                    <TableColumn fx:id="underwriterNotesColumn"
-                                 text="Underwriter Notes"
-                                 prefWidth="320"/>
+                    <TableColumn fx:id="underwriterNotesColumn" prefWidth="320" text="Underwriter Notes" />
 
                 </columns>
 
@@ -78,37 +56,26 @@
 
             <HBox spacing="10">
 
-                <Label text="Selected Status"
-                       prefWidth="140"/>
+                <Label prefWidth="140" text="Selected Status" />
 
-                <TextField fx:id="selectedStatusTextField"
-                           editable="false"
-                           prefWidth="300"/>
+                <TextField fx:id="selectedStatusTextField" editable="false" prefWidth="300" />
 
             </HBox>
 
             <HBox spacing="15">
 
-                <Button fx:id="refreshButton"
-                        text="Refresh"
-                        prefWidth="250"
-                        style="-fx-background-color:#b0eaff;"
-                        onAction="#refresh">
+                <Button fx:id="refreshButton" onAction="#refresh" prefWidth="250" style="-fx-background-color:#b0eaff;" text="Refresh">
 
                     <font>
-                        <Font name="Arial Bold" size="18"/>
+                        <Font name="Arial Bold" size="18" />
                     </font>
 
                 </Button>
 
-                <Button fx:id="clearButton"
-                        text="Clear"
-                        prefWidth="250"
-                        style="-fx-background-color:#b0eaff;"
-                        onAction="#clear">
+                <Button fx:id="clearButton" onAction="#clear" prefWidth="250" style="-fx-background-color:#b0eaff;" text="Clear">
 
                     <font>
-                        <Font name="Arial Bold" size="18"/>
+                        <Font name="Arial Bold" size="18" />
                     </font>
 
                 </Button>
@@ -121,15 +88,10 @@
 
     <bottom>
 
-        <Label fx:id="notificationLabel"
-               alignment="CENTER"
-               text="Ready"
-               prefHeight="60"
-               style="-fx-background-color:#ee8888;"
-               BorderPane.alignment="CENTER">
+        <Label fx:id="notificationLabel" alignment="CENTER" prefHeight="60" prefWidth="92.0" style="-fx-background-color:#ee8888;" text="Ready" BorderPane.alignment="CENTER">
 
             <font>
-                <Font name="Arial Bold" size="18"/>
+                <Font name="Arial Bold" size="18" />
             </font>
 
         </Label>
