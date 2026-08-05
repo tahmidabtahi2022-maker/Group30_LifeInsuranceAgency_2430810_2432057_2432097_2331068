@@ -102,7 +102,7 @@ public class registerCustomerAccountController
 
     private void saveCustomerToBinFile(Customer customer){
         try{
-            File f = new File("CustomerInfo.Bin");
+            File f = new File("CustomerInfo.bin");
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
 
@@ -124,7 +124,7 @@ public class registerCustomerAccountController
 
     public void loadCustomersFromBinaryFile(){
         try{
-            File f = new File("CustomerInfo.Bin");
+            File f = new File("CustomerInfo.bin");
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
