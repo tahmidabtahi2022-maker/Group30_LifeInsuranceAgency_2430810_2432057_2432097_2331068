@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Fuad_Bin_Omar.SystemAdministratorController.AccountRecoveryController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="656.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.SystemAdministratorController.AccountRecoveryController">
+   <children>
+      <Text layoutX="52.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registered Email Address   :" />
+      <Text layoutX="52.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verification Code  :" />
+      <Text layoutX="52.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password    :" />
+      <Text layoutX="52.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm New Password  :" />
+      <TextField fx:id="RegisteredEmailAddressTextfield" layoutX="246.0" layoutY="151.0" prefHeight="26.0" prefWidth="482.0" />
+      <Text layoutX="271.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Recovery" wrappingWidth="397.748779296875">
+         <font>
+            <Font name="Gill Sans MT" size="48.0" />
+         </font>
+      </Text>
+      <TextField fx:id="VerificationCodeTextfield" layoutX="246.0" layoutY="216.0" prefHeight="26.0" prefWidth="231.0" />
+      <TextField fx:id="NewPasswordTextfield" layoutX="246.0" layoutY="282.0" prefHeight="26.0" prefWidth="482.0" />
+      <Button layoutX="353.0" layoutY="538.0" mnemonicParsing="false" onAction="#BackToLoginButton" prefHeight="26.0" prefWidth="231.0" text="Back To Login" />
+      <Button layoutX="353.0" layoutY="456.0" mnemonicParsing="false" onAction="#ResetPasswordButton" prefHeight="26.0" prefWidth="231.0" text="Reset Password" />
+      <Text layoutX="461.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or" />
+      <TextField fx:id="ConfirmNewPasswordTextfield" layoutX="246.0" layoutY="347.0" prefHeight="26.0" prefWidth="482.0" />
+      <Button layoutX="496.0" layoutY="216.0" mnemonicParsing="false" onAction="#SendCodeButton" prefHeight="26.0" prefWidth="231.0" text="Send Code" />
+   </children>
 </AnchorPane>
