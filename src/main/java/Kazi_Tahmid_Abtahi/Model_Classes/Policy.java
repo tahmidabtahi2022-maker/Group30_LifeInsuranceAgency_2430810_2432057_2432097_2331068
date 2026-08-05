@@ -3,7 +3,7 @@ package Kazi_Tahmid_Abtahi.Model_Classes;
 import java.time.LocalDate;
 
 public class Policy {
-    private String policyId,customerId,customerEmailAddress,policyType,status;
+    private String policyId,customerId,policyType,status;
     private float accumulatedCashValue;
     private LocalDate nextDueDate;
     private boolean aplEnabled;
@@ -11,7 +11,6 @@ public class Policy {
     public Policy(String policyId, String customerId, String customerEmailAddress,String policyType, String status, float accumulatedCashValue, LocalDate nextDueDate, boolean aplEnabled) {
         this.policyId = policyId;
         this.customerId = customerId;
-        this.customerEmailAddress = customerEmailAddress;
         this.policyType = policyType;
         this.status = status;
         this.accumulatedCashValue = accumulatedCashValue;
@@ -71,13 +70,7 @@ public class Policy {
         return aplEnabled;
     }
 
-    public String getCustomerEmailAddress() {
-        return customerEmailAddress;
-    }
 
-    public void setCustomerEmailAddress(String customerEmailAddress) {
-        this.customerEmailAddress = customerEmailAddress;
-    }
 
     public void setAplEnabled(boolean aplEnabled) {
         this.aplEnabled = aplEnabled;
@@ -88,7 +81,6 @@ public class Policy {
         return "Policy{" +
                 "policyId='" + policyId + '\'' +
                 ", customerId='" + customerId + '\'' +
-                ", customerEmailAddress='" + customerEmailAddress + '\'' +
                 ", policyType='" + policyType + '\'' +
                 ", status='" + status + '\'' +
                 ", accumulatedCashValue=" + accumulatedCashValue +

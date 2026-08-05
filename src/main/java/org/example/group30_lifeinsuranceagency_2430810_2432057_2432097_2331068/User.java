@@ -1,8 +1,9 @@
 package org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class User {
+public abstract class User implements Serializable {
     private String userId, fullName,emailAddress,password;
     private LocalDate dateOfBirth;
 
