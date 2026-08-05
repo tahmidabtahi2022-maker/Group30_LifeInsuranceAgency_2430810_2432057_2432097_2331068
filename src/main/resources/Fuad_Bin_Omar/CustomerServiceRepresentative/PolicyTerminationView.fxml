@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.PolicyTerminationViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="702.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.PolicyTerminationViewController">
+   <children>
+      <Text layoutX="15.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Termination" wrappingWidth="392.00003662109384">
+         <font>
+            <Font name="Gill Sans MT" size="48.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name :" />
+      <Text layoutX="63.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Number :" />
+      <Button layoutX="765.0" layoutY="644.0" mnemonicParsing="false" onAction="#RefreshButton" prefHeight="26.0" prefWidth="121.0" text="Refresh" />
+      <Button layoutX="779.0" layoutY="107.0" mnemonicParsing="false" onAction="#SearchButton" prefHeight="26.0" prefWidth="102.0" text="Search" />
+      <DatePicker fx:id="CancelDatePicker" layoutX="651.0" layoutY="247.0" prefHeight="26.0" prefWidth="228.0" />
+      <Text layoutX="514.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cancellation Date :" />
+      <TableView fx:id="Tableview" layoutY="457.0" prefHeight="170.0" prefWidth="917.0">
+         <columns>
+            <TableColumn fx:id="PolicyIDColumn" prefWidth="163.20000916719437" text="Customer ID / Policy ID  " />
+            <TableColumn fx:id="CustomerNameColumn" prefWidth="199.1999969482422" text="Customer Name " />
+            <TableColumn fx:id="CancellationDateColumn" prefWidth="177.60003662109375" text="Cancellation Date " />
+            <TableColumn fx:id="RefundAmountColumn" prefWidth="173.60003662109375" text="Refund Amount " />
+            <TableColumn fx:id="CancellationReasonColumn" prefWidth="240.7999267578125" text="Cancellation Reason " />
+         </columns>
+      </TableView>
+      <Text layoutX="509.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cancellation Reason :" />
+      <ComboBox fx:id="CancellationReasonComboBox" layoutX="652.0" layoutY="199.0" prefHeight="26.0" prefWidth="228.0" />
+      <Button layoutX="618.0" layoutY="645.0" mnemonicParsing="false" onAction="#ClearButton" prefHeight="26.0" prefWidth="121.0" text="Clear" />
+      <Text layoutX="353.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID / Policy ID  :" />
+      <TextField fx:id="PolicyIDTextfield" layoutX="509.0" layoutY="107.0" prefHeight="26.0" prefWidth="228.0" />
+      <TextField fx:id="PolicyNumberTextfield" layoutX="196.0" layoutY="199.0" prefHeight="26.0" prefWidth="270.0" />
+      <Button layoutX="71.0" layoutY="399.0" mnemonicParsing="false" onAction="#TriggerCancellationButton" prefHeight="26.0" prefWidth="270.0" text="Trigger Cancellation Processing Protocol Flow" />
+      <TextField fx:id="CustomerNameTextfield" layoutX="196.0" layoutY="154.0" prefHeight="26.0" prefWidth="270.0" />
+      <TextField fx:id="PolicyStatusTextfield" layoutX="196.0" layoutY="247.0" prefHeight="26.0" prefWidth="270.0" />
+      <TextField fx:id="PolicyStartDateTextfield" layoutX="196.0" layoutY="294.0" prefHeight="26.0" prefWidth="270.0" />
+      <TextField fx:id="MaturityDateTextfield" layoutX="196.0" layoutY="343.0" prefHeight="26.0" prefWidth="270.0" />
+      <Text fx:id="RefundAmountLabel" layoutX="514.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Refund Amount :" />
+      <Button layoutX="493.0" layoutY="399.0" mnemonicParsing="false" onAction="#ConfirmPolicyCancellationButton" prefHeight="26.0" prefWidth="294.0" text="Confirm Policy Cancellation Execution Authorization" />
+      <Text layoutX="77.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Status :" />
+      <Text layoutX="54.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Start Date  :" />
+      <Text layoutX="70.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maturity Date :" />
+      <Label layoutX="638.0" layoutY="300.0" text="Label" />
+   </children>
 </AnchorPane>

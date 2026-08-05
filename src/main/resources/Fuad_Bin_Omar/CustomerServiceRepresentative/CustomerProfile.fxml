@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.CustomerProfileController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="682.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.CustomerProfileController">
+   <children>
+      <Text layoutX="53.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID :" />
+      <Text layoutX="53.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number :" />
+      <TextField fx:id="CustomerIDTextfield" layoutX="247.0" layoutY="145.0" prefHeight="26.0" prefWidth="482.0" />
+      <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Profile" wrappingWidth="397.748779296875">
+         <font>
+            <Font name="Gill Sans MT" size="48.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ContactNumberTextfield" layoutX="247.0" layoutY="191.0" prefHeight="26.0" prefWidth="482.0" />
+      <Button layoutX="772.0" layoutY="54.0" mnemonicParsing="false" onAction="#SearchButton" prefHeight="26.0" prefWidth="120.0" text="Search" />
+      <Text layoutX="53.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address :" />
+      <TextField fx:id="EmailAddressTextfield" layoutX="247.0" layoutY="243.0" prefHeight="26.0" prefWidth="482.0" />
+      <Text layoutX="53.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Number :" />
+      <TextField fx:id="PolicyNumberTextfield" layoutX="247.0" layoutY="294.0" prefHeight="26.0" prefWidth="482.0" />
+      <TableView fx:id="TableView" layoutX="-7.0" layoutY="441.0" prefHeight="200.0" prefWidth="933.0">
+         <columns>
+            <TableColumn fx:id="CustomerNameColumn" prefWidth="126.40002155303955" text="Customer Name " />
+            <TableColumn fx:id="CustomerIDColumn" prefWidth="100.80001831054688" text="Customer ID" />
+            <TableColumn fx:id="EmailAddressColumn" prefWidth="173.59996032714844" text="Email Address" />
+            <TableColumn fx:id="PolicyNumberColumn" prefWidth="100.00006103515625" text="Policy Number" />
+            <TableColumn fx:id="ActivePlanColumn" prefWidth="111.199951171875" text="Active Plan" />
+            <TableColumn fx:id="PolicyStatusColumn" prefWidth="101.60009765625" text="Policy Status" />
+            <TableColumn fx:id="ContactNumberColumn" prefWidth="219.99993896484375" text="Contact Number " />
+         </columns>
+      </TableView>
+      <Text layoutX="458.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID / Policy ID :" />
+      <TextField fx:id="PolicyOrCustomerIDTextfield" layoutX="604.0" layoutY="54.0" prefHeight="26.0" prefWidth="137.0" />
+      <Text layoutX="53.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Active Plan :" />
+      <TextField fx:id="ActivePlanTextfield" layoutX="247.0" layoutY="341.0" prefHeight="26.0" prefWidth="482.0" />
+      <Text layoutX="53.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Status :" />
+      <TextField fx:id="PolicyStatusTextfield" layoutX="247.0" layoutY="392.0" prefHeight="26.0" prefWidth="482.0" />
+      <Text layoutX="53.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name :" />
+      <TextField fx:id="CustomerNameTextfield" layoutX="247.0" layoutY="101.0" prefHeight="26.0" prefWidth="482.0" />
+      <Button layoutX="643.0" layoutY="647.0" mnemonicParsing="false" onAction="#RefreshButton" prefHeight="26.0" prefWidth="120.0" text="Refresh" />
+      <Button layoutX="780.0" layoutY="647.0" mnemonicParsing="false" onAction="#ClearButton" prefHeight="26.0" prefWidth="120.0" text="Clear" />
+   </children>
 </AnchorPane>
