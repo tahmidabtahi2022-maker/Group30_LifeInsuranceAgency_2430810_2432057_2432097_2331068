@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public abstract class User implements Serializable {
-    private String userId, fullName,emailAddress,password;
-    private LocalDate dateOfBirth;
+    protected String userId, fullName,emailAddress,phoneNumber,password;
+    protected LocalDate dateOfBirth;
 
-    public User(String userId, String fullName, String emailAddress, String password, LocalDate dateOfBirth) {
+    public User(String userId, String fullName, String emailAddress,String phoneNumber, String password, LocalDate dateOfBirth) {
         this.userId = userId;
         this.fullName = fullName;
         this.emailAddress = emailAddress;
+        this.phoneNumber = phoneNumber;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
     }
@@ -39,6 +40,14 @@ public abstract class User implements Serializable {
         this.emailAddress = emailAddress;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -61,6 +70,7 @@ public abstract class User implements Serializable {
                 "userId='" + userId + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", password='" + password + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 '}';

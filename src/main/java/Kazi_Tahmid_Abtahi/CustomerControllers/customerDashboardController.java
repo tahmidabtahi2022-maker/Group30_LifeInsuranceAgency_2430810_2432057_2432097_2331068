@@ -25,7 +25,7 @@ public class customerDashboardController
 
     @javafx.fxml.FXML
     public void comparePoliciesButtonOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/comparePoliciesView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/viewSearchAndFilterPoliciesView.fxml"));
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
     }
 

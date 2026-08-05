@@ -72,9 +72,9 @@ public class registerCustomerAccountController
                 generatedCustomerId,
                 fullNameTF.getText(),
                 emailAddressTF.getText(),
+                phoneNumberTF.getText(),
                 passwordTF.getText(),
                 dateOfBirthDatePicker.getValue(),
-                phoneNumberTF.getText(),
                 0.00f
         );
 

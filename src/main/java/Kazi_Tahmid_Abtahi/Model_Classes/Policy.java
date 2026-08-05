@@ -1,21 +1,25 @@
 package Kazi_Tahmid_Abtahi.Model_Classes;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Policy {
+public class Policy implements Serializable {
     private String policyId,customerId,policyType,status;
-    private float accumulatedCashValue;
+    private float coverageAmount,yearlyPremium,totalCashValue;
+    private int policyTermYears;
     private LocalDate nextDueDate;
-    private boolean aplEnabled;
 
-    public Policy(String policyId, String customerId, String customerEmailAddress,String policyType, String status, float accumulatedCashValue, LocalDate nextDueDate, boolean aplEnabled) {
+    public Policy(String policyId, String customerId, String policyType, String status, float coverageAmount, float yearlyPremium, float totalCashValue, int policyTermYears, LocalDate nextDueDate) {
         this.policyId = policyId;
         this.customerId = customerId;
         this.policyType = policyType;
         this.status = status;
-        this.accumulatedCashValue = accumulatedCashValue;
+        this.coverageAmount = coverageAmount;
+        this.yearlyPremium = yearlyPremium;
+        this.totalCashValue = totalCashValue;
+        this.policyTermYears = policyTermYears;
         this.nextDueDate = nextDueDate;
-        this.aplEnabled = aplEnabled;
     }
 
     public String getPolicyId() {
@@ -50,12 +54,36 @@ public class Policy {
         this.status = status;
     }
 
-    public float getAccumulatedCashValue() {
-        return accumulatedCashValue;
+    public float getCoverageAmount() {
+        return coverageAmount;
     }
 
-    public void setAccumulatedCashValue(float accumulatedCashValue) {
-        this.accumulatedCashValue = accumulatedCashValue;
+    public void setCoverageAmount(float coverageAmount) {
+        this.coverageAmount = coverageAmount;
+    }
+
+    public float getYearlyPremium() {
+        return yearlyPremium;
+    }
+
+    public void setYearlyPremium(float yearlyPremium) {
+        this.yearlyPremium = yearlyPremium;
+    }
+
+    public float getTotalCashValue() {
+        return totalCashValue;
+    }
+
+    public void setTotalCashValue(float totalCashValue) {
+        this.totalCashValue = totalCashValue;
+    }
+
+    public int getPolicyTermYears() {
+        return policyTermYears;
+    }
+
+    public void setPolicyTermYears(int policyTermYears) {
+        this.policyTermYears = policyTermYears;
     }
 
     public LocalDate getNextDueDate() {
@@ -66,16 +94,6 @@ public class Policy {
         this.nextDueDate = nextDueDate;
     }
 
-    public boolean isAplEnabled() {
-        return aplEnabled;
-    }
-
-
-
-    public void setAplEnabled(boolean aplEnabled) {
-        this.aplEnabled = aplEnabled;
-    }
-
     @Override
     public String toString() {
         return "Policy{" +
@@ -83,9 +101,11 @@ public class Policy {
                 ", customerId='" + customerId + '\'' +
                 ", policyType='" + policyType + '\'' +
                 ", status='" + status + '\'' +
-                ", accumulatedCashValue=" + accumulatedCashValue +
+                ", coverageAmount=" + coverageAmount +
+                ", yearlyPremium=" + yearlyPremium +
+                ", totalCashValue=" + totalCashValue +
+                ", policyTermYears=" + policyTermYears +
                 ", nextDueDate=" + nextDueDate +
-                ", aplEnabled=" + aplEnabled +
                 '}';
     }
 }
