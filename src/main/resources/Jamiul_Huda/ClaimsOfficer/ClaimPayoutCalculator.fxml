@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimPayoutCalculatorController"
+            style="-fx-background-color:#F4F8FC;">
+
+    <top>
+        <VBox spacing="8" style="-fx-background-color:#1565C0;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Claims Settlement Calculator"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:22px;
+                          -fx-font-weight:bold;"/>
+
+            <Label text="Calculate the eligible claim payout amount"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+
+        <VBox spacing="20" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="25" right="40" bottom="25" left="40"/>
+            </padding>
+
+            <GridPane hgap="15" vgap="15">
+
+                <Label text="Claim Token ID"/>
+                <TextField fx:id="claimIdField"
+                           GridPane.columnIndex="1"
+                           prefWidth="250"
+                           promptText="Enter Claim Token ID"/>
+
+                <Label text="Base Sum Assured"
+                       GridPane.rowIndex="1"/>
+                <TextField fx:id="baseAmountField"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"
+                           promptText="Enter Base Amount"/>
+
+                <Label text="Policy Exclusions"
+                       GridPane.rowIndex="2"/>
+                <TextField fx:id="exclusionField"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="2"
+                           promptText="Enter Exclusion Amount"/>
+
+                <Label text="Outstanding Balance"
+                       GridPane.rowIndex="3"/>
+                <TextField fx:id="balanceField"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="3"
+                           promptText="Enter Outstanding Balance"/>
+
+            </GridPane>
+
+            <HBox spacing="20" alignment="CENTER">
+
+                <Button text="Calculate"
+                        prefWidth="140"
+                        onAction="#calculatePayout"
+                        style="-fx-background-color:#2E7D32;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+                <Button text="Clear"
+                        prefWidth="120"
+                        onAction="#clearFields"
+                        style="-fx-background-color:#F9A825;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+            </HBox>
+
+            <TitledPane text="Payout Summary"
+                        expanded="true"
+                        prefWidth="500">
+
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label fx:id="baseLabel"
+                           text="Base Sum Assured :"/>
+
+                    <Label fx:id="exclusionLabel"
+                           text="Policy Exclusions :"/>
+
+                    <Label fx:id="balanceLabel"
+                           text="Outstanding Balance :"/>
+
+                    <Separator/>
+
+                    <Label fx:id="totalLabel"
+                           text="Eligible Claim Payout :"
+                           style="-fx-font-size:16px;
+                                  -fx-font-weight:bold;
+                                  -fx-text-fill:#1565C0;"/>
+
+                    <Label fx:id="statusLabel"
+                           style="-fx-font-weight:bold;
+                                  -fx-text-fill:#2E7D32;"/>
+
+                </VBox>
+
+            </TitledPane>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color:#E3F2FD;">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Button text="Back to Dashboard"
+                    prefWidth="170"
+                    onAction="#backDashboard"
+                    style="-fx-background-color:#C62828;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

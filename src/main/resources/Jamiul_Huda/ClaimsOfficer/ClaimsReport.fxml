@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimsReportController"
+            style="-fx-background-color:#F4F8FC;">
+
+    <top>
+
+        <VBox spacing="8"
+              style="-fx-background-color:#1565C0;">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Claims Trend Analytics &amp; Statutory Reporting"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:22px;
+                          -fx-font-weight:bold;"/>
+
+            <Label text="Monthly Claims Settlement Report"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:14px;"/>
+
+        </VBox>
+
+    </top>
+
+
+    <left>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Year"/>
+
+            <ComboBox fx:id="yearComboBox"
+                      prefWidth="180"/>
+
+            <Label text="Month"/>
+
+            <ComboBox fx:id="monthComboBox"
+                      prefWidth="180"/>
+
+            <Button text="Generate Report"
+                    prefWidth="180"
+                    onAction="#generateReport"
+                    style="-fx-background-color:#2E7D32;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Separator/>
+
+            <Label fx:id="grossClaimsLabel"
+                   text="Gross Claims : 0"/>
+
+            <Label fx:id="rejectionLabel"
+                   text="Rejection Rate : 0%"/>
+
+            <Label fx:id="settlementLabel"
+                   text="Settlement Amount : 0"/>
+
+            <Label fx:id="delayLabel"
+                   text="Average Delay : 0 Days"/>
+
+        </VBox>
+
+    </left>
+
+
+    <center>
+
+        <VBox spacing="20">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <BarChart fx:id="barChart"
+                      title="Claims Summary"
+                      prefHeight="280">
+
+                <xAxis>
+                    <CategoryAxis label="Category"/>
+                </xAxis>
+
+                <yAxis>
+                    <NumberAxis label="Value"/>
+                </yAxis>
+
+            </BarChart>
+
+            <LineChart fx:id="lineChart"
+                       title="Monthly Trend"
+                       prefHeight="280">
+
+                <xAxis>
+                    <CategoryAxis label="Month"/>
+                </xAxis>
+
+                <yAxis>
+                    <NumberAxis label="Claims"/>
+                </yAxis>
+
+            </LineChart>
+
+        </VBox>
+
+    </center>
+
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color:#E3F2FD;">
+
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Button text="Back to Dashboard"
+                    prefWidth="170"
+                    onAction="#backDashboard"
+                    style="-fx-background-color:#C62828;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
