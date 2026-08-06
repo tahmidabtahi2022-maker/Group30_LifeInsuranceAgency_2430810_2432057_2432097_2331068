@@ -1,169 +1,263 @@
 package Jamiul_Huda.InsuranceAgentControllers;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class CreateCustomerProfileController {
 
-    @FXML
-    private Label pageTitleLabel;
+
+    // ================= FXML COMPONENTS =================
+
 
     @FXML
-    private TextField nidTextField;
-
-    @FXML
-    private TextField emailTextField;
-
-    @FXML
-    private Button createProfileButton;
+    private Label dashboardTitleLabel;
 
     @FXML
     private Label agentNameLabel;
 
     @FXML
-    private Button logoutButton;
-
-    @FXML
-    private Button pendingRenewalsButton;
-
-    @FXML
-    private Button messagesButton;
-
-    @FXML
     private Label statusLabel;
 
-    @FXML
-    private Button dashboardButton;
-
-    @FXML
-    private Button settingsButton;
-
-    @FXML
-    private Button clearButton;
-
-    @FXML
-    private DatePicker dateOfBirthPicker;
 
     @FXML
     private TextField fullNameTextField;
 
     @FXML
-    private Label mobileeNumberTextField;
+    private TextField nidTextField;
 
     @FXML
     private TextField mobileNumberTextField;
 
     @FXML
-    private Button clientPortfolioButton;
+    private TextField emailTextField;
 
     @FXML
-    private Button onboardProspectButton;
+    private DatePicker dateOfBirthPicker;
+
+
+
+    // ================= INITIALIZE =================
+
 
     @FXML
-    private Label dashboardTitleLabel;
+    public void initialize(){
 
+        agentNameLabel.setText("Insurance Agent");
 
-
-    private void switchScene(ActionEvent event, String fxml) throws IOException {
-
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        stage.setScene(new Scene(root));
-
-        stage.show();
-    }
-
-    @FXML
-    private void openDashboard(ActionEvent event) throws IOException {
-
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/InsuranceAgentDashboardView.fxml");
-    }
-
-    @FXML
-    private void openClientPortfolio(ActionEvent event) throws IOException {
-
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/InsuranceAgentDashboardView.fxml");
-    }
-
-    @FXML
-    private void openOnboardProspect(ActionEvent event) {
-
-        statusLabel.setText("Already on Create Customer Profile page.");
+        statusLabel.setText(
+                "Ready to Create Customer"
+        );
 
     }
 
-    @FXML
-    private void openPendingRenewals(ActionEvent event) throws IOException {
 
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/ReviewTracker.fxml");
-    }
+
+    // ================= CREATE PROFILE =================
 
 
     @FXML
-    private void openMessages(ActionEvent event) throws IOException {
-
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/AgentRequestDocuments.fxml");
-    }
+    private void createProfile(ActionEvent event){
 
 
-    @FXML
-    private void openSettings(ActionEvent event) throws IOException {
-
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/AgentPerformanceReport.fxml");
-    }
+        String name =
+                fullNameTextField.getText();
 
 
-    @FXML
-    private void logout(ActionEvent event) {
+        String nid =
+                nidTextField.getText();
 
-        System.exit(0);
 
-    }
+        String mobile =
+                mobileNumberTextField.getText();
 
-    @FXML
-    private void createProfile(ActionEvent event) {
 
-        if (fullNameTextField.getText().isEmpty()
-                || nidTextField.getText().isEmpty()
-                || mobileNumberTextField.getText().isEmpty()
-                || emailTextField.getText().isEmpty()
-                || dateOfBirthPicker.getValue() == null) {
+        String email =
+                emailTextField.getText();
 
-            statusLabel.setText("Please fill all fields.");
+
+
+        if(name.isEmpty()
+                || nid.isEmpty()
+                || mobile.isEmpty()
+                || email.isEmpty()
+                || dateOfBirthPicker.getValue()==null){
+
+
+            statusLabel.setText(
+                    "Please fill all customer information"
+            );
+
 
             return;
+
         }
 
-        statusLabel.setText("Customer Profile Created Successfully!");
+
+
+        /*
+          Later you will connect your Customer Model
+          and Database here.
+        */
+
+
+        statusLabel.setText(
+                "Customer Profile Created Successfully"
+        );
+
 
     }
+
+
+
+
+
+    // ================= CLEAR FORM =================
+
 
     @FXML
-    private void clearForm(ActionEvent event) {
+    private void clearForm(ActionEvent event){
+
 
         fullNameTextField.clear();
+
         nidTextField.clear();
+
         mobileNumberTextField.clear();
+
         emailTextField.clear();
+
         dateOfBirthPicker.setValue(null);
 
-        statusLabel.setText("Form Cleared");
+
+
+        statusLabel.setText(
+                "Form Cleared"
+        );
+
 
     }
+
+
+
+
+    // ================= OPEN DASHBOARD =================
+
+
+    @FXML
+    private void openDashboard(ActionEvent event){
+
+
+        switchScene(
+                event,
+                "/Jamiul_Huda/InsuranceAgentViews/InsuranceAgentDashboard.fxml"
+        );
+
+
+    }
+
+
+
+
+    // ================= BACK =================
+
+
+    @FXML
+    private void back(ActionEvent event){
+
+
+        switchScene(
+                event,
+                "/Jamiul_Huda/InsuranceAgentViews/InsuranceAgentDashboard.fxml"
+        );
+
+
+    }
+
+
+
+
+    // ================= LOGOUT =================
+
+
+    @FXML
+    private void logout(ActionEvent event){
+
+
+        switchScene(
+                event,
+                "/Jamiul_Huda/InsuranceAgentViews/Login.fxml"
+        );
+
+
+    }
+
+
+
+
+
+    // ================= SCENE SWITCH METHOD =================
+
+
+    private void switchScene(
+            ActionEvent event,
+            String fxmlFile){
+
+
+        try{
+
+
+            Parent root =
+                    FXMLLoader.load(
+                            getClass()
+                                    .getResource(fxmlFile)
+                    );
+
+
+            Stage stage =
+                    (Stage)((Node)event.getSource())
+                            .getScene()
+                            .getWindow();
+
+
+
+            Scene scene =
+                    new Scene(root);
+
+
+
+            stage.setScene(scene);
+
+            stage.show();
+
+
+
+        }
+        catch(IOException e){
+
+
+            e.printStackTrace();
+
+
+            statusLabel.setText(
+                    "Scene loading error"
+            );
+
+
+        }
+
+
+    }
+
+
 
 }
