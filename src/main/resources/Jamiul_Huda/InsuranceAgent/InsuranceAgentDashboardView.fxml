@@ -1,145 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="901.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jamiul_Huda.InsuranceAgentControllers.InsuranceAgentDashboardController">
-   <top>
-      <HBox prefHeight="73.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="dashboardTitleLabel" alignment="CENTER" prefHeight="35.0" prefWidth="411.0" text="Insurance Agent Dashboard">
-               <font>
-                  <Font name="Carlito Bold" size="24.0" />
-               </font>
-            </Label>
-            <Region prefHeight="100.0" prefWidth="305.0" />
-            <Label fx:id="agentNameLabel" prefHeight="18.0" prefWidth="328.0" text="Insurance Agent">
-               <font>
-                  <Font name="Carlito Bold" size="24.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-   </top>
-   <left>
-      <VBox prefHeight="556.0" prefWidth="189.0" BorderPane.alignment="CENTER">
-         <children>
-             <Button fx:id="clientPortfolioButton"
-                     alignment="TOP_LEFT"
-                     mnemonicParsing="false"
-                     onAction="#openClientPortfolio"
-                     style="-fx-background-color: #ffa2a2;"
-                     text="My Client Portfolio Registry" />           <Button fx:id="pendingRenewalsButton"
-                                                                              alignment="TOP_LEFT"
-                                                                              mnemonicParsing="false"
-                                                                              onAction="#openPendingRenewals"
-                                                                              prefHeight="26.0"
-                                                                              prefWidth="184.0"
-                                                                              text="Pending Renewals" />
-             <Button fx:id="messagesButton"
-                     alignment="TOP_LEFT"
-                     mnemonicParsing="false"
-                     onAction="#openMessages"
-                     prefHeight="26.0"
-                     prefWidth="184.0"
-                     text="Messages" />
-             <Button fx:id="settingsButton"
-                     alignment="TOP_LEFT"
-                     mnemonicParsing="false"
-                     onAction="#openSettings"
-                     prefHeight="26.0"
-                     prefWidth="184.0"
-                     text="Settings" />
-             <Button fx:id="logoutButton"
-                     alignment="TOP_LEFT"
-                     mnemonicParsing="false"
-                     onAction="#logout"
-                     prefHeight="26.0"
-                     prefWidth="184.0"
-                     text="Logout" />
-         </children>
-      </VBox>
-   </left>
-   <center>
-      <VBox prefHeight="955.0" prefWidth="1221.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="clientPortfolioTitleLabel" alignment="CENTER" prefHeight="78.0" prefWidth="785.0" style="-fx-background-color: #809de1;" text="My Client Portfolio Registry">
-               <font>
-                  <Font name="Carlito Bold" size="24.0" />
-               </font>
-            </Label>
-            <HBox prefHeight="51.0" prefWidth="786.0">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="51.0" prefWidth="212.0">
-                     <children>
-                        <Label fx:id="totalClientsLabel" text="Total Clients" />
-                        <Label fx:id="totalClientsValueLabel" text="25" />
-                     </children>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.InsuranceAgentDashboardController"
+            prefWidth="1400"
+            prefHeight="850">
 
+    <!-- ================= HEADER ================= -->
 
-             <cursor>
-                        <Cursor fx:constant="CROSSHAIR" />
-                     </cursor>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="51.0" prefWidth="234.0">
-                     <children>
-                        <Label fx:id="policyCountLabel" text="Policy Count" />
-                        <Label fx:id="policyCountValueLabel" text="40" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="51.0" prefWidth="159.0">
-                     <children>
-                        <Label fx:id="renewalsDueLabel" text="Renewals Due" />
-                        <Label fx:id="renewalsDueValueLabel" prefHeight="18.0" prefWidth="0.0" text="8" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="51.0" prefWidth="194.0">
-                     <children>
-                        <Label fx:id="pendingInteractionsLabel" prefHeight="18.0" prefWidth="128.0" text="Pending Interactions" />
-                        <Label fx:id="pendingInteractionsValueLabel" text="5" />
-                     </children>
-                  </VBox>
-               </children>
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              style="-fx-background-color:#1565C0;"
+              prefHeight="80">
+
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <children>
+
+                <Label fx:id="dashboardTitleLabel"
+                       text="Insurance Agent Dashboard"
+                       textFill="WHITE">
+
+                    <font>
+                        <Font size="28"/>
+                    </font>
+
+                </Label>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Label fx:id="agentNameLabel"
+                       text="Welcome, Insurance Agent"
+                       textFill="WHITE">
+
+                    <font>
+                        <Font size="18"/>
+                    </font>
+
+                </Label>
+
+            </children>
+
+        </HBox>
+
+    </top>
+
+    <!-- ================= LEFT MENU ================= -->
+
+    <left>
+
+        <VBox spacing="10"
+              prefWidth="260"
+              style="-fx-background-color:#ECEFF1;">
+
+            <padding>
+                <Insets top="20" left="15" right="15" bottom="20"/>
+            </padding>
+
+            <children>
+
+                <Button fx:id="dashboardButton"
+                        text="Dashboard"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openDashboard"/>
+
+                <Button fx:id="clientPortfolioButton"
+                        text="Create Customer Profile"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openClientPortfolio"/>
+
+                <Button text="Policy Application"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openPolicyApplication"/>
+
+                <Button text="Financial Quote"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openFinancialQuote"/>
+
+                <Button fx:id="pendingRenewalsButton"
+                        text="Review Tracker"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openPendingRenewals"/>
+
+                <Button text="Client Verification"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openClientVerification"/>
+
+                <Button fx:id="messagesButton"
+                        text="Request Documents"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openMessages"/>
+
+                <Button fx:id="settingsButton"
+                        text="Performance Report"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        onAction="#openSettings"/>
+
+                <Separator/>
+
+                <Button fx:id="logoutButton"
+                        text="Logout"
+                        prefHeight="45"
+                        maxWidth="Infinity"
+                        style="-fx-background-color:#EF5350;-fx-text-fill:white;"
+                        onAction="#logout"/>
+
+            </children>
+
+        </VBox>
+
+    </left>
+
+    <!-- ================= CENTER ================= -->
+
+    <center>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="15" left="15" right="15" bottom="15"/>
+            </padding>
+
+            <!-- Summary -->
+
+            <HBox spacing="15">
+
+                <children>
+
+                    <VBox alignment="CENTER"
+                          prefWidth="180"
+                          style="-fx-background-color:#BBDEFB;-fx-background-radius:10;">
+
+                        <children>
+
+                            <Label text="Total Clients"/>
+
+                            <Label fx:id="totalClientsValueLabel"
+                                   text="25">
+
+                                <font>
+                                    <Font size="24"/>
+                                </font>
+
+                            </Label>
+
+                        </children>
+
+                    </VBox>
+
+                    <VBox alignment="CENTER"
+                          prefWidth="180"
+                          style="-fx-background-color:#C8E6C9;-fx-background-radius:10;">
+
+                        <children>
+
+                            <Label text="Policies"/>
+
+                            <Label fx:id="policyCountValueLabel"
+                                   text="40">
+
+                                <font>
+                                    <Font size="24"/>
+                                </font>
+
+                            </Label>
+
+                        </children>
+
+                    </VBox>
+
+                    <VBox alignment="CENTER"
+                          prefWidth="180"
+                          style="-fx-background-color:#FFE082;-fx-background-radius:10;">
+
+                        <children>
+
+                            <Label text="Renewals"/>
+
+                            <Label fx:id="renewalsDueValueLabel"
+                                   text="8">
+
+                                <font>
+                                    <Font size="24"/>
+                                </font>
+
+                            </Label>
+
+                        </children>
+
+                    </VBox>
+
+                    <VBox alignment="CENTER"
+                          prefWidth="180"
+                          style="-fx-background-color:#FFCDD2;-fx-background-radius:10;">
+
+                        <children>
+
+                            <Label text="Pending"/>
+
+                            <Label fx:id="pendingInteractionsValueLabel"
+                                   text="5">
+
+                                <font>
+                                    <Font size="24"/>
+                                </font>
+
+                            </Label>
+
+                        </children>
+
+                    </VBox>
+
+                </children>
+
             </HBox>
-            <HBox prefHeight="33.0" prefWidth="786.0">
-               <children>
-                  <TextField fx:id="searchClientTextField" text="Search Client..." />
-                   <Button fx:id="searchButton"
-                           mnemonicParsing="false"
-                           onAction="#searchClient"
-                           prefHeight="26.0"
-                           prefWidth="150.0"
-                           text="Search" />               </children>
+
+            <!-- Search -->
+
+            <HBox spacing="10">
+
+                <children>
+
+                    <TextField fx:id="searchClientTextField"
+                               HBox.hgrow="ALWAYS"
+                               promptText="Search Customer"/>
+
+                    <Button fx:id="searchButton"
+                            text="Search"
+                            prefWidth="120"
+                            onAction="#searchClient"/>
+
+                </children>
+
             </HBox>
-            <TableView fx:id="clientTableView" prefHeight="360.0" prefWidth="792.0">
-              <columns>
-                <TableColumn fx:id="clientIdColumn" prefWidth="183.0" text="Client ID" />
-                <TableColumn fx:id="clientNameColumn" prefWidth="187.0" text="Client Name" />
-                  <TableColumn fx:id="policyCountColumn" prefWidth="171.0" text="Policy Count" />
-                  <TableColumn fx:id="renewalDeadlineColumn" prefWidth="214.0" text="Renewal Deadline" />
-                  <TableColumn fx:id="pendingInteractionColumn" prefWidth="190.0" text="Pending Interaction" />
-                  <TableColumn fx:id="statusColumn" prefWidth="179.0" text="Status" />
-              </columns>
+
+            <!-- Table -->
+
+            <TableView fx:id="clientTableView"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="clientIdColumn"
+                                 text="Client ID"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="clientNameColumn"
+                                 text="Customer Name"
+                                 prefWidth="220"/>
+
+                    <TableColumn fx:id="policyCountColumn"
+                                 text="Policies"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="renewalDeadlineColumn"
+                                 text="Renewal Date"
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="pendingInteractionColumn"
+                                 text="Pending Interaction"
+                                 prefWidth="220"/>
+
+                    <TableColumn fx:id="statusColumn"
+                                 text="Status"
+                                 prefWidth="180"/>
+
+                </columns>
+
             </TableView>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="statusLabel" alignment="CENTER" prefHeight="18.0" prefWidth="396.0" text="Showing Assigned Customers">
-                     <font>
-                        <Font name="Carlito Bold" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
+
+            <!-- Quick Actions -->
+
+            <HBox spacing="10">
+
+                <children>
+
+                    <Button text="New Customer"
+                            onAction="#openClientPortfolio"/>
+
+                    <Button text="New Policy"
+                            onAction="#openPolicyApplication"/>
+
+                    <Button text="Generate Quote"
+                            onAction="#openFinancialQuote"/>
+
+                    <Button text="Verification"
+                            onAction="#openClientVerification"/>
+
+                </children>
+
             </HBox>
-         </children>
-      </VBox>
-   </center>
+
+        </VBox>
+
+    </center>
+
+    <!-- ================= FOOTER ================= -->
+
+    <bottom>
+
+        <Label fx:id="statusLabel"
+               text="System Ready"
+               alignment="CENTER"
+               prefHeight="45"
+               style="-fx-background-color:#CFD8DC;"/>
+
+    </bottom>
+
 </BorderPane>

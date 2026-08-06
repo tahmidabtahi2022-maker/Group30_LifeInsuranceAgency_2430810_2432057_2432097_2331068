@@ -1,5 +1,6 @@
 package Jamiul_Huda.InsuranceAgentControllers;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,172 +12,522 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+
 public class PolicyApplicationController {
 
-    @FXML
-    private Button searchButton;
+
+
+    // ================= HEADER =================
+
 
     @FXML
-    private TextField riskBaselineTextField;
+    private Label dashboardTitleLabel;
+
+
+    @FXML
+    private Label agentNameLabel;
+
+
+
+    // ================= CUSTOMER SEARCH =================
+
 
     @FXML
     private TextField clientIdTextField;
 
-    @FXML
-    private TextField nomineeNameTextField;
 
     @FXML
-    private TextField applicationStatusTextField;
+    private Button searchButton;
 
-    @FXML
-    private Label notificationLabel;
-
-    @FXML
-    private Button calculateRiskButton;
 
     @FXML
     private TextField customerStatusTextField;
 
-    @FXML
-    private Button clearButton;
 
-    @FXML
-    private Button submitProposalButton;
+
+
+    // ================= POLICY DETAILS =================
+
 
     @FXML
     private ComboBox<String> insurancePackageComboBox;
 
+
     @FXML
     private TextField sumAssuredTextField;
+
+
+    @FXML
+    private TextField nomineeNameTextField;
+
+
 
     @FXML
     private ComboBox<String> healthCategoryComboBox;
 
-    //===================== Scene Switch =====================
 
-    private void switchScene(ActionEvent event, String fxml) throws IOException {
-
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        stage.setScene(new Scene(root));
-
-        stage.show();
-    }
-
-    //===================== Dashboard =====================
 
     @FXML
-    private void openDashboard(ActionEvent event) throws IOException {
+    private TextField riskBaselineTextField;
 
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/InsuranceAgentDashboardView.fxml");
-    }
 
-    //===================== Review Tracker =====================
 
     @FXML
-    private void openPendingRenewals(ActionEvent event) throws IOException {
+    private TextField applicationStatusTextField;
 
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/ReviewTracker.fxml");
-    }
 
-    //===================== Request Documents =====================
 
-    @FXML
-    private void openMessages(ActionEvent event) throws IOException {
 
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/AgentRequestDocuments.fxml");
-    }
+    // ================= BUTTONS =================
 
-    //===================== Performance Report =====================
 
     @FXML
-    private void openSettings(ActionEvent event) throws IOException {
+    private Button calculateRiskButton;
 
-        switchScene(event,
-                "/Jamiul_Huda/InsuranceAgent/AgentPerformanceReport.fxml");
-    }
-
-    //===================== Logout =====================
 
     @FXML
-    private void logout(ActionEvent event) {
+    private Button submitProposalButton;
 
-        System.exit(0);
+
+    @FXML
+    private Button clearButton;
+
+
+
+    @FXML
+    private Label notificationLabel;
+
+
+
+
+
+    // ================= INITIALIZE =================
+
+
+    @FXML
+    public void initialize(){
+
+
+        agentNameLabel.setText(
+                "Insurance Agent"
+        );
+
+
+
+        insurancePackageComboBox
+                .getItems()
+                .addAll(
+
+                        "Life Insurance",
+                        "Health Insurance",
+                        "Vehicle Insurance",
+                        "Family Protection Plan"
+
+                );
+
+
+
+        healthCategoryComboBox
+                .getItems()
+                .addAll(
+
+                        "Low Risk",
+                        "Medium Risk",
+                        "High Risk"
+
+                );
+
+
+
+        applicationStatusTextField
+                .setText(
+                        "Draft"
+                );
+
+
+
+        notificationLabel.setText(
+                "Ready to Submit Proposal"
+        );
+
 
     }
 
-    //===================== Search Customer =====================
+
+
+
+
+    // ================= SEARCH CUSTOMER =================
+
 
     @FXML
-    private void searchCustomer(ActionEvent event) {
+    private void searchCustomer(ActionEvent event){
 
-        notificationLabel.setText("Customer Found.");
+
+        String clientId =
+                clientIdTextField.getText();
+
+
+
+        if(clientId.isEmpty()){
+
+
+            notificationLabel.setText(
+                    "Enter Client ID"
+            );
+
+
+            return;
+
+        }
+
+
+
+
+        /*
+            Temporary customer search.
+
+            Later replace with:
+            CustomerService.search(clientId)
+        */
+
+
+
+        if(clientId.equals("C001")){
+
+
+            customerStatusTextField.setText(
+                    "Active Customer"
+            );
+
+
+            notificationLabel.setText(
+                    "Customer Found"
+            );
+
+
+        }
+        else{
+
+
+            customerStatusTextField.setText(
+                    "Not Found"
+            );
+
+
+            notificationLabel.setText(
+                    "Customer does not exist"
+            );
+
+
+        }
+
 
     }
 
-    //===================== Calculate Risk =====================
+
+
+
+
+    // ================= RISK CALCULATION =================
+
 
     @FXML
-    private void calculateRisk(ActionEvent event) {
+    private void calculateRisk(ActionEvent event){
 
-        riskBaselineTextField.setText("Medium Risk");
 
-        notificationLabel.setText("Risk Calculated.");
+
+        String health =
+                healthCategoryComboBox.getValue();
+
+
+
+        if(health == null){
+
+
+            notificationLabel.setText(
+                    "Select Health Category"
+            );
+
+
+            return;
+
+        }
+
+
+
+        String risk;
+
+
+
+        switch(health){
+
+
+            case "Low Risk":
+
+                risk = "10%";
+
+                break;
+
+
+
+            case "Medium Risk":
+
+                risk = "40%";
+
+                break;
+
+
+
+            case "High Risk":
+
+                risk = "70%";
+
+                break;
+
+
+
+            default:
+
+                risk = "Unknown";
+
+
+        }
+
+
+
+        riskBaselineTextField.setText(
+                risk
+        );
+
+
+
+        notificationLabel.setText(
+                "Risk Calculated Successfully"
+        );
+
 
     }
 
-    //===================== Submit Application =====================
+
+
+
+
+    // ================= SUBMIT PROPOSAL =================
+
 
     @FXML
-    private void submitProposal(ActionEvent event) {
+    private void submitProposal(ActionEvent event){
 
-        applicationStatusTextField.setText("Pending Client Verification");
 
-        notificationLabel.setText("Policy Application Submitted Successfully.");
+
+        if(clientIdTextField.getText().isEmpty()
+                || insurancePackageComboBox.getValue()==null
+                || sumAssuredTextField.getText().isEmpty()
+                || nomineeNameTextField.getText().isEmpty()){
+
+
+            notificationLabel.setText(
+                    "Complete all information first"
+            );
+
+
+            return;
+
+        }
+
+
+
+
+        /*
+            Later:
+            Save Policy Application
+            into database
+        */
+
+
+
+        applicationStatusTextField.setText(
+                "Submitted"
+        );
+
+
+
+        notificationLabel.setText(
+                "Proposal Submitted Successfully"
+        );
+
+
 
     }
 
-    //===================== Clear =====================
+
+
+
+
+    // ================= CLEAR FORM =================
+
 
     @FXML
-    private void clearForm(ActionEvent event) {
+    private void clearForm(ActionEvent event){
+
+
 
         clientIdTextField.clear();
-        nomineeNameTextField.clear();
-        sumAssuredTextField.clear();
+
+
         customerStatusTextField.clear();
-        applicationStatusTextField.clear();
+
+
+        insurancePackageComboBox
+                .setValue(null);
+
+
+        sumAssuredTextField.clear();
+
+
+        nomineeNameTextField.clear();
+
+
+        healthCategoryComboBox
+                .setValue(null);
+
+
         riskBaselineTextField.clear();
 
-        insurancePackageComboBox.getSelectionModel().clearSelection();
-        healthCategoryComboBox.getSelectionModel().clearSelection();
 
-        notificationLabel.setText("Form Cleared.");
+        applicationStatusTextField
+                .setText("Draft");
+
+
+
+        notificationLabel.setText(
+                "Form Cleared"
+        );
+
 
     }
+
+
+
+
+
+    // ================= DASHBOARD =================
 
 
     @FXML
-    public void initialize() {
+    private void openDashboard(ActionEvent event){
 
-        insurancePackageComboBox.getItems().addAll(
-                "Basic Life Insurance",
-                "Premium Life Insurance",
-                "Family Protection Plan",
-                "Senior Citizen Plan"
+
+        switchScene(
+                event,
+                "/Jamiul_Huda/InsuranceAgentViews/InsuranceAgentDashboard.fxml"
         );
 
-        healthCategoryComboBox.getItems().addAll(
-                "Low Risk",
-                "Medium Risk",
-                "High Risk"
-        );
 
     }
+
+
+
+
+
+
+    // ================= BACK =================
+
+
+    @FXML
+    private void back(ActionEvent event){
+
+
+        switchScene(
+                event,
+                "/Jamiul_Huda/InsuranceAgentViews/InsuranceAgentDashboard.fxml"
+        );
+
+
+    }
+
+
+
+
+
+
+    // ================= LOGOUT =================
+
+
+    @FXML
+    private void logout(ActionEvent event){
+
+
+        switchScene(
+                event,
+                "/Jamiul_Huda/InsuranceAgentViews/Login.fxml"
+        );
+
+
+    }
+
+
+
+
+
+
+    // ================= SCENE SWITCHING =================
+
+
+    private void switchScene(
+            ActionEvent event,
+            String fxmlFile){
+
+
+        try{
+
+
+            Parent root =
+                    FXMLLoader.load(
+                            getClass()
+                                    .getResource(fxmlFile)
+                    );
+
+
+
+            Stage stage =
+                    (Stage)((Node)event.getSource())
+                            .getScene()
+                            .getWindow();
+
+
+
+            Scene scene =
+                    new Scene(root);
+
+
+
+            stage.setScene(scene);
+
+
+            stage.show();
+
+
+
+        }
+        catch(IOException e){
+
+
+            e.printStackTrace();
+
+
+            notificationLabel.setText(
+                    "Scene loading failed"
+            );
+
+
+        }
+
+
+    }
+
+
 
 }

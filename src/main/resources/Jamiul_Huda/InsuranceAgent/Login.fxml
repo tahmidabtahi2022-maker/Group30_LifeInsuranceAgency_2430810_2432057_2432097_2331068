@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.LoginController"
+            prefHeight="720"
+            prefWidth="1100"
+            style="-fx-background-color: linear-gradient(to bottom,#d9f3ff,#f8fdff);">
+
+    <top>
+
+        <VBox alignment="CENTER"
+              spacing="10"
+              BorderPane.alignment="CENTER"
+              style="-fx-background-color:#1E88E5;"
+              prefHeight="120">
+
+            <children>
+
+                <Label text="Life Insurance Management System"
+                       textFill="WHITE">
+
+                    <font>
+                        <Font size="30"/>
+                    </font>
+
+                </Label>
+
+                <Label text="Insurance Agent Portal"
+                       textFill="WHITE">
+
+                    <font>
+                        <Font size="18"/>
+                    </font>
+
+                </Label>
+
+            </children>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox alignment="CENTER"
+              spacing="18">
+
+            <children>
+
+                <VBox spacing="15"
+                      maxWidth="420"
+                      style="-fx-background-color:white;
+                             -fx-background-radius:15;
+                             -fx-border-radius:15;
+                             -fx-border-color:#B0BEC5;
+                             -fx-padding:35;">
+
+                    <children>
+
+                        <Label text="LOGIN">
+
+                            <font>
+                                <Font size="28"/>
+                            </font>
+
+                        </Label>
+
+                        <Label text="Username"/>
+
+                        <TextField fx:id="usernameTextField"
+                                   promptText="Enter Username"/>
+
+                        <Label text="Password"/>
+
+                        <PasswordField fx:id="passwordField"
+                                       promptText="Enter Password"/>
+
+                        <HBox spacing="15"
+                              alignment="CENTER">
+
+                            <children>
+
+                                <Button fx:id="loginButton"
+                                        text="Login"
+                                        prefWidth="150"
+                                        style="-fx-background-color:#4CAF50;
+                                               -fx-text-fill:white;
+                                               -fx-font-size:15;"
+                                        onAction="#login"/>
+
+                                <Button fx:id="clearButton"
+                                        text="Clear"
+                                        prefWidth="150"
+                                        style="-fx-background-color:#FFC107;
+                                               -fx-font-size:15;"
+                                        onAction="#clearFields"/>
+
+                            </children>
+
+                        </HBox>
+
+                        <Button fx:id="exitButton"
+                                text="Exit"
+                                prefWidth="320"
+                                style="-fx-background-color:#F44336;
+                                       -fx-text-fill:white;
+                                       -fx-font-size:15;"
+                                onAction="#exit"/>
+
+                        <Label fx:id="statusLabel"
+                               alignment="CENTER"
+                               prefHeight="45"
+                               maxWidth="9999"
+                               style="-fx-background-color:#ECEFF1;
+                                      -fx-border-color:#B0BEC5;"
+                               text="Please Login"/>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <Label text="© 2026 Life Insurance Agency Project"
+               alignment="CENTER"
+               prefHeight="40"
+               BorderPane.alignment="CENTER"/>
+
+    </bottom>
+
+</BorderPane>
