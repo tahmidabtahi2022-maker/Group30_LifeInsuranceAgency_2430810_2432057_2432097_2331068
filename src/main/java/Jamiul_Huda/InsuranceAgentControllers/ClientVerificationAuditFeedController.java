@@ -63,7 +63,7 @@ public class ClientVerificationAuditFeedController {
 
         stage.show();
     }
-    @FXML
+    @Deprecated
     private void openDashboard(ActionEvent event) throws IOException {
 
         switchScene(event,
