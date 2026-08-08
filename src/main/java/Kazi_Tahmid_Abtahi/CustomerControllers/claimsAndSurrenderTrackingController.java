@@ -37,6 +37,9 @@ public class claimsAndSurrenderTrackingController
     @javafx.fxml.FXML
     private Label financeApprovalStatusLabel;
 
+    public void receiveUserEmail(String email) {
+    }
+
     @javafx.fxml.FXML
     public void initialize() {
     }

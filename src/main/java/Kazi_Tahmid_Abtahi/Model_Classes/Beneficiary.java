@@ -1,17 +1,15 @@
 package Kazi_Tahmid_Abtahi.Model_Classes;
 
-import org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068.User;
-
 import java.io.Serializable;
-import java.time.LocalDate;
 
-public class Beneficiary extends User implements Serializable {
-    private String policyId,relationship;
+public class Beneficiary implements Serializable {
+    private String policyId,policyType,beneficiaryName,relationship;
     private float allocationPercentage;
 
-    public Beneficiary(String userId, String fullName, String emailAddress, String phoneNumber, String password, LocalDate dateOfBirth, String policyId, String relationship, float allocationPercentage) {
-        super(userId, fullName, emailAddress, phoneNumber, password, dateOfBirth);
+    public Beneficiary(String policyId, String policyType, String beneficiaryName, String relationship, float allocationPercentage) {
         this.policyId = policyId;
+        this.policyType = policyType;
+        this.beneficiaryName = beneficiaryName;
         this.relationship = relationship;
         this.allocationPercentage = allocationPercentage;
     }
@@ -22,6 +20,22 @@ public class Beneficiary extends User implements Serializable {
 
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
+    }
+
+    public String getPolicyType() {
+        return policyType;
+    }
+
+    public void setPolicyType(String policyType) {
+        this.policyType = policyType;
+    }
+
+    public String getBeneficiaryName() {
+        return beneficiaryName;
+    }
+
+    public void setBeneficiaryName(String beneficiaryName) {
+        this.beneficiaryName = beneficiaryName;
     }
 
     public String getRelationship() {
@@ -44,6 +58,8 @@ public class Beneficiary extends User implements Serializable {
     public String toString() {
         return "Beneficiary{" +
                 "policyId='" + policyId + '\'' +
+                ", policyType='" + policyType + '\'' +
+                ", beneficiaryName='" + beneficiaryName + '\'' +
                 ", relationship='" + relationship + '\'' +
                 ", allocationPercentage=" + allocationPercentage +
                 '}';

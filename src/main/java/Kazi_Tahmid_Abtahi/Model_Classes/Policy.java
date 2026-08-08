@@ -5,21 +5,25 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Policy implements Serializable {
-    private String policyId,customerId,policyType,status;
-    private float coverageAmount,yearlyPremium,totalCashValue;
-    private int policyTermYears;
+    private String policyId, customerId, policyType, status, smokerStatus, medicalHistory;
+    private float coverageAmount, yearlyPremium, totalCashValue;
+    private int policyTerm;
     private LocalDate nextDueDate;
+    private ArrayList<Beneficiary> beneficiaryList;
 
-    public Policy(String policyId, String customerId, String policyType, String status, float coverageAmount, float yearlyPremium, float totalCashValue, int policyTermYears, LocalDate nextDueDate) {
+    public Policy(String policyId, String customerId, String policyType, String status, String smokerStatus, String medicalHistory, float coverageAmount, float yearlyPremium, float totalCashValue, int policyTerm, LocalDate nextDueDate) {
         this.policyId = policyId;
         this.customerId = customerId;
         this.policyType = policyType;
         this.status = status;
+        this.smokerStatus = smokerStatus;
+        this.medicalHistory = medicalHistory;
         this.coverageAmount = coverageAmount;
         this.yearlyPremium = yearlyPremium;
         this.totalCashValue = totalCashValue;
-        this.policyTermYears = policyTermYears;
+        this.policyTerm = policyTerm;
         this.nextDueDate = nextDueDate;
+        this.beneficiaryList = new ArrayList<>();
     }
 
     public String getPolicyId() {
@@ -54,6 +58,22 @@ public class Policy implements Serializable {
         this.status = status;
     }
 
+    public String getSmokerStatus() {
+        return smokerStatus;
+    }
+
+    public void setSmokerStatus(String smokerStatus) {
+        this.smokerStatus = smokerStatus;
+    }
+
+    public String getMedicalHistory() {
+        return medicalHistory;
+    }
+
+    public void setMedicalHistory(String medicalHistory) {
+        this.medicalHistory = medicalHistory;
+    }
+
     public float getCoverageAmount() {
         return coverageAmount;
     }
@@ -78,12 +98,12 @@ public class Policy implements Serializable {
         this.totalCashValue = totalCashValue;
     }
 
-    public int getPolicyTermYears() {
-        return policyTermYears;
+    public int getPolicyTerm() {
+        return policyTerm;
     }
 
-    public void setPolicyTermYears(int policyTermYears) {
-        this.policyTermYears = policyTermYears;
+    public void setPolicyTerm(int policyTerm) {
+        this.policyTerm = policyTerm;
     }
 
     public LocalDate getNextDueDate() {
@@ -94,6 +114,24 @@ public class Policy implements Serializable {
         this.nextDueDate = nextDueDate;
     }
 
+    String displayStatus;
+
+    public String getDisplayStatus() {
+        return displayStatus;
+    }
+
+    public void setDisplayStatus(String displayStatus) {
+        this.displayStatus = displayStatus;
+    }
+
+    public ArrayList<Beneficiary> getBeneficiaryList() {
+        return beneficiaryList;
+    }
+
+    public void setBeneficiaryList(ArrayList<Beneficiary> beneficiaryList) {
+        this.beneficiaryList = beneficiaryList;
+    }
+
     @Override
     public String toString() {
         return "Policy{" +
@@ -101,10 +139,12 @@ public class Policy implements Serializable {
                 ", customerId='" + customerId + '\'' +
                 ", policyType='" + policyType + '\'' +
                 ", status='" + status + '\'' +
+                ", smokerStatus='" + smokerStatus + '\'' +
+                ", medicalHistory='" + medicalHistory + '\'' +
                 ", coverageAmount=" + coverageAmount +
                 ", yearlyPremium=" + yearlyPremium +
                 ", totalCashValue=" + totalCashValue +
-                ", policyTermYears=" + policyTermYears +
+                ", policyTerm=" + policyTerm +
                 ", nextDueDate=" + nextDueDate +
                 '}';
     }

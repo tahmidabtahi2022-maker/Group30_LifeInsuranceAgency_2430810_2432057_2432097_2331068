@@ -24,22 +24,19 @@
             <TableColumn fx:id="statusTC" prefWidth="141.60012817382812" text="Status " />
         </columns>
       </TableView>
-      <Label layoutX="70.0" layoutY="84.0" text="Your Policies: " textFill="#2621b1">
+      <Label layoutX="72.0" layoutY="331.0" text="Enter the policy id of which you want to pay premium for : " />
+      <TextField fx:id="selectedPolicyIdForPaymentTF" layoutX="396.0" layoutY="327.0" />
+      <Label layoutX="72.0" layoutY="360.0" text="Enter payment details :" textFill="#1f3c8e">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="72.0" layoutY="331.0" text="Enter the policy id of which you want to pay premium for : " />
-      <TextField fx:id="selectedPolicyIdForPaymentTF" layoutX="396.0" layoutY="327.0" />
-      <Label layoutX="72.0" layoutY="360.0" text="Enter payment details :" />
-      <Label layoutX="70.0" layoutY="444.0" />
       <Label layoutX="70.0" layoutY="387.0" text="Payment method : " />
       <ComboBox fx:id="paymentMethodCB" layoutX="193.0" layoutY="383.0" prefWidth="150.0" />
-      <Label layoutX="70.0" layoutY="479.0" />
       <Label layoutX="70.0" layoutY="422.0" text="Gateway Transaction Reference Number : " />
       <Label layoutX="73.0" layoutY="453.0" text="Enter payment Amount :" />
       <TextField fx:id="enterPaymentAmountTF" layoutX="217.0" layoutY="449.0" />
       <TextField fx:id="gatewayTransactionReferenceNumberTF" layoutX="306.0" layoutY="418.0" />
       <Button layoutX="70.0" layoutY="484.0" mnemonicParsing="false" onAction="#confirmAndPayPremiumButtonOnAction" text="Confirm &amp; Pay Premium" />
-      <Button layoutX="240.0" layoutY="484.0" mnemonicParsing="false" onAction="#DownloadTaxRecieptButtonOnAction" text="Download tax Reciept" />
+      <Label fx:id="statusLabel" layoutX="247.0" layoutY="488.0" prefHeight="27.0" prefWidth="390.0" text="Status: " />
    </children>
 </AnchorPane>

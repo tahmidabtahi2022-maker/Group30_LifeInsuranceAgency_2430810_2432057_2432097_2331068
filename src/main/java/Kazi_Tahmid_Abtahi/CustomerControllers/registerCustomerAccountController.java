@@ -40,8 +40,6 @@ public class registerCustomerAccountController
     public void initialize() {
         customerList = new ArrayList<>();
         loadCustomersFromBinaryFile();
-
-
     }
 
     @javafx.fxml.FXML

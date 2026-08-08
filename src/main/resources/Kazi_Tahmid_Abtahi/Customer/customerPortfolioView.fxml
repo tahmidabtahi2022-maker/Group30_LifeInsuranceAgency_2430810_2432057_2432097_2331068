@@ -14,17 +14,16 @@
       <TableView fx:id="customerOwnedPolicyDataTableview" layoutX="50.0" layoutY="122.0" prefHeight="200.0" prefWidth="572.0">
         <columns>
           <TableColumn fx:id="policyIdTC" prefWidth="75.0" text="Policy ID " />
-          <TableColumn fx:id="insuranceTypeTC" prefWidth="111.20000457763672" text="Insurance Type" />
-            <TableColumn fx:id="totalFaceValueTC" prefWidth="125.60003662109375" text="Total Face Value " />
-            <TableColumn fx:id="accumulatedCashValueTC" prefWidth="160.80001831054688" text="Accumulated Cash Value" />
+          <TableColumn fx:id="policyTypeTC" prefWidth="111.20000457763672" text="Policy Type" />
+            <TableColumn fx:id="coverageAmountTC" prefWidth="125.60003662109375" text="Coverage Amount" />
+            <TableColumn fx:id="totalCashValueTC" prefWidth="160.80001831054688" text="Total  Cash Value" />
             <TableColumn fx:id="statusTC" prefWidth="102.39996337890625" text="Status " />
         </columns>
       </TableView>
-      <Label layoutX="50.0" layoutY="91.0" text="All your owned policies are listed here :" textFill="#3023a6">
+      <Label layoutX="50.0" layoutY="339.0" text="Filter your policies : " textFill="#2b26a9">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="50.0" layoutY="339.0" text="Filter your policies : " />
       <Label layoutX="50.0" layoutY="377.0" text="Search Policy id : " />
       <TextField fx:id="policyIdFilterTF" layoutX="152.0" layoutY="374.0" promptText="Enter the policy id " />
       <ComboBox fx:id="statusFilterCB" layoutX="152.0" layoutY="413.0" prefWidth="150.0" />
