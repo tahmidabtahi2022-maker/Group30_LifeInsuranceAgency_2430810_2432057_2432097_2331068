@@ -1,5 +1,10 @@
 package Fuad_Bin_Omar.SystemAdministratorController;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+
 public class ModifyUserPermissionsController
 {
     @javafx.fxml.FXML

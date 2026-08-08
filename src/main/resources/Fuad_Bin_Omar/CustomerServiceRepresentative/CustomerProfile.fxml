@@ -40,10 +40,11 @@
       <Text layoutX="53.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Active Plan :" />
       <TextField fx:id="ActivePlanTextfield" layoutX="247.0" layoutY="341.0" prefHeight="26.0" prefWidth="482.0" />
       <Text layoutX="53.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Status :" />
-      <TextField fx:id="PolicyStatusTextfield" layoutX="247.0" layoutY="392.0" prefHeight="26.0" prefWidth="482.0" />
+      <TextField fx:id="PolicyStatusTextfield" layoutX="247.0" layoutY="392.0" prefHeight="26.0" prefWidth="310.0" />
       <Text layoutX="53.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name :" />
       <TextField fx:id="CustomerNameTextfield" layoutX="247.0" layoutY="101.0" prefHeight="26.0" prefWidth="482.0" />
       <Button layoutX="643.0" layoutY="647.0" mnemonicParsing="false" onAction="#RefreshButton" prefHeight="26.0" prefWidth="120.0" text="Refresh" />
       <Button layoutX="780.0" layoutY="647.0" mnemonicParsing="false" onAction="#ClearButton" prefHeight="26.0" prefWidth="120.0" text="Clear" />
+      <Button layoutX="571.0" layoutY="392.0" mnemonicParsing="false" onAction="#ProfileAddButton" prefHeight="26.0" prefWidth="157.0" text="Profile Add" />
    </children>
 </AnchorPane>

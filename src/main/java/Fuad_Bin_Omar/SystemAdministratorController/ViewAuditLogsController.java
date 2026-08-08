@@ -1,5 +1,8 @@
 package Fuad_Bin_Omar.SystemAdministratorController;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
 public class ViewAuditLogsController
 {
     @javafx.fxml.FXML
