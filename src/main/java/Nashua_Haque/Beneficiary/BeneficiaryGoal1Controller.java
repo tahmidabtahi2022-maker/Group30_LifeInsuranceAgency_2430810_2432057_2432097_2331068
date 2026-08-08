@@ -4,8 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class BeneficiaryGoal1Controller {
 
@@ -50,7 +57,7 @@ public class BeneficiaryGoal1Controller {
     public void initialize() {
 
         beneficiaryList = FXCollections.observableArrayList();
-        genderCB.getItems().addAll("Male","Female", "Others");
+        genderCB.getItems().addAll("Male", "Female", "Others");
 
         beneficiaryIdTC.setCellValueFactory(new PropertyValueFactory<>("id"));
         fullNameTC.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -65,7 +72,7 @@ public class BeneficiaryGoal1Controller {
     @FXML
     void registerOA(ActionEvent event) {
 
-        if(nameTF.getText().isEmpty() || emailTF.getText().isEmpty() || phoneTF.getText().isEmpty() || genderCB.getValue()==null){
+        if (nameTF.getText().isEmpty() || emailTF.getText().isEmpty() || phoneTF.getText().isEmpty() || genderCB.getValue() == null) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -74,7 +81,7 @@ public class BeneficiaryGoal1Controller {
             return;
         }
 
-        try{
+        try {
 
             int phone = Integer.parseInt(phoneTF.getText());
 
@@ -97,7 +104,7 @@ public class BeneficiaryGoal1Controller {
 
             clearFields();
 
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Phone number must be numeric.");
@@ -112,7 +119,7 @@ public class BeneficiaryGoal1Controller {
         clearFields();
     }
 
-    private void clearFields(){
+    private void clearFields() {
 
         nameTF.clear();
         emailTF.clear();
@@ -120,5 +127,4 @@ public class BeneficiaryGoal1Controller {
         genderCB.getSelectionModel().clearSelection();
 
     }
-
 }

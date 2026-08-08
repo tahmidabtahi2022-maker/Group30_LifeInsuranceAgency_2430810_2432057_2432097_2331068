@@ -124,4 +124,8 @@ public class BranchManagerGoal2Controller {
         fromDateDP.setValue(null);
         toDateDP.setValue(null);
     }
+
+    @FXML
+    public void backOA(ActionEvent actionEvent) {
+    }
 }

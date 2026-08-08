@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Nashua_Haque.Branch_Manager.BranchManagerGoal2Controller">
     <children>
         <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
@@ -34,6 +33,7 @@
                 <DatePicker fx:id="toDateDP" layoutX="361.0" layoutY="48.0" />
                 <DatePicker fx:id="fromDateDP" layoutX="126.0" layoutY="48.0" />
                 <Label layoutX="45.0" layoutY="52.0" prefHeight="25.0" prefWidth="68.0" text="From Date:" />
+            <Button layoutX="19.0" layoutY="18.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
             </children>
         </AnchorPane>
     </children>

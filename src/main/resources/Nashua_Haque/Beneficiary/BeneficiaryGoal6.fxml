@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Nashua_Haque.Beneficiary.BeneficiaryGoal6Controller">
     <children>
         <AnchorPane prefHeight="502.0" prefWidth="728.0">
@@ -39,6 +38,7 @@
                 <Label layoutX="364.0" layoutY="72.0" prefHeight="17.0" prefWidth="99.0" text="Notification Filter:" />
                 <Button layoutX="362.0" layoutY="194.0" mnemonicParsing="false" onAction="#refreshOA" text="Refreash" />
                 <DatePicker fx:id="dateDP" layoutX="130.0" layoutY="68.0" />
+            <Button layoutX="60.0" layoutY="29.0" mnemonicParsing="false" text="Back" />
             </children>
         </AnchorPane>
     </children>

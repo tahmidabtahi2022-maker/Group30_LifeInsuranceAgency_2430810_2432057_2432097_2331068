@@ -145,4 +145,8 @@ public class BeneficiaryGoal7Controller {
 
         totalClaimsTF.setText(String.valueOf(claimHistoryList.size()));
     }
+
+    @FXML
+    public void backOA(ActionEvent actionEvent) {
+    }
 }

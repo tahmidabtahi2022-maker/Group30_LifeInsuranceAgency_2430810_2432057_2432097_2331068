@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Nashua_Haque.Branch_Manager.BranchManagerGoal1Controller">
     <children>
         <Label layoutX="42.0" layoutY="45.0" prefHeight="31.0" prefWidth="80.0" text="Branch Level:" />
@@ -37,5 +36,6 @@
         <DatePicker fx:id="joiningDateDP" layoutX="258.0" layoutY="109.0" />
         <Button layoutX="141.0" layoutY="153.0" mnemonicParsing="false" onAction="#searchOA" text="Search" />
         <Button layoutX="326.0" layoutY="153.0" mnemonicParsing="false" onAction="#clearOA" text="Clear" />
+      <Button layoutX="56.0" layoutY="17.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
     </children>
 </AnchorPane>

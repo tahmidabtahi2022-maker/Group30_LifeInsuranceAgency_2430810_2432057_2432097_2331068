@@ -150,4 +150,8 @@ public class BranchManagerGoal1Controller {
 
         tableView.setItems(agentList);
     }
+
+    @FXML
+    public void backOA(ActionEvent actionEvent) {
+    }
 }
