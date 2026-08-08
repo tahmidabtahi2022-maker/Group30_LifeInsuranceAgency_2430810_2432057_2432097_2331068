@@ -9,39 +9,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane depthTest="DISABLE" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068.LoginPageController">
+<AnchorPane depthTest="DISABLE" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068.LoginPageController">
     <children>
 
-        <Label layoutX="100.0" layoutY="192.0" text="Email Address:" textFill="#333333" />
-        <TextField fx:id="enterEmailAddressTF" layoutX="199.0" layoutY="182.0" prefHeight="30.0" prefWidth="289.0" promptText="Enter your email" />
+        <Label layoutX="100.0" layoutY="146.0" text="Email Address:" textFill="#333333" />
+        <TextField fx:id="enterEmailAddressTF" layoutX="198.0" layoutY="139.0" prefHeight="30.0" prefWidth="289.0" promptText="Enter your email" />
 
-        <Label layoutX="100.0" layoutY="227.0" text="Password:" textFill="#333333" />
-        <PasswordField fx:id="enterPasswordTF" layoutX="198.0" layoutY="220.0" prefHeight="30.0" prefWidth="290.0" promptText="Enter your password" />
+        <Label layoutX="101.0" layoutY="182.0" text="Password:" textFill="#333333" />
+        <PasswordField fx:id="enterPasswordTF" layoutX="197.0" layoutY="175.0" prefHeight="30.0" prefWidth="290.0" promptText="Enter your password" />
 
-        <Button layoutX="101.0" layoutY="322.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #2f3e58;" text="Login" textFill="WHITE">
+        <Button layoutX="101.0" layoutY="256.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #2f3e58;" text="Login" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Button>
 
-        <Label fx:id="feedbackLabel" alignment="TOP_LEFT" layoutX="100.0" layoutY="135.0" prefHeight="26.0" prefWidth="399.0" text="Welcome" textFill="#361818" />
-        <Label layoutX="225.0" layoutY="20.0" prefHeight="48.0" prefWidth="150.0" text="Metlife Agency" textFill="#1814d4">
+        <Label fx:id="feedbackLabel" alignment="TOP_LEFT" layoutX="100.0" layoutY="112.0" prefHeight="26.0" prefWidth="399.0" text="Welcome to Metlife Agency" textFill="#361818" />
+        <Label layoutX="225.0" layoutY="14.0" prefHeight="48.0" prefWidth="150.0" style="-fx-background-color: #9ff2f8;" text="Metlife Agency" textFill="#0f1ec9">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="268.0" layoutY="68.0" text="Log In " textFill="#1419c4">
+        <Label alignment="CENTER" layoutX="225.0" layoutY="62.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #9ff2f8;" text="Log In " textFill="#1419c4">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <ComboBox fx:id="selectUserTypeCB" layoutX="199.0" layoutY="260.0" prefWidth="150.0" />
-        <Label layoutX="100.0" layoutY="264.0" text="Select User Type:" textFill="#333333" />
-        <Button layoutX="344.0" layoutY="322.0" mnemonicParsing="false" onAction="#registerNewAccountOnAction" prefHeight="35.0" prefWidth="169.0" style="-fx-background-color: #2f3e58;" text="Register New Account" textFill="WHITE">
+        <ComboBox fx:id="selectUserTypeCB" layoutX="198.0" layoutY="216.0" prefWidth="150.0" />
+        <Label layoutX="101.0" layoutY="220.0" text="Select User Type:" textFill="#333333" />
+        <Button layoutX="358.0" layoutY="313.0" mnemonicParsing="false" onAction="#registerNewAccountOnAction" prefHeight="30.0" prefWidth="175.0" style="-fx-background-color: #2f3e58;" text="Register New Account" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Button>
+      <Label layoutX="101.0" layoutY="322.0" text="if you are customer and dont have an account:" />
     </children>
     <rotationAxis>
         <Point3D />

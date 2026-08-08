@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.PolicyValidityVerificationController">
+
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Policy Validity Verification"
+                   style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        </VBox>
+    </top>
+
+
+    <center>
+
+        <VBox spacing="15"
+              alignment="CENTER">
+
+            <Label text="Claim Verification Details"/>
+
+
+            <TextField fx:id="claimIdField"
+                       promptText="Enter Claim Token ID"/>
+
+
+            <TextField fx:id="policyNumberField"
+                       promptText="Enter Policy Number"/>
+
+
+            <DatePicker fx:id="claimDatePicker"
+                        promptText="Claim Occurrence Date"/>
+
+
+            <Button text="Verify Policy"
+                    onAction="#verifyPolicy"/>
+
+
+            <Label fx:id="resultLabel"
+                   wrapText="true"/>
+
+
+        </VBox>
+
+    </center>
+
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+
+            <Button text="Back Dashboard"
+                    onAction="#backDashboard"/>
+
+        </HBox>
+
+    </bottom>
+
+
+</BorderPane>

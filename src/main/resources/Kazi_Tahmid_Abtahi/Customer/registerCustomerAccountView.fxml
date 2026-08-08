@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.registerCustomerAccountController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="581.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.registerCustomerAccountController">
+   <children>
+      <TextField fx:id="fullNameTF" layoutX="246.0" layoutY="78.0" prefHeight="26.0" prefWidth="261.0" promptText="Enter your full name" />
+      <TextField fx:id="passwordTF" layoutX="246.0" layoutY="229.0" prefHeight="26.0" prefWidth="262.0" promptText="Enter a password (8-12 digits)" />
+      <TextField fx:id="phoneNumberTF" layoutX="246.0" layoutY="154.0" prefHeight="26.0" prefWidth="262.0" promptText="Enter your phone number (11 digits)" />
+      <TextField fx:id="confirmPasswordTF" layoutX="246.0" layoutY="265.0" prefHeight="26.0" prefWidth="262.0" promptText="Enter the pasword for confirmation" />
+      <TextField fx:id="emailAddressTF" layoutX="246.0" layoutY="117.0" prefHeight="26.0" prefWidth="262.0" promptText="Enter your email address" />
+      <DatePicker fx:id="dateOfBirthDatePicker" layoutX="246.0" layoutY="189.0" prefHeight="26.0" prefWidth="262.0" promptText="Enter your date of birth" />
+      <Label layoutX="128.0" layoutY="82.0" text="Full Name:" />
+      <Label layoutX="128.0" layoutY="121.0" text="Email Address:" />
+      <Label layoutX="128.0" layoutY="158.0" text="Phone Number:" />
+      <Label layoutX="128.0" layoutY="193.0" text="Date of Birth:" />
+      <Label layoutX="128.0" layoutY="233.0" text="Password:" />
+      <Label layoutX="128.0" layoutY="269.0" text="Confirm password:" />
+      <Label layoutX="120.0" layoutY="29.0" text="Customer Account Registration" textFill="#2f3e58">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="129.0" layoutY="352.0" mnemonicParsing="false" onAction="#registerAccountButtonOnAction" style="-fx-background-color: #2f3e58;" text="Register Account" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="128.0" layoutY="419.0" prefHeight="63.0" prefWidth="470.0" text="Complete Registration Process. enter all your data properly" />
+      <Button layoutX="129.0" layoutY="491.0" mnemonicParsing="false" onAction="#returnToLoginPageButtonOnAction" style="-fx-background-color: #2f3e58;" text="Return to login page" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

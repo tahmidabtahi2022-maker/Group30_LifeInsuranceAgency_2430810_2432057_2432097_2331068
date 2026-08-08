@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Jamiul_Huda.InsuranceAgentControllers.AgentRequestDocumentsController"
+      prefWidth="1277"
+      prefHeight="897"
+      spacing="12">
+
+    <children>
+
+        <Label fx:id="lblTitle"
+               alignment="CENTER"
+               prefHeight="60"
+               prefWidth="1277"
+               style="-fx-background-color:#b3f876;"
+               text="Client Clarification &amp; Evidence Requests Manager">
+
+            <font>
+                <Font name="Arial Bold" size="24"/>
+            </font>
+
+        </Label>
+
+        <HBox fx:id="applicationIdBox" spacing="10">
+
+            <children>
+
+                <Label fx:id="lblApplicationId"
+                       text="Application ID:"
+                       prefWidth="120">
+
+                    <font>
+                        <Font name="Arial Bold" size="14"/>
+                    </font>
+
+                </Label>
+
+                <TextField fx:id="txtApplicationId"
+                           prefWidth="250"/>
+
+            </children>
+
+        </HBox>
+
+        <Label fx:id="lblMissingDocuments"
+               text="Missing Documents">
+
+            <font>
+                <Font name="Arial Bold" size="14"/>
+            </font>
+
+        </Label>
+
+        <CheckBox fx:id="chkSalarySlip"
+                  text="Latest Salary Slip Statement"/>
+
+        <CheckBox fx:id="chkPhysicianLetter"
+                  text="Attending Physician Clarification Letter"/>
+
+        <Label fx:id="lblReason"
+               text="Reason for Request">
+
+            <font>
+                <Font name="Arial Bold" size="14"/>
+            </font>
+
+        </Label>
+
+        <TextArea fx:id="txtReason"
+                  prefHeight="220"
+                  wrapText="true"/>
+
+        <Button fx:id="btnSendRequest"
+                text="Send Request"
+                prefWidth="220"
+                onAction="#sendRequest"
+                style="-fx-background-color:#9eea7a;">
+
+            <font>
+                <Font name="Arial Bold" size="16"/>
+            </font>
+
+        </Button>
+
+        <Label fx:id="lblStatus"
+               alignment="CENTER"
+               prefHeight="70"
+               prefWidth="1277"
+               text="Ready"
+               style="-fx-background-color:#ffa8e6;">
+
+            <font>
+                <Font name="Arial Bold" size="18"/>
+            </font>
+
+        </Label>
+
+    </children>
+
+</VBox>

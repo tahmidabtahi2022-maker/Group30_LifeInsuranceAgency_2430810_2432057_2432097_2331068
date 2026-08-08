@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="638.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.AccountsOfficerControllers.policyAuditAndLapsesController">
+    <children>
+        <Label layoutX="230.0" layoutY="28.0" text="Policy Audit &amp; Lapses" textFill="#2b2091">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Button layoutX="60.0" layoutY="335.0" mnemonicParsing="false" onAction="#runAuditScanButtonOnAction" prefHeight="40.0" prefWidth="230.0" text="Run System-Wide Policy Audit Scan" />
+
+        <Label layoutX="59.0" layoutY="93.0" text="Overdue Policies Audit Results : " textFill="#200f7e">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <TableView fx:id="overduePoliciesTableView" layoutX="58.0" layoutY="124.0" prefHeight="190.0" prefWidth="570.0">
+            <columns>
+                <TableColumn fx:id="policyIdTC" prefWidth="125.0" text="Policy ID" />
+                <TableColumn fx:id="customerContactTC" prefWidth="150.0" text="Customer Contact" />
+                <TableColumn fx:id="paymentDueDateTC" prefWidth="150.0" text="Payment Due Date" />
+                <TableColumn fx:id="daysOverdueTC" prefWidth="143.0" text="Days Overdue" />
+            </columns>
+        </TableView>
+
+        <Label layoutX="64.0" layoutY="418.0" text="Audit Scan Summary : " textFill="#242fac">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="64.0" layoutY="454.0" text="Total Policies Scanned :" />
+        <Label fx:id="totalScannedLabel" layoutX="216.0" layoutY="454.0" text="0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="64.0" layoutY="516.0" text="Late Fees Applied (&lt;= 30 Days) :" />
+        <Label fx:id="lateFeesAppliedLabel" layoutX="265.0" layoutY="516.0" text="0.00 BDT">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="64.0" layoutY="486.0" text="Policies Lapsed (&gt; 30 Days) :" />
+        <Label fx:id="policiesLapsedLabel" layoutX="247.0" layoutY="486.0" text="0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="statusMessageLabel" layoutX="65.0" layoutY="549.0" prefHeight="40.0" prefWidth="570.0" text="Status : " textFill="#00000b" />
+    </children>
+</AnchorPane>

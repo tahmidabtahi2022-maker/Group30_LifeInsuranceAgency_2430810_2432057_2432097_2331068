@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimApprovalController"
+            style="-fx-background-color:#F4F8FC;">
+
+    <top>
+        <VBox spacing="8" style="-fx-background-color:#1565C0;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Claim Approval &amp; Payout Processing"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:22px;
+                          -fx-font-weight:bold;"/>
+
+            <Label text="Approve verified claims and send them to Accounts."
+                   style="-fx-text-fill:white;
+                          -fx-font-size:14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+
+        <VBox spacing="18" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="25" right="40" bottom="25" left="40"/>
+            </padding>
+
+            <GridPane hgap="15" vgap="15">
+
+                <Label text="Claim Token ID"/>
+                <TextField fx:id="claimIdField"
+                           GridPane.columnIndex="1"
+                           prefWidth="280"
+                           promptText="Enter Claim Token ID"/>
+
+                <Label text="Policy Number"
+                       GridPane.rowIndex="1"/>
+                <TextField fx:id="policyNumberField"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"
+                           prefWidth="280"
+                           promptText="Enter Policy Number"/>
+
+            </GridPane>
+
+            <VBox spacing="10">
+
+                <CheckBox fx:id="policyVerifiedCheckBox"
+                          text="Policy Verification Completed"/>
+
+                <CheckBox fx:id="documentsVerifiedCheckBox"
+                          text="Documents Verified"/>
+
+                <CheckBox fx:id="payoutVerifiedCheckBox"
+                          text="Payout Calculation Verified"/>
+
+            </VBox>
+
+            <HBox spacing="20" alignment="CENTER">
+
+                <Button text="Approve Claim"
+                        prefWidth="160"
+                        onAction="#approveClaim"
+                        style="-fx-background-color:#2E7D32;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+                <Button text="Clear"
+                        prefWidth="120"
+                        onAction="#clearFields"
+                        style="-fx-background-color:#FB8C00;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+            </HBox>
+
+            <TitledPane text="Approval Status"
+                        expanded="true"
+                        prefWidth="550">
+
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label fx:id="statusLabel"
+                           style="-fx-font-size:15px;
+                                  -fx-font-weight:bold;
+                                  -fx-text-fill:#1565C0;"/>
+
+                </VBox>
+
+            </TitledPane>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color:#E3F2FD;">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Button text="Back to Dashboard"
+                    prefWidth="170"
+                    onAction="#backDashboard"
+                    style="-fx-background-color:#C62828;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

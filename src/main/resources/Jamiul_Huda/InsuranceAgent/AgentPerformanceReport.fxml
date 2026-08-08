@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Jamiul_Huda.InsuranceAgentControllers.AgentPerformanceReportController"
+      prefHeight="896.0"
+      prefWidth="1231.0"
+      spacing="15"
+      alignment="TOP_CENTER">
+
+    <children>
+
+        <Label fx:id="lblTitle"
+               alignment="CENTER"
+               prefHeight="70.0"
+               prefWidth="1231.0"
+               style="-fx-background-color: #fffcc5;"
+               text="Performance Analytics &amp; Commission Statement Tool">
+            <font>
+                <Font name="Carlito Bold" size="24.0"/>
+            </font>
+        </Label>
+
+        <HBox fx:id="dateBox"
+              alignment="CENTER"
+              spacing="10">
+
+            <children>
+
+                <Label fx:id="lblFrom" text="From">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+
+                <DatePicker fx:id="dpFrom"/>
+
+                <Label fx:id="lblTo" text="To">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+
+                <DatePicker fx:id="dpTo"/>
+
+            </children>
+
+        </HBox>
+
+        <Button fx:id="btnGenerateReport"
+                mnemonicParsing="false"
+                onAction="#generateReport"
+                prefHeight="40.0"
+                prefWidth="250.0"
+                style="-fx-background-color: #ffd2d2;"
+                text="Generate Report">
+            <font>
+                <Font name="Carlito Bold" size="16.0"/>
+            </font>
+        </Button>
+
+        <Label fx:id="lblSummary"
+               alignment="CENTER"
+               prefHeight="40.0"
+               prefWidth="1231.0"
+               style="-fx-background-color: #c6ffce;"
+               text="Performance Summary">
+            <font>
+                <Font name="Carlito Bold" size="18.0"/>
+            </font>
+        </Label>
+
+        <TextArea fx:id="txtSummary"
+                  editable="false"
+                  prefHeight="220.0"
+                  prefWidth="1180.0"/>
+
+        <Label fx:id="lblGraph"
+               alignment="CENTER"
+               prefHeight="40.0"
+               prefWidth="1231.0"
+               style="-fx-background-color: #c6ffce;"
+               text="Performance Graph">
+            <font>
+                <Font name="Carlito Bold" size="18.0"/>
+            </font>
+        </Label>
+
+        <TextArea fx:id="txtGraph"
+                  editable="false"
+                  prefHeight="180.0"
+                  prefWidth="1180.0"
+                  text="Performance graph will be displayed here."/>
+
+    </children>
+
+</VBox>

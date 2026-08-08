@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimRejectionController"
+            style="-fx-background-color:#F5F7FA;">
+
+    <top>
+        <VBox spacing="8" style="-fx-background-color:#C62828;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Claim Rejection Management"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:22px;
+                          -fx-font-weight:bold;"/>
+
+            <Label text="Reject claims with appropriate policy violation reasons."
+                   style="-fx-text-fill:white;
+                          -fx-font-size:14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+
+        <VBox spacing="18" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="25" right="40" bottom="25" left="40"/>
+            </padding>
+
+            <GridPane hgap="15" vgap="15">
+
+                <Label text="Claim Token ID"/>
+                <TextField fx:id="claimIdField"
+                           GridPane.columnIndex="1"
+                           prefWidth="300"
+                           promptText="Enter Claim Token ID"/>
+
+                <Label text="Policy Number"
+                       GridPane.rowIndex="1"/>
+                <TextField fx:id="policyNumberField"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"
+                           prefWidth="300"
+                           promptText="Enter Policy Number"/>
+
+                <Label text="Rejection Reason"
+                       GridPane.rowIndex="2"/>
+                <ComboBox fx:id="reasonComboBox"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="2"
+                          prefWidth="300"/>
+
+                <Label text="Verification Notes"
+                       GridPane.rowIndex="3"/>
+                <TextArea fx:id="notesArea"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="3"
+                          prefWidth="300"
+                          prefHeight="140"
+                          wrapText="true"
+                          promptText="Enter rejection notes"/>
+
+            </GridPane>
+
+            <HBox spacing="20" alignment="CENTER">
+
+                <Button text="Reject Claim"
+                        prefWidth="150"
+                        onAction="#rejectClaim"
+                        style="-fx-background-color:#D32F2F;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+                <Button text="Clear"
+                        prefWidth="120"
+                        onAction="#clearFields"
+                        style="-fx-background-color:#F9A825;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+            </HBox>
+
+            <TitledPane text="Status"
+                        expanded="true"
+                        prefWidth="560">
+
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label fx:id="statusLabel"
+                           style="-fx-font-size:15px;
+                                  -fx-font-weight:bold;
+                                  -fx-text-fill:#1565C0;"/>
+
+                </VBox>
+
+            </TitledPane>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color:#ECEFF1;">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Button text="Back to Dashboard"
+                    prefWidth="170"
+                    onAction="#backDashboard"
+                    style="-fx-background-color:#455A64;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

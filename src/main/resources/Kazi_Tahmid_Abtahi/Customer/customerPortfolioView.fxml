@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="564.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kazi_Tahmid_Abtahi.CustomerControllers.customerPortfolioController">
+   <children>
+      <TableView fx:id="customerOwnedPolicyDataTableview" layoutX="50.0" layoutY="122.0" prefHeight="200.0" prefWidth="572.0">
+        <columns>
+          <TableColumn fx:id="policyIdTC" prefWidth="75.0" text="Policy ID " />
+          <TableColumn fx:id="insuranceTypeTC" prefWidth="111.20000457763672" text="Insurance Type" />
+            <TableColumn fx:id="totalFaceValueTC" prefWidth="125.60003662109375" text="Total Face Value " />
+            <TableColumn fx:id="accumulatedCashValueTC" prefWidth="160.80001831054688" text="Accumulated Cash Value" />
+            <TableColumn fx:id="statusTC" prefWidth="102.39996337890625" text="Status " />
+        </columns>
+      </TableView>
+      <Label layoutX="50.0" layoutY="91.0" text="All your owned policies are listed here :" textFill="#3023a6">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="339.0" text="Filter your policies : " />
+      <Label layoutX="50.0" layoutY="377.0" text="Search Policy id : " />
+      <TextField fx:id="policyIdFilterTF" layoutX="152.0" layoutY="374.0" promptText="Enter the policy id " />
+      <ComboBox fx:id="statusFilterCB" layoutX="152.0" layoutY="413.0" prefWidth="150.0" />
+      <Label layoutX="50.0" layoutY="417.0" text="Filter Status : " />
+      <Label layoutX="244.0" layoutY="37.0" text="Portfolio Dashboard" textFill="#29129e">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="438.0" />
+      <Label layoutX="50.0" layoutY="456.0" text="Policy Type:" />
+      <ComboBox fx:id="policyTypeFilterCB" layoutX="151.0" layoutY="452.0" prefWidth="150.0" />
+      <Button layoutX="55.0" layoutY="491.0" mnemonicParsing="false" onAction="#applyFiltersButtonOnAction" text="Apply Filters" />
+      <Button layoutX="187.0" layoutY="491.0" mnemonicParsing="false" onAction="#resetFilterButtonOnAction" text="Reset Filters" />
+   </children>
+</AnchorPane>

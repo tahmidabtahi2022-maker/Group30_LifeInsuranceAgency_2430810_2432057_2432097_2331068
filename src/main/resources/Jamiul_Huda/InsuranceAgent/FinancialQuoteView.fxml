@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.FinancialQuoteController"
+            prefWidth="1295"
+            prefHeight="897">
+
+    <top>
+        <Label text="Financial Quotation &amp; Analytical Modeling Tool"
+               alignment="CENTER"
+               prefHeight="66"
+               style="-fx-background-color:#ffbbbb;"
+               BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="24"/>
+            </font>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="10" prefWidth="1295" BorderPane.alignment="CENTER">
+
+            <HBox spacing="10">
+                <Label text="Budget" prefWidth="170"/>
+                <TextField fx:id="budgetTextField"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Risk Appetite" prefWidth="170"/>
+                <ComboBox fx:id="riskAppetiteComboBox" prefWidth="170"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Protection Period (Years)" prefWidth="170"/>
+                <TextField fx:id="protectionPeriodTextField"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Dependents Count" prefWidth="170"/>
+                <TextField fx:id="dependentsCountTextField"/>
+            </HBox>
+
+            <TableView fx:id="recommendationTableView" prefHeight="180">
+
+                <columns>
+
+                    <TableColumn fx:id="packageNameColumn"
+                                 text="Package Name"
+                                 prefWidth="400"/>
+
+                    <TableColumn fx:id="premiumColumn"
+                                 text="Premium"
+                                 prefWidth="420"/>
+
+                    <TableColumn fx:id="maturityValueColumn"
+                                 text="Maturity Value"
+                                 prefWidth="420"/>
+
+                </columns>
+
+            </TableView>
+
+            <BarChart fx:id="comparisonBarChart"
+                      title="Cost vs Maturity Comparison"
+                      prefHeight="250">
+
+                <xAxis>
+                    <CategoryAxis label="Insurance Package"/>
+                </xAxis>
+
+                <yAxis>
+                    <NumberAxis label="Value"/>
+                </yAxis>
+
+            </BarChart>
+
+            <HBox spacing="10">
+
+                <Button fx:id="generateRecommendationButton"
+                        text="Generate Recommendation"
+                        prefWidth="350"
+                        style="-fx-background-color:#b5ffab;"
+                        onAction="#generateRecommendation">
+                    <font>
+                        <Font name="Arial Bold" size="18"/>
+                    </font>
+                </Button>
+
+                <Button fx:id="exportPdfButton"
+                        text="Export PDF"
+                        prefWidth="250"
+                        style="-fx-background-color:#b5ffab;"
+                        onAction="#exportPdf">
+                    <font>
+                        <Font name="Arial Bold" size="18"/>
+                    </font>
+                </Button>
+
+                <Button fx:id="clearButton"
+                        text="Clear"
+                        prefWidth="200"
+                        style="-fx-background-color:#b5ffab;"
+                        onAction="#clear">
+                    <font>
+                        <Font name="Arial Bold" size="18"/>
+                    </font>
+                </Button>
+
+            </HBox>
+
+        </VBox>
+    </center>
+
+    <bottom>
+
+        <Label fx:id="notificationLabel"
+               text="Status"
+               alignment="CENTER"
+               prefHeight="80"
+               style="-fx-background-color:#e4b3e3;"
+               BorderPane.alignment="CENTER">
+
+            <font>
+                <Font name="Arial Bold" size="18"/>
+            </font>
+
+        </Label>
+
+    </bottom>
+
+</BorderPane>
