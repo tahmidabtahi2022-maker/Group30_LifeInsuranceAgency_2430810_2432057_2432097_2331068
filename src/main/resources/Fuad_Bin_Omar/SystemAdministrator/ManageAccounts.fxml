@@ -38,5 +38,6 @@
             <TableColumn fx:id="EmailColumn" prefWidth="196.7999267578125" text="Email   :" />
         </columns>
       </TableView>
+      <Button layoutX="745.0" layoutY="44.0" mnemonicParsing="false" onAction="#DeactivateAccountButton" prefHeight="26.0" prefWidth="140.0" text="Deactivate Account" />
    </children>
 </AnchorPane>

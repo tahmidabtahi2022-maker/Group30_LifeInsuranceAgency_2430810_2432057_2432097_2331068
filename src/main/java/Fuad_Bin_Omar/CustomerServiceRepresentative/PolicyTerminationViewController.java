@@ -1,5 +1,8 @@
 package Fuad_Bin_Omar.CustomerServiceRepresentative;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
 public class PolicyTerminationViewController
 {
     @javafx.fxml.FXML
@@ -24,8 +27,6 @@ public class PolicyTerminationViewController
     private DatePicker CancelDatePicker;
     @javafx.fxml.FXML
     private TableColumn RefundAmountColumn;
-    @javafx.fxml.FXML
-    private Text RefundAmountLabel;
     @javafx.fxml.FXML
     private TableColumn PolicyIDColumn;
     @javafx.fxml.FXML

@@ -7,7 +7,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="699.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.SystemAdministratorController.PremiumTemplateController">
    <children>
       <Text layoutX="92.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Term Life Base Rate  :" />
@@ -23,8 +22,8 @@
       <Button layoutX="559.0" layoutY="638.0" mnemonicParsing="false" onAction="#SaveNewSettingButton" prefHeight="26.0" prefWidth="291.0" text="Save New  Setting" />
       <TextField fx:id="OtherPremiumFactorsTextfield" layoutX="286.0" layoutY="330.0" prefHeight="26.0" prefWidth="482.0" />
       <Label layoutX="108.0" layoutY="430.0" text="Validation Message" />
-      <Label layoutX="108.0" layoutY="463.0" text="Only numeric values allowed." />
+      <Label fx:id="NumericValuesLabel" layoutX="108.0" layoutY="463.0" text="Only numeric values allowed." />
       <Label layoutX="656.0" layoutY="446.0" text="Status" />
-      <Label layoutX="658.0" layoutY="478.0" text="Label" />
+      <Label fx:id="StatusLabel" layoutX="658.0" layoutY="478.0" text="Label" />
    </children>
 </AnchorPane>

@@ -4,5 +4,7 @@ module org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068 {
 
 
     opens org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068 to javafx.fxml;
+    opens Fuad_Bin_Omar.SystemAdministratorController to javafx.fxml;
     exports org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068;
+    exports Fuad_Bin_Omar.SystemAdministratorController;
 }
