@@ -43,7 +43,7 @@ public class payPremiumsAndDuesController
 
     @javafx.fxml.FXML
     public void initialize() {
-        pendingPolicies = new ArrayList<Policy>();
+        pendingPolicies = new ArrayList<>();
         paymentMethodCB.getItems().addAll("Bank Transfer", "Card", "Mobile Financial Service");
 
         policyIdTC.setCellValueFactory(new PropertyValueFactory<>("policyId"));
@@ -57,45 +57,18 @@ public class payPremiumsAndDuesController
         loadPendingPremiums();
     }
 
-    public void loadPendingPremiums() {
-        customerPolicyDataTableview.getItems().clear();
-        pendingPolicies = new ArrayList<Policy>();
 
-        ArrayList<Policy> allPolicies = new ArrayList<Policy>();
-        try {
-            File f = new File("PolicyInfo.bin");
-            FileInputStream fis = new FileInputStream(f);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            while (true) {
-                allPolicies.add((Policy) ois.readObject());
-            }
-        } catch (Exception e) {
-            //
-        }
-
-        for (Policy p : allPolicies) {
-            if (p.getCustomerId() != null && p.getCustomerId().equals(customerId)) {
-                if (p.getNextDueDate() != null && p.getNextDueDate().isBefore(LocalDate.now())) {
-                    p.setDisplayStatus("Overdue");
-                } else {
-                    p.setDisplayStatus("Pending");
-                }
-
-                pendingPolicies.add(p);
-                customerPolicyDataTableview.getItems().add(p);
-            }
-        }
-    }
 
     @javafx.fxml.FXML
     public void confirmAndPayPremiumButtonOnAction(ActionEvent actionEvent) {
 
         if (selectedPolicyIdForPaymentTF.getText().isEmpty() || gatewayTransactionReferenceNumberTF.getText().isEmpty() || enterPaymentAmountTF.getText().isEmpty() || paymentMethodCB.getValue() == null) {
-            Alert myAlert = new Alert(Alert.AlertType.ERROR);
-            myAlert.setContentText("Please fill in the Policy ID, payment method, reference number, and amount.");
-            myAlert.show();
-            statusLabel.setText("Status: Please fill up all required fields.");
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Please fill in the information properly");
+            a.show();
+            statusLabel.setText("Please fill in the information properly");
             return;
+
         }
 
         Policy targetPolicy = null;
@@ -104,22 +77,34 @@ public class payPremiumsAndDuesController
                 targetPolicy = p;
             }
         }
+
+
         if (targetPolicy == null) {
-            Alert myAlert = new Alert(Alert.AlertType.ERROR);
-            myAlert.setContentText("That Policy ID was not found in your pending premiums list.");
-            myAlert.show();
-            statusLabel.setText("Status: Policy ID not found.");
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("That Policy ID was not found in your pending premiums list.");
+            a.show();
+            statusLabel.setText("That Policy ID was not found in your pending premiums list.");
+            return;
+        }
+
+        if (targetPolicy.getNextDueDate() == null) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("This policy has no due date on record.");
+            a.show();
+            statusLabel.setText("This policy has no due date on record.");
             return;
         }
 
 
         if (Float.parseFloat(enterPaymentAmountTF.getText()) != targetPolicy.getYearlyPremium()) {
-            Alert myAlert = new Alert(Alert.AlertType.ERROR);
-            myAlert.setContentText("Payment amount must exactly match the due premium of " + targetPolicy.getYearlyPremium());
-            myAlert.show();
-            statusLabel.setText("Status: Payment amount does not match the due premium.");
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Payment amount must exactly match the due premium amount");
+            a.show();
+            statusLabel.setText("Payment amount must exactly match the due premium amount");
             return;
         }
+
+
 
         String firstFourDigits = String.format("%04d", LocalDate.now().getYear());
         Random r = new Random();
@@ -141,10 +126,11 @@ public class payPremiumsAndDuesController
         targetPolicy.setNextDueDate(targetPolicy.getNextDueDate().plusYears(1));
         updatePolicyInFile(targetPolicy);
 
-        Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
-        myAlert.setContentText("Payment successful! Transaction Receipt Number: " + generatedTransactionId);
-        myAlert.show();
-        statusLabel.setText("Status: Payment successful. Receipt Number: " + generatedTransactionId);
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("Payment successful!");
+        a.setContentText("Transaction Receipt Number: " + generatedTransactionId);
+        a.show();
+        statusLabel.setText("Payment successful.Transaction Receipt Number: " + generatedTransactionId);
 
         selectedPolicyIdForPaymentTF.clear();
         gatewayTransactionReferenceNumberTF.clear();
@@ -152,6 +138,41 @@ public class payPremiumsAndDuesController
         paymentMethodCB.setValue(null);
 
         loadPendingPremiums();
+    }
+
+    public void loadPendingPremiums() {
+        customerPolicyDataTableview.getItems().clear();
+        pendingPolicies = new ArrayList<>();
+
+        ArrayList<Policy> allPolicies = new ArrayList<>();
+        try {
+            File f = new File("PolicyInfo.bin");
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            while (true) {
+                allPolicies.add((Policy) ois.readObject());
+
+            }
+        } catch (Exception e) {
+            //
+        }
+
+        for (Policy p : allPolicies) {
+            if (p.getCustomerId() != null && p.getCustomerId().equals(customerId)) {
+                if (p.getNextDueDate() != null && p.getNextDueDate().isBefore(LocalDate.now())) {
+                    p.setDisplayStatus("Overdue");
+
+                } else {
+                    p.setDisplayStatus("Pending");
+
+                }
+
+                pendingPolicies.add(p);
+                customerPolicyDataTableview.getItems().add(p);
+
+            }
+
+        }
     }
 
     private void savePaymentToBinFile(PremiumPayment payment) {
@@ -163,6 +184,7 @@ public class payPremiumsAndDuesController
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
                 oos = new AppendableObjectOutputStream(fos);
+
             } else {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
@@ -170,13 +192,14 @@ public class payPremiumsAndDuesController
 
             oos.writeObject(payment);
             oos.close();
+
         } catch (Exception e) {
-            statusLabel.setText("Status: Could not save the payment record.");
+            //
         }
     }
 
     private void updatePolicyInFile(Policy updatedPolicy) {
-        ArrayList<Policy> allPolicies = new ArrayList<Policy>();
+        ArrayList<Policy> allPolicies = new ArrayList<>();
         try {
             File f = new File("PolicyInfo.bin");
             FileInputStream fis = new FileInputStream(f);
@@ -184,16 +207,22 @@ public class payPremiumsAndDuesController
             while (true) {
                 allPolicies.add((Policy) ois.readObject());
             }
+
         } catch (Exception e) {
-            // reached end of file
+            //
         }
 
-        ArrayList<Policy> newPolicyList = new ArrayList<Policy>();
+
+
+
+        ArrayList<Policy> newPolicyList = new ArrayList<>();
         for (Policy p : allPolicies) {
             if (p.getPolicyId().equals(updatedPolicy.getPolicyId())) {
                 newPolicyList.add(updatedPolicy);
+
             } else {
                 newPolicyList.add(p);
+
             }
         }
 
@@ -203,9 +232,11 @@ public class payPremiumsAndDuesController
             for (Policy p : newPolicyList) {
                 oos.writeObject(p);
             }
+
             oos.close();
         } catch (Exception e) {
-            statusLabel.setText("Status: Could not update the policy record.");
+            //
+
         }
     }
 
@@ -214,15 +245,20 @@ public class payPremiumsAndDuesController
             File f = new File("CustomerInfo.bin");
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
+
             while (true) {
                 Customer c = (Customer) ois.readObject();
                 if (c.getEmailAddress().equals(email)) {
                     return c.getUserId();
                 }
+
             }
         } catch (Exception e) {
             //
+
         }
         return null;
+
+
     }
 }

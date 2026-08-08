@@ -37,8 +37,8 @@
         <TextField fx:id="updateBeneficiaryRelationshipInputTF" layoutX="261.0" layoutY="427.0" prefWidth="160.0" />
         <Label layoutX="60.0" layoutY="465.0" text="Allocation Percentage (%) : " />
         <TextField fx:id="updateAllocationPercentageInputTF" layoutX="261.0" layoutY="461.0" prefWidth="160.0" />
-        <Button layoutX="442.0" layoutY="406.0" mnemonicParsing="false" onAction="#addBeneficiaryToListButtonOnAction" prefHeight="26.0" prefWidth="224.0" text="Add Beneficiary to List" />
-        <Button layoutX="442.0" layoutY="452.0" mnemonicParsing="false" onAction="#saveBeneficiaryInformationsButtonOnActionS" prefHeight="26.0" prefWidth="224.0" text="Save Beneficiary Informations" />
+        <Button layoutX="442.0" layoutY="406.0" mnemonicParsing="false" onAction="#addBeneficiaryToListButtonOnAction" prefHeight="26.0" prefWidth="178.0" text="Add Beneficiary to List" />
+        <Button layoutX="442.0" layoutY="452.0" mnemonicParsing="false" onAction="#saveBeneficiaryInformationsButtonOnActionS" prefHeight="26.0" prefWidth="178.0" text="Save Beneficiary Informations" />
         <Label fx:id="updateInformationStatusLabel" layoutX="60.0" layoutY="495.0" prefHeight="40.0" prefWidth="582.0" text="Status : " wrapText="true">
             <font>
                 <Font size="11.0" />

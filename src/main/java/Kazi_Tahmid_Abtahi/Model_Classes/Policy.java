@@ -9,7 +9,7 @@ public class Policy implements Serializable {
     private float coverageAmount, yearlyPremium, totalCashValue;
     private int policyTerm;
     private LocalDate nextDueDate;
-    private ArrayList<Beneficiary> beneficiaryList;
+
 
     public Policy(String policyId, String customerId, String policyType, String status, String smokerStatus, String medicalHistory, float coverageAmount, float yearlyPremium, float totalCashValue, int policyTerm, LocalDate nextDueDate) {
         this.policyId = policyId;
@@ -23,7 +23,6 @@ public class Policy implements Serializable {
         this.totalCashValue = totalCashValue;
         this.policyTerm = policyTerm;
         this.nextDueDate = nextDueDate;
-        this.beneficiaryList = new ArrayList<>();
     }
 
     public String getPolicyId() {
@@ -124,13 +123,6 @@ public class Policy implements Serializable {
         this.displayStatus = displayStatus;
     }
 
-    public ArrayList<Beneficiary> getBeneficiaryList() {
-        return beneficiaryList;
-    }
-
-    public void setBeneficiaryList(ArrayList<Beneficiary> beneficiaryList) {
-        this.beneficiaryList = beneficiaryList;
-    }
 
     @Override
     public String toString() {

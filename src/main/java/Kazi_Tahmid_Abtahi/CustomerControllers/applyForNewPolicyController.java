@@ -27,7 +27,10 @@ public class applyForNewPolicyController
     private Policy pendingPolicy;
 
     public void receiveUserEmail(String email) {
-        this.customerId = lookupCustomerId(email);
+        this.customerId = findCustomerId(email);
+        if (this.customerId == null) {
+            confirmationStatusLabel.setText("Could not find your customer account");
+        }
     }
 
     @javafx.fxml.FXML
@@ -37,17 +40,26 @@ public class applyForNewPolicyController
     @javafx.fxml.FXML
     public void confirmApplicationAndPayFirstPremiumButtonOnAction(ActionEvent actionEvent) {
         if (pendingPolicy == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("No quote details found. Please select a policy quote first.");
-            alert.show();
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("No quote details found");
+            a.show();
+            confirmationStatusLabel.setText("No quote details found");
+            return;
+        }
+
+        if (this.customerId == null) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Customer account not found. Please log in again.");
+            a.show();
+            confirmationStatusLabel.setText("Customer account not found. Please log in again.");
             return;
         }
 
         if (!confirmPolicyDetailsCheckbox.isSelected()) {
-            Alert myAlert = new Alert(Alert.AlertType.ERROR);
-            myAlert.setContentText("Please check the confirmation box to confirm your policy information is correct.");
-            myAlert.show();
-            confirmationStatusLabel.setText("Status: Confirmation checkbox required.");
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Please check the confirmation checkbox");
+            a.show();
+            confirmationStatusLabel.setText("Please check the confirmation checkbox");
             return;
         }
 
@@ -63,16 +75,11 @@ public class applyForNewPolicyController
 
         savePolicyToBinFile(pendingPolicy);
 
-        confirmationStatusLabel.setText(
-                "Status: Application submitted successfully!\n" +
-                        "Your new Policy ID is " + pendingPolicy.getPolicyId() + ". Policy Type: " + pendingPolicy.getPolicyType() +
-                        ", Coverage: " + pendingPolicy.getCoverageAmount() + ", Annual Premium: " + pendingPolicy.getYearlyPremium() +
-                        ". Your policy is now Active."
+        confirmationStatusLabel.setText("Application submitted successfully!" +  "Your new Policy ID is " + pendingPolicy.getPolicyId() + ". Policy Type: " + pendingPolicy.getPolicyType() +  ", Coverage: " + pendingPolicy.getCoverageAmount() + ", Annual Premium: " + pendingPolicy.getYearlyPremium() +  ". Your policy is now Active."
         );
 
         confirmPolicyDetailsCheckbox.setSelected(false);
         policyAndQuoteDetailsTA.setText("Application Submitted Successfully");
-
 
     }
 
@@ -86,7 +93,7 @@ public class applyForNewPolicyController
 
         pendingPolicy = new Policy(
                 null,
-                customerId,
+                null,
                 quote.getPolicyType(),
                 "Pending",
                 quote.getSmokerStatus(),
@@ -98,13 +105,7 @@ public class applyForNewPolicyController
                 null
         );
 
-        policyAndQuoteDetailsTA.setText(
-                "Policy Type: " + quote.getPolicyType() + "\n" +
-                        "Policy Term: " + quote.getPolicyTerm() + " years\n" +
-                        "Coverage Amount: " + quote.getCoverageAmount() + "\n" +
-                        "Smoker Status: " + quote.getSmokerStatus() + "\n" +
-                        "Medical History: " + quote.getMedicalHistory() + "\n" +
-                        "Estimated Annual Premium: " + quote.getCalculatedPremium()
+        policyAndQuoteDetailsTA.setText("Policy Type: " + quote.getPolicyType() + "\n" + "Policy Term: " + quote.getPolicyTerm() + " years\n" +  "Coverage Amount: " + quote.getCoverageAmount() + "\n" +  "Smoker Status: " + quote.getSmokerStatus() + "\n" +  "Medical History: " + quote.getMedicalHistory() + "\n" +  "Estimated Annual Premium: " + quote.getCalculatedPremium()
         );
     }
 
@@ -125,12 +126,12 @@ public class applyForNewPolicyController
             oos.writeObject(policy);
             oos.close();
         } catch (Exception e) {
-            confirmationStatusLabel.setText("Status: Could not save the policy. (" + e.getMessage() + ")");
+            //
         }
     }
 
 
-    private String lookupCustomerId(String email) {
+    private String findCustomerId(String email) {
         try {
             File f = new File("CustomerInfo.bin");
             FileInputStream fis = new FileInputStream(f);

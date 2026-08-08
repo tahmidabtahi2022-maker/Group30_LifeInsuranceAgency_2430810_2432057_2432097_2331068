@@ -35,15 +35,14 @@ public class customerDashboardController
         this.userEmail = email;
     }
 
+
     @javafx.fxml.FXML
-    public void comparePoliciesButtonOnAction(ActionEvent actionEvent) throws IOException {
+    public void calculatePremiumQuoteButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/policyQuoteView.fxml"));
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
         policyQuoteController controller = fxmlLoader.getController();
         controller.receiveUserEmail(this.userEmail);
         controller.receiveDashboardController(this);
-
-
     }
 
     @javafx.fxml.FXML
@@ -53,8 +52,6 @@ public class customerDashboardController
         applyForNewPolicyController controller = fxmlLoader.getController();
         controller.receiveUserEmail(this.userEmail);
         controller.receiveQuoteDetails(pendingQuote);
-
-
     }
 
     @javafx.fxml.FXML
@@ -63,7 +60,6 @@ public class customerDashboardController
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
         payPremiumsAndDuesController controller = fxmlLoader.getController();
         controller.receiveUserEmail(this.userEmail);
-
     }
 
     @javafx.fxml.FXML
@@ -72,34 +68,24 @@ public class customerDashboardController
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
         customerPortfolioController controller = fxmlLoader.getController();
         controller.receiveUserEmail(this.userEmail);
-
     }
 
     @javafx.fxml.FXML
     public void manageBeneficiariesButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/trackingPolicyBeneficiariesView.fxml"));
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
-        trackingPolicyBeneficiariesController controller = fxmlLoader.getController();
-        controller.receiveUserEmail(this.userEmail);
-
     }
 
     @javafx.fxml.FXML
     public void policyLoanAndSettingsButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/policyLoanAndAPL.fxml"));
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
-        policyLoanAndAPLController controller = fxmlLoader.getController();
-        controller.receiveUserEmail(this.userEmail);
-
     }
 
     @javafx.fxml.FXML
     public void claimsAndSurrenderTrackingButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/claimsAndSurrenderTrackingView.fxml"));
         customerDashboardBorderpane.setCenter(fxmlLoader.load());
-        claimsAndSurrenderTrackingController controller = fxmlLoader.getController();
-        controller.receiveUserEmail(this.userEmail);
-
     }
 
     @javafx.fxml.FXML
@@ -111,4 +97,5 @@ public class customerDashboardController
         nextStage.setScene(scene);
         nextStage.show();
     }
+
 }

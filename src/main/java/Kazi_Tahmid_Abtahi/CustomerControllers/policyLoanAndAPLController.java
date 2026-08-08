@@ -23,8 +23,6 @@ public class policyLoanAndAPLController
     @javafx.fxml.FXML
     private TextField requestedLoanAmountTF;
 
-    public void receiveUserEmail(String email) {
-    }
 
     @javafx.fxml.FXML
     public void initialize() {

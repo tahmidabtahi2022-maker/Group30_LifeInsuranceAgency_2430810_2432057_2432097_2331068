@@ -12,7 +12,7 @@
    <left>
       <VBox prefHeight="578.0" prefWidth="182.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#comparePoliciesButtonOnAction" style="-fx-background-color: #250b84;" text="Compare Policies" textFill="WHITE">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculatePremiumQuoteButtonOnAction" style="-fx-background-color: #250b84;" text="Calculate Premium Quote" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>

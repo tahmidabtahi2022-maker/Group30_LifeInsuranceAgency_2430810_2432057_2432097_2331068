@@ -21,7 +21,7 @@
         <ComboBox fx:id="policyTypeCB" layoutX="280.0" layoutY="100.0" prefHeight="26.0" prefWidth="186.0" />
         <ComboBox fx:id="policyTermCB" layoutX="280.0" layoutY="180.0" prefHeight="26.0" prefWidth="186.0" />
         <RadioButton fx:id="smokerStatusYesRB" layoutX="280.0" layoutY="224.0" mnemonicParsing="false" text="Yes" />
-        <TextArea fx:id="medicalHistoryTA" layoutX="281.0" layoutY="273.0" prefHeight="114.0" prefWidth="389.0" promptText="Short Description of you medical history" />
+        <TextArea fx:id="medicalHistoryTA" layoutX="281.0" layoutY="273.0" prefHeight="114.0" prefWidth="358.0" promptText="Short Description of you medical history" />
         <Label layoutX="121.0" layoutY="104.0" text="Enter Policy Type :" />
         <Label layoutX="121.0" layoutY="147.0" text="Enter coverage Amount :" />
         <Label layoutX="121.0" layoutY="184.0" text="Enter Policy Term :" />

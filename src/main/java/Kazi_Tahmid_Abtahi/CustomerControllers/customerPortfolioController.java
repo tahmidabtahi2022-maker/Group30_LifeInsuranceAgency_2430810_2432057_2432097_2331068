@@ -36,7 +36,7 @@ public class customerPortfolioController
     private TableColumn<Policy,Float> totalCashValueTC;
 
     private String userEmail;
-    private final ArrayList<Policy> customerPolicyList = new ArrayList<>();
+    private ArrayList<Policy> customerPolicyList;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -49,6 +49,32 @@ public class customerPortfolioController
         totalCashValueTC.setCellValueFactory(new PropertyValueFactory<>("totalCashValue"));
         statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
 
+        customerPolicyList = new ArrayList<>();
+    }
+
+    public void receiveUserEmail(String email) {
+        this.userEmail = email;
+        loadCustomerPoliciesFromFile();
+    }
+
+    private String findCustomerId(String email) {
+        try {
+            File f = new File("CustomerInfo.bin");
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                Customer c = (Customer) ois.readObject();
+                if (c.getEmailAddress().equals(email)) {
+                    return c.getUserId();
+
+                }
+            }
+
+        } catch (Exception e) {
+            //
+        }
+        return null;
     }
 
     @javafx.fxml.FXML
@@ -57,8 +83,8 @@ public class customerPortfolioController
 
         for (Policy policy : customerPolicyList) {
             boolean matchesId = policy.getPolicyId().contains(policyIdFilterTF.getText());
-            boolean matchesStatus = policy.getStatus().equals(statusFilterCB.getValue());
-            boolean matchesType = policy.getPolicyType().equalsIgnoreCase(policyTypeFilterCB.getValue());
+            boolean matchesStatus = statusFilterCB.getValue() == null || policy.getStatus().equals(statusFilterCB.getValue());
+            boolean matchesType = policyTypeFilterCB.getValue() == null || policy.getPolicyType().equals(policyTypeFilterCB.getValue());
 
             if (matchesId && matchesStatus && matchesType) {
                 customerOwnedPolicyDataTableview.getItems().add(policy);
@@ -76,46 +102,32 @@ public class customerPortfolioController
         customerOwnedPolicyDataTableview.getItems().addAll(customerPolicyList);
     }
 
-    public void receiveUserEmail(String email) {
-        this.userEmail = email;
-        loadCustomerPoliciesFromFile();
-    }
+
 
 
     private void loadCustomerPoliciesFromFile() {
         customerPolicyList.clear();
         customerOwnedPolicyDataTableview.getItems().clear();
 
+        String customerId = findCustomerId(this.userEmail);
         try{
             File f = new File("PolicyInfo.bin");
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
+
             while(true){
                 Policy policy = (Policy) ois.readObject();
-                if (policy.getCustomerId().equals(lookupCustomerId(this.userEmail)) || policy.getCustomerId().equals(this.userEmail)) {
+                if (customerId != null && customerId.equals(policy.getCustomerId())) {
                     customerPolicyList.add(policy);
+
                 }
             }
         } catch (Exception e) {
             //
         }
+
         customerOwnedPolicyDataTableview.getItems().addAll(customerPolicyList);
     }
 
-    private String lookupCustomerId(String email) {
-        try {
-            File f = new File("CustomerInfo.bin");
-            FileInputStream fis = new FileInputStream(f);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            while (true) {
-                Customer c = (Customer) ois.readObject();
-                if (c.getEmailAddress().equals(email)) {
-                    return c.getUserId();
-                }
-            }
-        } catch (Exception e) {
-            //
-        }
-        return null;
-    }
+
 }
