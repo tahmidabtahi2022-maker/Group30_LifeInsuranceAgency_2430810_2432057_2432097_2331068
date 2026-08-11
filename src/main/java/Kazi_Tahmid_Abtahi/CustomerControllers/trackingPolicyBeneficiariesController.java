@@ -1,13 +1,9 @@
 package Kazi_Tahmid_Abtahi.CustomerControllers;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
-public class TrackingPolicyBeneficiariesController
-{
+public class trackingPolicyBeneficiariesController {
     @javafx.fxml.FXML
     private TableColumn policyTypeTC;
     @javafx.fxml.FXML
@@ -32,14 +28,14 @@ public class TrackingPolicyBeneficiariesController
     private TextField updateBeneficiaryRelationshipInputTF;
 
     @javafx.fxml.FXML
-    public void initialize() {
+    public void saveBeneficiaryInformationsButtonOnActionS(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void showUpdatedInformationsButtonOnAction(ActionEvent actionEvent) {
+    public void addBeneficiaryToListButtonOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void updatebeneficiaryInformationButtonOnAction(ActionEvent actionEvent) {
+    public void loadPolicyBeneficiaryInformationsButtonOnAction(ActionEvent actionEvent) {
     }
 }

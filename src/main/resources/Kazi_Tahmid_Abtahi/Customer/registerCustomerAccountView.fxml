@@ -31,7 +31,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Label layoutX="128.0" layoutY="419.0" prefHeight="63.0" prefWidth="470.0" text="Complete Registration Process. enter all your data properly" />
+      <Label fx:id="statusLabel" layoutX="128.0" layoutY="419.0" prefHeight="63.0" prefWidth="470.0" text="Complete Registration Process. enter all your data properly" />
       <Button layoutX="129.0" layoutY="491.0" mnemonicParsing="false" onAction="#returnToLoginPageButtonOnAction" style="-fx-background-color: #2f3e58;" text="Return to login page" textFill="WHITE">
          <font>
             <Font size="13.0" />

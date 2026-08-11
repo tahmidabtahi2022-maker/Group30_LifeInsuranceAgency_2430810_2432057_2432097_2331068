@@ -41,13 +41,13 @@
         <Label layoutX="71.0" layoutY="260.0" text="Pay out Process Progress :" />
         <Label fx:id="payOutProcessProgressStatusLabel" layoutX="245.0" layoutY="260.0" text="None" />
 
-        <Label layoutX="69.0" layoutY="317.0" text="Past Payout Records &amp; History : " textFill="#242fac">
+        <Label layoutX="69.0" layoutY="287.0" text="Past Payout Records &amp; History : " textFill="#242fac">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </Label>
 
-        <TableView fx:id="pastPayoutsTableView" layoutX="71.0" layoutY="348.0" prefHeight="188.0" prefWidth="636.0">
+        <TableView fx:id="pastPayoutsTableView" layoutX="69.0" layoutY="314.0" prefHeight="188.0" prefWidth="636.0">
             <columns>
                 <TableColumn fx:id="claimIdTC" prefWidth="104.79998779296875" text="Claim ID" />
                 <TableColumn fx:id="policyTypeTC" prefWidth="103.19999694824219" text="Policy Type" />
@@ -58,8 +58,8 @@
             </columns>
         </TableView>
 
-        <Button layoutX="76.0" layoutY="550.0" mnemonicParsing="false" onAction="#downloadClaimHistorySummaryButtonOnAction" text="Download Claim History " />
+        <Button layoutX="69.0" layoutY="514.0" mnemonicParsing="false" onAction="#downloadClaimHistorySummaryButtonOnAction" text="Download Claim History " />
 
-        <Label fx:id="statusMessageLabel" layoutX="76.0" layoutY="584.0" prefHeight="40.0" prefWidth="560.0" text="Status : " textFill="#00000b" />
+        <Label fx:id="statusMessageLabel" layoutX="71.0" layoutY="540.0" prefHeight="40.0" prefWidth="560.0" text="Status : " textFill="#00000b" />
     </children>
 </AnchorPane>
