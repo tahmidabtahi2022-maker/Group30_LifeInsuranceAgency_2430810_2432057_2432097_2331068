@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.ClaimsOfficerDashboardController"
+            prefWidth="1300.0"
+            prefHeight="900.0"
+            style="-fx-background-color:#F4F8FC;">
+
+    <!-- ================= Header ================= -->
+
+    <top>
+
+        <HBox spacing="20"
+              alignment="CENTER_LEFT"
+              style="-fx-background-color:#1565C0;">
+
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <Label fx:id="dashboardTitleLabel"
+                   text="Claims Officer Dashboard"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:28px;
+                          -fx-font-weight:bold;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="officerNameLabel"
+                   text="Claims Officer"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:20px;
+                          -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </top>
+
+    <!-- ================= Left Menu ================= -->
+
+    <left>
+
+        <VBox spacing="12"
+              prefWidth="260"
+              style="-fx-background-color:#E3F2FD;">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Claims Menu"
+                   style="-fx-font-size:20px;
+                          -fx-font-weight:bold;
+                          -fx-text-fill:#0D47A1;"/>
+
+            <Button fx:id="goal1Button"
+                    text="Pending Claims Queue"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal1"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal2Button"
+                    text="Policy Verification"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal2"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal3Button"
+                    text="Evidence Viewer"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal3"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal4Button"
+                    text="Evidence Request"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal4"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal5Button"
+                    text="Claim Calculator"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal5"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal6Button"
+                    text="Claim Approval"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal6"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal7Button"
+                    text="Claim Rejection"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal7"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Button fx:id="goal8Button"
+                    text="Claims Report"
+                    prefWidth="220"
+                    prefHeight="40"
+                    onAction="#openGoal8"
+                    style="-fx-background-color:#42A5F5;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton"
+                    text="Logout"
+                    prefWidth="220"
+                    prefHeight="42"
+                    onAction="#logout"
+                    style="-fx-background-color:#D32F2F;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+        </VBox>
+
+    </left>
+
+    <!-- ================= Center ================= -->
+
+    <center>
+
+        <VBox alignment="CENTER"
+              spacing="20">
+
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <Label text="Welcome to the Claims Officer Dashboard"
+                   style="-fx-font-size:30px;
+                          -fx-font-weight:bold;
+                          -fx-text-fill:#1565C0;"/>
+
+            <Label text="Manage insurance claims, verify policies, review evidence, approve or reject claims, calculate payouts, and generate monthly reports."
+                   wrapText="true"
+                   maxWidth="700"
+                   style="-fx-font-size:17px;
+                          -fx-text-fill:#424242;"/>
+
+            <Label fx:id="statusLabel"
+                   prefWidth="700"
+                   prefHeight="60"
+                   alignment="CENTER"
+                   text="Select a module from the left menu to begin."
+                   style="-fx-background-color:#E8F5E9;
+                          -fx-background-radius:10;
+                          -fx-border-color:#66BB6A;
+                          -fx-border-radius:10;
+                          -fx-font-size:17px;
+                          -fx-font-weight:bold;
+                          -fx-text-fill:#2E7D32;"/>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

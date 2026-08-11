@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.InsuranceAgentControllers.PolicyApplicationController"
+            prefWidth="1300"
+            prefHeight="850"
+            style="-fx-background-color:#F5F7FA;">
+
+
+
+    <!-- ================= TOP HEADER ================= -->
+
+
+    <top>
+
+
+        <HBox alignment="CENTER_LEFT"
+              prefHeight="80"
+              spacing="20"
+              style="-fx-background-color:#1565C0;">
+
+
+            <padding>
+                <Insets left="30" right="30"/>
+            </padding>
+
+
+            <children>
+
+
+                <Label text="Insurance Agent Dashboard"
+                       fx:id="dashboardTitleLabel"
+                       textFill="WHITE">
+
+
+                    <font>
+                        <Font size="26"/>
+                    </font>
+
+
+                </Label>
+
+
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+
+
+                <Label fx:id="agentNameLabel"
+                       text="Insurance Agent"
+                       textFill="WHITE">
+
+
+                    <font>
+                        <Font size="18"/>
+                    </font>
+
+
+                </Label>
+
+
+            </children>
+
+
+        </HBox>
+
+
+    </top>
+
+
+
+
+
+    <!-- ================= CENTER ================= -->
+
+
+    <center>
+
+
+        <VBox alignment="CENTER"
+              spacing="20">
+
+
+            <padding>
+                <Insets top="25"
+                        right="60"
+                        bottom="25"
+                        left="60"/>
+            </padding>
+
+
+
+            <children>
+
+
+
+                <VBox prefWidth="900"
+                      spacing="22"
+                      style="-fx-background-color:white;
+                             -fx-background-radius:15;
+                             -fx-padding:35;">
+
+
+                    <children>
+
+
+
+
+                        <Label text="Policy Application Portal"
+                               alignment="CENTER"
+                               maxWidth="Infinity"
+                               style="-fx-background-color:#90CAF9;
+                                      -fx-background-radius:10;">
+
+
+                            <font>
+                                <Font size="26"/>
+                            </font>
+
+
+                        </Label>
+
+
+
+
+
+                        <GridPane hgap="20"
+                                  vgap="18">
+
+
+                            <columnConstraints>
+
+
+                                <ColumnConstraints prefWidth="220"/>
+
+
+                                <ColumnConstraints hgrow="ALWAYS"/>
+
+
+                            </columnConstraints>
+
+
+
+
+                            <children>
+
+
+
+
+                                <Label text="Unique Client ID"
+                                       GridPane.rowIndex="0"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <TextField fx:id="clientIdTextField"
+                                           promptText="Enter Client ID"
+                                           GridPane.rowIndex="0"
+                                           GridPane.columnIndex="1"/>
+
+
+
+                                <Button fx:id="searchButton"
+                                        text="Search"
+                                        prefWidth="120"
+                                        onAction="#searchCustomer"
+                                        style="-fx-background-color:#2196F3;
+                                               -fx-text-fill:white;"
+                                        GridPane.rowIndex="0"
+                                        GridPane.columnIndex="2"/>
+
+
+
+
+
+                                <Label text="Customer Status"
+                                       GridPane.rowIndex="1"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <TextField fx:id="customerStatusTextField"
+                                           editable="false"
+                                           GridPane.rowIndex="1"
+                                           GridPane.columnIndex="1"/>
+
+
+
+
+
+
+                                <Label text="Insurance Package"
+                                       GridPane.rowIndex="2"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <ComboBox fx:id="insurancePackageComboBox"
+                                          prefWidth="300"
+                                          promptText="Select Package"
+                                          GridPane.rowIndex="2"
+                                          GridPane.columnIndex="1"/>
+
+
+
+
+
+
+                                <Label text="Sum Assured"
+                                       GridPane.rowIndex="3"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <TextField fx:id="sumAssuredTextField"
+                                           promptText="Enter Amount"
+                                           GridPane.rowIndex="3"
+                                           GridPane.columnIndex="1"/>
+
+
+
+
+
+
+                                <Label text="Nominee Name"
+                                       GridPane.rowIndex="4"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <TextField fx:id="nomineeNameTextField"
+                                           promptText="Enter Nominee Name"
+                                           GridPane.rowIndex="4"
+                                           GridPane.columnIndex="1"/>
+
+
+
+
+
+
+                                <Label text="Health Category"
+                                       GridPane.rowIndex="5"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <ComboBox fx:id="healthCategoryComboBox"
+                                          prefWidth="300"
+                                          promptText="Select Health Category"
+                                          GridPane.rowIndex="5"
+                                          GridPane.columnIndex="1"/>
+
+
+
+
+
+
+                                <Label text="Risk Baseline"
+                                       GridPane.rowIndex="6"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <TextField fx:id="riskBaselineTextField"
+                                           editable="false"
+                                           promptText="Calculated Risk"
+                                           GridPane.rowIndex="6"
+                                           GridPane.columnIndex="1"/>
+
+
+
+
+
+
+
+                                <Label text="Application Status"
+                                       GridPane.rowIndex="7"
+                                       GridPane.columnIndex="0"/>
+
+
+                                <TextField fx:id="applicationStatusTextField"
+                                           editable="false"
+                                           GridPane.rowIndex="7"
+                                           GridPane.columnIndex="1"/>
+
+
+
+
+                            </children>
+
+
+                        </GridPane>
+
+
+
+
+
+
+
+                        <!-- BUTTON AREA -->
+
+
+                        <HBox alignment="CENTER"
+                              spacing="25">
+
+
+                            <children>
+
+
+
+                                <Button fx:id="calculateRiskButton"
+                                        text="Calculate Risk"
+                                        prefWidth="220"
+                                        prefHeight="45"
+                                        onAction="#calculateRisk"
+                                        style="-fx-background-color:#4CAF50;
+                                               -fx-text-fill:white;
+                                               -fx-font-size:16;"/>
+
+
+
+
+
+                                <Button fx:id="submitProposalButton"
+                                        text="Submit Proposal"
+                                        prefWidth="220"
+                                        prefHeight="45"
+                                        onAction="#submitProposal"
+                                        style="-fx-background-color:#2196F3;
+                                               -fx-text-fill:white;
+                                               -fx-font-size:16;"/>
+
+
+
+
+
+                                <Button fx:id="clearButton"
+                                        text="Clear"
+                                        prefWidth="220"
+                                        prefHeight="45"
+                                        onAction="#clearForm"
+                                        style="-fx-background-color:#FFC107;
+                                               -fx-font-size:16;"/>
+
+
+
+                            </children>
+
+
+                        </HBox>
+
+
+
+
+
+                        <Label fx:id="notificationLabel"
+                               text="Status"
+                               alignment="CENTER"
+                               prefHeight="40"
+                               maxWidth="Infinity"
+                               style="-fx-background-color:#CFD8DC;
+                                      -fx-font-size:16;
+                                      -fx-font-weight:bold;"/>
+
+
+
+                    </children>
+
+
+
+                </VBox>
+
+
+
+            </children>
+
+
+
+        </VBox>
+
+
+
+    </center>
+
+
+
+
+
+
+    <!-- ================= BOTTOM NAVIGATION ================= -->
+
+
+
+    <bottom>
+
+
+
+        <HBox alignment="CENTER"
+              spacing="30"
+              prefHeight="75"
+              style="-fx-background-color:#ECEFF1;">
+
+
+
+            <children>
+
+
+
+                <Button fx:id="dashboardButton"
+                        text="Dashboard"
+                        prefWidth="180"
+                        prefHeight="45"
+                        onAction="#openDashboard"
+                        style="-fx-background-color:#2196F3;
+                               -fx-text-fill:white;"/>
+
+
+
+
+                <Button fx:id="backButton"
+                        text="Back"
+                        prefWidth="180"
+                        prefHeight="45"
+                        onAction="#back"
+                        style="-fx-background-color:#FF9800;
+                               -fx-text-fill:white;"/>
+
+
+
+
+                <Button fx:id="logoutButton"
+                        text="Logout"
+                        prefWidth="180"
+                        prefHeight="45"
+                        onAction="#logout"
+                        style="-fx-background-color:#F44336;
+                               -fx-text-fill:white;"/>
+
+
+
+            </children>
+
+
+        </HBox>
+
+
+    </bottom>
+
+
+
+</BorderPane>

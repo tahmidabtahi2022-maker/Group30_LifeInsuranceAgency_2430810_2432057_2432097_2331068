@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="691.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.PaymentProcessingController">
+   <children>
+      <Text layoutX="23.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Processing" wrappingWidth="392.00003662109384">
+         <font>
+            <Font name="Gill Sans MT" size="48.0" />
+         </font>
+      </Text>
+      <Text layoutX="50.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Balance :" />
+      <Text layoutX="42.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Amount :" />
+      <Button layoutX="755.0" layoutY="634.0" mnemonicParsing="false" onAction="#RefreshButton" prefHeight="26.0" prefWidth="121.0" text="Refresh" />
+      <Button layoutX="760.0" layoutY="109.0" mnemonicParsing="false" onAction="#SearchButton" prefHeight="26.0" prefWidth="102.0" text="Search" />
+      <DatePicker fx:id="PaymentDatePicker" layoutX="669.0" layoutY="233.0" prefHeight="26.0" prefWidth="194.0" />
+      <Text layoutX="557.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Date :" />
+      <TableView fx:id="Tableview" layoutY="447.0" prefHeight="170.0" prefWidth="907.0">
+         <columns>
+            <TableColumn fx:id="CustomerIDColumn" prefWidth="163.20000916719437" text="Customer ID" />
+            <TableColumn fx:id="PaymentAmountColumn" prefWidth="199.1999969482422" text="Payment Amount " />
+            <TableColumn fx:id="PremiumPeriodColumn" prefWidth="177.60003662109375" text="Premium Period " />
+            <TableColumn fx:id="ReceiptNumberColumn" prefWidth="173.60003662109375" text="Receipt Number " />
+            <TableColumn fx:id="PaymentDateColumn" prefWidth="240.7999267578125" text="Payment Date " />
+         </columns>
+      </TableView>
+      <Text layoutX="46.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Premium Period :" />
+      <ComboBox fx:id="PremiumPeriodComboBox" layoutX="187.0" layoutY="233.0" prefHeight="26.0" prefWidth="339.0" />
+      <Button layoutX="608.0" layoutY="634.0" mnemonicParsing="false" onAction="#ClearButton" prefHeight="26.0" prefWidth="121.0" text="Clear" />
+      <Text layoutX="334.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID / Policy ID  :" />
+      <TextField fx:id="PolicyIDTextfield" layoutX="490.0" layoutY="109.0" prefHeight="26.0" prefWidth="228.0" />
+      <TextField fx:id="PaymentAmountTextfield" layoutX="186.0" layoutY="189.0" prefHeight="26.0" prefWidth="678.0" />
+      <Label fx:id="CurrentBalanceLabel" layoutX="187.0" layoutY="149.0" text="Label" />
+      <Label fx:id="ReceiptNumberLabel" layoutX="268.0" layoutY="339.0" text="Label" />
+      <Text layoutX="83.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receipt Number :" />
+      <Text layoutX="83.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Updated Balance :" />
+      <Text layoutX="83.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Confirmation :" />
+      <Label fx:id="UpdatedBalanceLabel" layoutX="268.0" layoutY="368.0" text="Label" />
+      <Label fx:id="PaymentConfirmationLabel" layoutX="268.0" layoutY="401.0" text="Label" />
+      <Button layoutX="742.0" layoutY="284.0" mnemonicParsing="false" onAction="#RecordPaymentButton" prefHeight="26.0" prefWidth="121.0" text="Record Payment" />
+      <Text layoutX="23.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment  Receipt Details:" />
+   </children>
+</AnchorPane>

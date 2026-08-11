@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" fx:controller="org.example.group30_lifeinsuranceagency_2430810_2432057_2432097_2331068.BeneficiaryDashboardController">
+   <top>
+      <Label text="Beneficiary" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="364.0" prefWidth="203.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Menu">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#registerAccountBOA" text="Register Account" />
+            <Button mnemonicParsing="false" onAction="#viewBeneficiaryStatusBOA" text="View Beneficiary Status" />
+            <Button mnemonicParsing="false" onAction="#submitClaimRequestBOA" text="Submit Claim Request" />
+            <Button mnemonicParsing="false" onAction="#uploadDocumentsBOA" text="Upload Documents" />
+            <Button mnemonicParsing="false" onAction="#trackClaimProgressBOA" text="Track Claim Progress" />
+            <Button mnemonicParsing="false" onAction="#receiveNotificationsBOA" text="Receive Notifications" />
+            <Button mnemonicParsing="false" onAction="#viewClaimHistoryBOA" text="View Claim History" />
+            <Button mnemonicParsing="false" onAction="#updatePersonalDetailsBOA" text="Update Personal Details" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

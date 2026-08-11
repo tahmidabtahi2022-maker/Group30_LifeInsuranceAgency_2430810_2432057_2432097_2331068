@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="683.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.UpdateCustomerInfoController">
+   <children>
+      <Text layoutX="63.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID :" />
+      <Text layoutX="63.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number :" />
+      <TextField fx:id="CustomerIDTextfield" layoutX="257.0" layoutY="155.0" prefHeight="26.0" prefWidth="482.0" />
+      <Text layoutX="22.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Customer Info" wrappingWidth="514.5487670898438">
+         <font>
+            <Font name="Gill Sans MT" size="48.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ContactNumberTextfield" layoutX="257.0" layoutY="201.0" prefHeight="26.0" prefWidth="292.0" />
+      <Button layoutX="777.0" layoutY="63.0" mnemonicParsing="false" onAction="#SearchButton" prefHeight="26.0" prefWidth="120.0" text="Search Customer" />
+      <Text layoutX="63.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address :" />
+      <TextField fx:id="EmailAddressTextfield" layoutX="257.0" layoutY="253.0" prefHeight="26.0" prefWidth="482.0" />
+      <TableView fx:id="TableView" layoutY="401.0" prefHeight="226.0" prefWidth="910.0">
+         <columns>
+            <TableColumn fx:id="CustomerNameColumn" prefWidth="120.79998475313187" text="Customer Name " />
+            <TableColumn fx:id="CustomerIDColumn" prefWidth="80.80001831054688" text="Customer ID" />
+            <TableColumn fx:id="EmailAddressColumn" prefWidth="189.59999084472656" text="Email Address" />
+            <TableColumn fx:id="AddressColumn" prefWidth="186.4000244140625" text="Address" />
+            <TableColumn fx:id="ContactNumberColumn" prefWidth="124.800048828125" text="Contact Number " />
+            <TableColumn fx:id="UpdateTimeColumn" prefWidth="208.7999267578125" text="Updated Date and time " />
+         </columns>
+      </TableView>
+      <Text layoutX="618.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID / Policy ID :" />
+      <TextField fx:id="PolicyOrCustomerIDTextfield" layoutX="614.0" layoutY="64.0" prefHeight="26.0" prefWidth="137.0" />
+      <Text layoutX="67.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address  :" />
+      <Text layoutX="63.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name :" />
+      <TextField fx:id="CustomerNameTextfield" layoutX="257.0" layoutY="111.0" prefHeight="26.0" prefWidth="482.0" />
+      <Button layoutX="22.0" layoutY="643.0" mnemonicParsing="false" onAction="#ValidateDataInputsButton" prefHeight="26.0" prefWidth="242.0" text="Validate Data Inputs" />
+      <Button layoutX="380.0" layoutY="643.0" mnemonicParsing="false" onAction="#CommitUpdatedRecordButton" prefHeight="26.0" prefWidth="190.0" text="Commit Updated Record" />
+      <TextArea fx:id="AddressTextArea" layoutX="257.0" layoutY="296.0" prefHeight="86.0" prefWidth="482.0" />
+      <DatePicker fx:id="UpdateDatePicker" layoutX="723.0" layoutY="201.0" prefHeight="26.0" prefWidth="147.0" />
+      <Text layoutX="571.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Updated Date and time :" />
+      <Button layoutX="701.0" layoutY="643.0" mnemonicParsing="false" onAction="#ClearFieldsButton" prefHeight="26.0" prefWidth="120.0" text="Clear Fields" />
+   </children>
+</AnchorPane>

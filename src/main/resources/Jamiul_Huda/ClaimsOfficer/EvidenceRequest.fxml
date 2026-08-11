@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Jamiul_Huda.ClaimsOfficerControllers.EvidenceRequestController"
+            style="-fx-background-color:#F4F8FB;">
+
+    <top>
+        <VBox spacing="10"
+              style="-fx-background-color:#1976D2;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Issue Formal Claim Information Clarification Request"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:22px;
+                          -fx-font-weight:bold;"/>
+
+            <Label text="Request additional supporting evidence for claim verification."
+                   style="-fx-text-fill:white;
+                          -fx-font-size:14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+
+        <VBox spacing="15" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="25" right="40" bottom="25" left="40"/>
+            </padding>
+
+            <GridPane hgap="15" vgap="15">
+
+                <Label text="Claim Token ID"/>
+                <TextField fx:id="claimIdField"
+                           GridPane.columnIndex="1"
+                           prefWidth="320"
+                           promptText="Enter Claim Token ID"/>
+
+                <Label text="Policy Number"
+                       GridPane.rowIndex="1"/>
+                <TextField fx:id="policyNumberField"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"
+                           prefWidth="320"
+                           promptText="Enter Policy Number"/>
+
+                <Label text="Clarification Request"
+                       GridPane.rowIndex="2"/>
+
+                <TextArea fx:id="requestArea"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="2"
+                          prefWidth="320"
+                          prefHeight="180"
+                          wrapText="true"
+                          promptText="Enter detailed clarification request (Minimum 25 characters)"/>
+
+            </GridPane>
+
+            <HBox spacing="20" alignment="CENTER">
+
+                <Button text="Submit Request"
+                        onAction="#submitRequest"
+                        prefWidth="170"
+                        style="-fx-background-color:#43A047;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+                <Button text="Clear"
+                        onAction="#clearFields"
+                        prefWidth="120"
+                        style="-fx-background-color:#FB8C00;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+
+            </HBox>
+
+            <Label fx:id="statusLabel"
+                   style="-fx-font-size:14px;
+                          -fx-font-weight:bold;
+                          -fx-text-fill:#1565C0;"/>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color:#E3F2FD;">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Button text="Back to Dashboard"
+                    onAction="#backDashboard"
+                    prefWidth="170"
+                    style="-fx-background-color:#D32F2F;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

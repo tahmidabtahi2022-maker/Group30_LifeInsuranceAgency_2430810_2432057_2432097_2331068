@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class LoginPageController
 {
     @javafx.fxml.FXML
-    private ComboBox<String> selectUserTypeCB;
+    private ComboBox selectUserTypeCB;
     @javafx.fxml.FXML
     private PasswordField enterPasswordTF;
     @javafx.fxml.FXML
@@ -32,15 +32,8 @@ public class LoginPageController
     }
 
     @javafx.fxml.FXML
-    public void registerNewAccountOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Kazi_Tahmid_Abtahi/Customer/registerCustomerAccountView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        nextStage.setTitle("Metlife Agency");
-        nextStage.setScene(scene);
-        nextStage.show();
+    public void registerNewAccountOnAction(ActionEvent actionEvent) {
     }
-
 
     @javafx.fxml.FXML
     public void loginButtonOnAction(ActionEvent actionEvent) throws IOException {

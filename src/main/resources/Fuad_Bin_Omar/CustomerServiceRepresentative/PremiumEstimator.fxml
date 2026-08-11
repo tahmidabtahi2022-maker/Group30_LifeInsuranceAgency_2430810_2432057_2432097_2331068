@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="677.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fuad_Bin_Omar.CustomerServiceRepresentative.PremiumEstimatorController">
+   <children>
+      <Text layoutX="102.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Premium (৳) :" />
+      <Text layoutX="245.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Premium Estimator" wrappingWidth="482.4000000000001">
+         <font>
+            <Font name="Gill Sans MT" size="48.0" />
+         </font>
+      </Text>
+      <TextField fx:id="MonthlyPremiumTextfield" layoutX="271.0" layoutY="365.0" prefHeight="26.0" prefWidth="588.0" />
+      <Text layoutX="65.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coverage Amount(৳) :" />
+      <TextField fx:id="CoverageAmountTextfield" layoutX="245.0" layoutY="205.0" prefHeight="26.0" prefWidth="614.0" />
+      <Text layoutX="100.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health Status :" />
+      <Button layoutX="623.0" layoutY="251.0" mnemonicParsing="false" onAction="#GeneratePremiumQuoteButton" prefHeight="26.0" prefWidth="235.0" text="Generate Premium Quote" />
+      <Button layoutX="753.0" layoutY="162.0" mnemonicParsing="false" onAction="#ClearButton" prefHeight="26.0" prefWidth="102.0" text="Clear" />
+      <DatePicker fx:id="BirthDatePicker" layoutX="245.0" layoutY="162.0" prefHeight="26.0" prefWidth="378.0" />
+      <Text layoutX="104.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth  :" />
+      <Button layoutX="638.0" layoutY="162.0" mnemonicParsing="false" onAction="#ExportQuoteButton" prefHeight="26.0" prefWidth="102.0" text="Export Quote" />
+      <ComboBox fx:id="HealthStatusComboBox" layoutX="245.0" layoutY="251.0" prefHeight="26.0" prefWidth="326.0" />
+      <Label layoutX="39.0" layoutY="122.0" text="Input Information" />
+      <Text layoutX="107.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Premium (৳) :" />
+      <TextField fx:id="AnnualPremiumTextfield" layoutX="271.0" layoutY="411.0" prefHeight="26.0" prefWidth="588.0" />
+      <Label layoutX="39.0" layoutY="313.0" text="Premium Result" />
+      <TableView fx:id="Tableview" layoutX="-1.0" layoutY="478.0" prefHeight="202.0" prefWidth="935.0">
+        <columns>
+          <TableColumn fx:id="DateofBirthColumn" prefWidth="163.20000916719437" text="Date of Birth  " />
+          <TableColumn fx:id="CoverageAmountColumn" prefWidth="199.1999969482422" text="Coverage Amount(৳) " />
+            <TableColumn fx:id="HealthStatusColumn" prefWidth="144.79998779296875" text="Health Status " />
+            <TableColumn fx:id="MonthlyPremiumColumn" prefWidth="210.4000244140625" text="Monthly Premium (৳) " />
+            <TableColumn fx:id="AnnualPremiumColumn" prefWidth="219.99993896484375" text="Annual Premium (৳)" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
