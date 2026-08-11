@@ -50,11 +50,12 @@ public class customerPortfolioController
         statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         customerPolicyList = new ArrayList<>();
+        loadCustomerPoliciesFromFile();
     }
 
     public void receiveUserEmail(String email) {
         this.userEmail = email;
-        loadCustomerPoliciesFromFile();
+
     }
 
     private String findCustomerId(String email) {

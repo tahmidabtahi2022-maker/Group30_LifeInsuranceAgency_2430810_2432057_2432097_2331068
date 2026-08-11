@@ -43,18 +43,19 @@ public class payPremiumsAndDuesController
 
     @javafx.fxml.FXML
     public void initialize() {
-        pendingPolicies = new ArrayList<>();
         paymentMethodCB.getItems().addAll("Bank Transfer", "Card", "Mobile Financial Service");
 
         policyIdTC.setCellValueFactory(new PropertyValueFactory<>("policyId"));
         premiumDueAmountTC.setCellValueFactory(new PropertyValueFactory<>("yearlyPremium"));
         nextDueDateTC.setCellValueFactory(new PropertyValueFactory<>("nextDueDate"));
         statusTC.setCellValueFactory(new PropertyValueFactory<>("displayStatus"));
+
+        pendingPolicies = new ArrayList<>();
+        loadPendingPremiums();
     }
 
     public void receiveUserEmail(String email) {
         this.customerId = lookupCustomerId(email);
-        loadPendingPremiums();
     }
 
 
