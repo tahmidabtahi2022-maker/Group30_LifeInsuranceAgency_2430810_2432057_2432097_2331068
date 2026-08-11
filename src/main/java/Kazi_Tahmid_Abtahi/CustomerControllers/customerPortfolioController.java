@@ -83,7 +83,7 @@ public class customerPortfolioController
         customerOwnedPolicyDataTableview.getItems().clear();
 
         for (Policy policy : customerPolicyList) {
-            boolean matchesId = policy.getPolicyId().contains(policyIdFilterTF.getText());
+            boolean matchesId = policy.getPolicyId().equals(policyIdFilterTF.getText());
             boolean matchesStatus = statusFilterCB.getValue() == null || policy.getStatus().equals(statusFilterCB.getValue());
             boolean matchesType = policyTypeFilterCB.getValue() == null || policy.getPolicyType().equals(policyTypeFilterCB.getValue());
 
